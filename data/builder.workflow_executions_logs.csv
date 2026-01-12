@@ -1,0 +1,2492 @@
+execution_count,companyId,companyName,month
+258,1794,ARCA ARG,2025-01
+27,1102,Agritop,2025-01
+28,1562,Aldeamo,2025-01
+2,1642,Alianza del Valle,2025-01
+36,462,Ambiente QA,2025-01
+9,1896,Arca Continental Argentina,2025-01
+47,748,Arca MX Ecommerce,2025-01
+71001,362,Arca PE,2025-01
+8,1068,Arca PE Ecommerce,2025-01
+19602,470,Arca PE Proyecto Frío,2025-01
+30,1940,Arca camiones,2025-01
+25,1849,Arca movil,2025-01
+52,317,Aurea,2025-01
+19,1639,Automation QA Test,2025-01
+428,1973,BCP Sendsei,2025-01
+22921,1245,BG - Banco del Barrio 2,2025-01
+164,930,Banco Bolivariano Cobranzas,2025-01
+3915,1584,Banco Comercial Manabí,2025-01
+1936874,155,Banco Guayaquil,2025-01
+579,1737,Banco Union,2025-01
+1,133,Banco del Austro,2025-01
+4063,417,Banisi,2025-01
+61195,692,Banisi Chat,2025-01
+1,1767,Banorte,2025-01
+62,11,BdP,2025-01
+38,1649,Bruno,2025-01
+11,1569,CANTEC,2025-01
+6454,1848,CIVE,2025-01
+4,1373,Califik,2025-01
+54085,138,Cervecería Nacional,2025-01
+92,1898,Cibernetica,2025-01
+69,1847,Ck Comercializadora,2025-01
+83139,1559,Coca Cola en tu hogar,2025-01
+4523,1694,Cooperativa Daquilema,2025-01
+1,855,Cooperativa El Sagrario,2025-01
+21,1881,Cooperativa Policía Nacional,2025-01
+14,1846,Cudesa,2025-01
+171,1960,Cámara de construcción de Guayaquil,2025-01
+44,1808,Daiesa,2025-01
+43893,1760,Danec,2025-01
+91,35,Datafast,2025-01
+23,1926,Datilmedia S.A.,2025-01
+236004,150,Deprati,2025-01
+597,1602,Descuentos y Beneficios,2025-01
+1008,5,DevLab,2025-01
+158,110,Dipaso,2025-01
+1149,1743,Distrikia,2025-01
+7,1304,Doctorio,2025-01
+521,1945,Duragas,2025-01
+22,1053,EclipSoft,2025-01
+1,1160,Expand,2025-01
+192,1652,Expoplaza,2025-01
+337,1951,FPV Seguros,2025-01
+152,1758,Finanza AI,2025-01
+28,1937,Flexi,2025-01
+29389,124,GEA Ecuador,2025-01
+59,1280,Gea Colombia,2025-01
+990,1925,INDI BCP,2025-01
+40,368,Innovat Latam.,2025-01
+139,1955,Italika,2025-01
+8,1961,Jelou AI commerce ingles,2025-01
+1501,1957,Jelou Banking,2025-01
+397,135,Jelou Dev,2025-01
+388,1944,Jelou Marketplace,2025-01
+6686,361,Jelou Pay,2025-01
+657,331,Jelou Producto,2025-01
+1542,322,Jelou Shop,2025-01
+10,1044,Jelou Ventas,2025-01
+674,1266,Katherine del Carmen Ovando,2025-01
+26980,1718,Kaufmann,2025-01
+1465,997,La Finestra SAS,2025-01
+48,1948,Lastra Bazurto Patricia Aracelly,2025-01
+1746,935,Lavca,2025-01
+1069,965,Livansud,2025-01
+10,1798,Luz Verde Cobranza,2025-01
+1691,258,Luzverde,2025-01
+6141,404,MONGO'S,2025-01
+356,745,Mail Boxes Etc,2025-01
+299,940,Mardis,2025-01
+3460,1950,Marriott,2025-01
+48209,405,Massline,2025-01
+60,1648,Medexcard,2025-01
+6,1507,Michael’s Delivery,2025-01
+6,967,N5,2025-01
+2319,1482,Naturisa,2025-01
+1677,147,Netlife,2025-01
+16,1329,Nutrarte,2025-01
+66,1962,Ondu Cloud,2025-01
+2343,1480,Oriental,2025-01
+3,1861,PLUVIALE,2025-01
+46,1379,Pocket Tienda Prototipo,2025-01
+3,1547,PopCornComunication,2025-01
+85732,54,Pycca,2025-01
+1714,1903,Rabbit,2025-01
+1,1633,SaludSA,2025-01
+85,123,Security Data,2025-01
+282,1845,Seguros Confianza,2025-01
+9,358,Seguros Liberty,2025-01
+58,452,Seguros Pacífico,2025-01
+606,1566,Siigo,2025-01
+336,1811,Sistecrédito,2025-01
+27492,1761,Solca,2025-01
+49,1865,Start Co,2025-01
+476,1641,Supreme,2025-01
+324,1384,Talento Humano,2025-01
+1,382,Team APPS,2025-01
+123,1844,Tienda Branchos,2025-01
+4,1741,Toledano,2025-01
+189,1946,Total Education Program,2025-01
+6,183,Tracklink,2025-01
+1360,1880,TransSky,2025-01
+2,2001,TransSky Cobranzas,2025-01
+405,1953,TuSupperAhorro,2025-01
+6624,823,Tuenti POC,2025-01
+6932,1890,Tuenti Vendedores,2025-01
+97,807,Universidad de las Artes,2025-01
+1,1407,Verial,2025-01
+132292,95,Veris,2025-01
+256,1860,Vitapro,2025-01
+7,1133,Vivalia,2025-01
+3001,1696,XTRIM,2025-01
+173,353,Yomp,2025-01
+433,1964,ZHM Seguros,2025-01
+15,1986,Zepelin,2025-01
+23,1102,Agritop,2025-02
+19,1562,Aldeamo,2025-02
+3,1642,Alianza del Valle,2025-02
+1,2031,Alpha Trading,2025-02
+492,462,Ambiente QA,2025-02
+2,1896,Arca Continental Argentina,2025-02
+108799,362,Arca PE,2025-02
+300,1068,Arca PE Ecommerce,2025-02
+20822,470,Arca PE Proyecto Frío,2025-02
+141,1849,Arca movil,2025-02
+52,317,Aurea,2025-02
+1267,1973,BCP Sendsei,2025-02
+11095,1245,BG - Banco del Barrio 2,2025-02
+83,930,Banco Bolivariano Cobranzas,2025-02
+10378,1584,Banco Comercial Manabí,2025-02
+1864811,155,Banco Guayaquil,2025-02
+1871,1737,Banco Union,2025-02
+319,133,Banco del Austro,2025-02
+46701,417,Banisi,2025-02
+99792,692,Banisi Chat,2025-02
+295,2010,Base Pocket Account,2025-02
+4,11,BdP,2025-02
+5,1472,Big tech,2025-02
+306,1649,Bruno,2025-02
+2,1569,CANTEC,2025-02
+7,2047,CBC,2025-02
+5809,1848,CIVE,2025-02
+23,1373,Califik,2025-02
+63396,138,Cervecería Nacional,2025-02
+613,1898,Cibernetica,2025-02
+24,1847,Ck Comercializadora,2025-02
+100421,1559,Coca Cola en tu hogar,2025-02
+51,1992,Contapro BCP,2025-02
+5635,1694,Cooperativa Daquilema,2025-02
+14331,855,Cooperativa El Sagrario,2025-02
+22,1881,Cooperativa Policía Nacional,2025-02
+4,1960,Cámara de construcción de Guayaquil,2025-02
+98,1808,Daiesa,2025-02
+7306,1760,Danec,2025-02
+54,35,Datafast,2025-02
+88,1926,Datilmedia S.A.,2025-02
+240560,150,Deprati,2025-02
+310,1602,Descuentos y Beneficios,2025-02
+1180,5,DevLab,2025-02
+81,1512,Dialogus,2025-02
+279,110,Dipaso,2025-02
+618,1743,Distrikia,2025-02
+15,1304,Doctorio,2025-02
+194,1945,Duragas,2025-02
+40,1053,EclipSoft,2025-02
+2,2036,Entel Demo,2025-02
+15,1160,Expand,2025-02
+63,1652,Expoplaza,2025-02
+525,1951,FPV Seguros,2025-02
+2,121,Facephi<>Peigo,2025-02
+392,2032,Figueroa Merchan Jose Luis,2025-02
+1415,1758,Finanza AI,2025-02
+400,1937,Flexi,2025-02
+86926,124,GEA Ecuador,2025-02
+2,2012,GEOMIL,2025-02
+7,1280,Gea Colombia,2025-02
+1286,1925,INDI BCP,2025-02
+2,368,Innovat Latam.,2025-02
+309,1955,Italika,2025-02
+779,1957,Jelou Banking,2025-02
+635,135,Jelou Dev,2025-02
+488,1944,Jelou Marketplace,2025-02
+6483,361,Jelou Pay,2025-02
+1684,331,Jelou Producto,2025-02
+1,2033,Jelou Revenue,2025-02
+554,322,Jelou Shop,2025-02
+654,2025,KIVETI S.A.,2025-02
+436,1266,Katherine del Carmen Ovando,2025-02
+27371,1718,Kaufmann,2025-02
+8,2005,Kuno Digital,2025-02
+131,997,La Finestra SAS,2025-02
+4,1988,La casa de los abuelos,2025-02
+917,935,Lavca,2025-02
+742,965,Livansud,2025-02
+2,1798,Luz Verde Cobranza,2025-02
+1453,258,Luzverde,2025-02
+7476,404,MONGO'S,2025-02
+3602,745,Mail Boxes Etc,2025-02
+448,940,Mardis,2025-02
+2792,1950,Marriott,2025-02
+47220,405,Massline,2025-02
+499,1648,Medexcard,2025-02
+6,967,N5,2025-02
+7,2019,NATURALESMEJOR S.A.,2025-02
+1506,1482,Naturisa,2025-02
+1211730,147,Netlife,2025-02
+3,1914,Neuron,2025-02
+2,1329,Nutrarte,2025-02
+434,1962,Ondu Cloud,2025-02
+2904,1480,Oriental,2025-02
+1,1861,PLUVIALE,2025-02
+57,1379,Pocket Tienda Prototipo,2025-02
+2,1547,PopCornComunication,2025-02
+2,2017,Punta Azul,2025-02
+113744,54,Pycca,2025-02
+1239,1903,Rabbit,2025-02
+53,1633,SaludSA,2025-02
+274853,123,Security Data,2025-02
+534,1845,Seguros Confianza,2025-02
+61,358,Seguros Liberty,2025-02
+41,452,Seguros Pacífico,2025-02
+39,1984,Semvra,2025-02
+1140,1566,Siigo,2025-02
+208,1811,Sistecrédito,2025-02
+29792,1761,Solca,2025-02
+78,1865,Start Co,2025-02
+1124,1641,Supreme,2025-02
+377,1641,Supreme Ventures,2025-02
+312,1384,Talento Humano,2025-02
+689,1844,Tienda Branchos,2025-02
+108,1946,Total Education Program,2025-02
+3566,183,Tracklink,2025-02
+1067,1880,TransSky,2025-02
+2,2001,TransSky Cobranzas,2025-02
+1559,1953,TuSupperAhorro,2025-02
+10058,823,Tuenti POC,2025-02
+25847,1890,Tuenti Vendedores,2025-02
+91,807,Universidad de las Artes,2025-02
+114302,95,Veris,2025-02
+7,2006,Viamatica,2025-02
+2,1942,Viaxperta,2025-02
+16,1860,Vitapro,2025-02
+213,1133,Vivalia,2025-02
+2013,1696,XTRIM,2025-02
+132,353,Yomp,2025-02
+1372,1964,ZHM Seguros,2025-02
+14,312,ABInBev Colombia,2025-03
+29,1102,Agritop,2025-03
+6,1562,Aldeamo,2025-03
+19,1642,Alianza del Valle,2025-03
+278,2031,Alpha Trading,2025-03
+297,462,Ambiente QA,2025-03
+146,1896,Arca Continental Argentina,2025-03
+145346,362,Arca PE,2025-03
+165,1068,Arca PE Ecommerce,2025-03
+21875,470,Arca PE Proyecto Frío,2025-03
+4,1940,Arca camiones,2025-03
+288,1849,Arca movil,2025-03
+27,317,Aurea,2025-03
+7,1639,Automation QA Test,2025-03
+1057,2183,Automekano,2025-03
+32,1974,BCP Cobranza,2025-03
+74,2156,BCP Cuenta Sueldo,2025-03
+1447,1973,BCP Sendsei,2025-03
+12903,1245,BG - Banco del Barrio 2,2025-03
+16937,741,Bajaj,2025-03
+31,930,Banco Bolivariano Cobranzas,2025-03
+14479,1584,Banco Comercial Manabí,2025-03
+51,1993,Banco Delta,2025-03
+2168941,155,Banco Guayaquil,2025-03
+2486,1737,Banco Union,2025-03
+172,133,Banco del Austro,2025-03
+42721,417,Banisi,2025-03
+127002,692,Banisi Chat,2025-03
+426,2010,Base Pocket Account,2025-03
+151,2079,Borja Cedeño Olga Raquel,2025-03
+326,1649,Bruno,2025-03
+45,2047,CBC,2025-03
+7319,1848,CIVE,2025-03
+1,1373,Califik,2025-03
+65,2111,Calle Tenorio Jorge David,2025-03
+27,316,CasaPlan MotorPlan,2025-03
+34374,138,Cervecería Nacional,2025-03
+503,1898,Cibernetica,2025-03
+26,1847,Ck Comercializadora,2025-03
+90056,1559,Coca Cola en tu hogar,2025-03
+546,2049,Conauto,2025-03
+114,1992,Contapro BCP,2025-03
+3232,1694,Cooperativa Daquilema,2025-03
+39111,855,Cooperativa El Sagrario,2025-03
+16,1881,Cooperativa Policía Nacional,2025-03
+17,2130,Cresa,2025-03
+4,1808,Daiesa,2025-03
+978,1760,Danec,2025-03
+637,35,Datafast,2025-03
+98,1926,Datilmedia S.A.,2025-03
+285269,150,Deprati,2025-03
+39,1602,Descuentos y Beneficios,2025-03
+1514,5,DevLab,2025-03
+93,1512,Dialogus,2025-03
+722,110,Dipaso,2025-03
+21,1304,Doctorio,2025-03
+1110,2073,Donutterapia,2025-03
+435,1945,Duragas,2025-03
+161,1053,EclipSoft,2025-03
+28,2110,Ecugenius S.A.,2025-03
+9,28,El Rosado,2025-03
+1,1160,Expand,2025-03
+635,1951,FPV Seguros,2025-03
+129,121,Facephi<>Peigo,2025-03
+1614,2032,Figueroa Merchan Jose Luis,2025-03
+2909,1758,Finanza AI,2025-03
+2669,1937,Flexi,2025-03
+120617,124,GEA Ecuador,2025-03
+2,1280,Gea Colombia,2025-03
+146,148,Generali,2025-03
+230,2095,Gigmax,2025-03
+322,2100,Holaenfermera-Ec S.A.S.,2025-03
+1325,1925,INDI BCP,2025-03
+9,368,Innovat Latam.,2025-03
+40,2139,Intervalores,2025-03
+542,1955,Italika,2025-03
+1033,1957,Jelou Banking,2025-03
+385,135,Jelou Dev,2025-03
+592,1944,Jelou Marketplace,2025-03
+6502,361,Jelou Pay,2025-03
+662,331,Jelou Producto,2025-03
+29,2033,Jelou Revenue,2025-03
+488,322,Jelou Shop,2025-03
+8,1044,Jelou Ventas,2025-03
+171,288,Junta de Beneficencia,2025-03
+194,2025,KIVETI S.A.,2025-03
+278,1266,Katherine del Carmen Ovando,2025-03
+20210,1718,Kaufmann,2025-03
+70,997,La Finestra SAS,2025-03
+962,935,Lavca,2025-03
+939,965,Livansud,2025-03
+44,2053,Lopez Lopez Jaime Fernando,2025-03
+632,2125,Lotería Nacional EC,2025-03
+1467,258,Luzverde,2025-03
+125,2044,M&C Travel S.A,2025-03
+8925,404,MONGO'S,2025-03
+3494,745,Mail Boxes Etc,2025-03
+512,940,Mardis,2025-03
+3533,1950,Marriott,2025-03
+50111,405,Massline,2025-03
+617,1648,Medexcard,2025-03
+228,2043,Morphosis,2025-03
+14,339,Movil Group,2025-03
+167,2019,NATURALESMEJOR S.A.,2025-03
+1073,1482,Naturisa,2025-03
+1525557,147,Netlife,2025-03
+7,1658,Nutricionista Verónica Martínez,2025-03
+271,1962,Ondu Cloud,2025-03
+3440,1480,Oriental,2025-03
+1,2176,PROALCONSULTING,2025-03
+4,1379,Pocket Tienda Prototipo,2025-03
+3,1547,PopCornComunication,2025-03
+1,2017,Punta Azul,2025-03
+361270,54,Pycca,2025-03
+870,1903,Rabbit,2025-03
+702,1633,SaludSA,2025-03
+369263,123,Security Data,2025-03
+488,1845,Seguros Confianza,2025-03
+720,358,Seguros Liberty,2025-03
+42,452,Seguros Pacífico,2025-03
+716,1984,Semvra,2025-03
+1152,1566,Siigo,2025-03
+62,1811,Sistecrédito,2025-03
+63697,1761,Solca,2025-03
+17,1865,Start Co,2025-03
+1331,1641,Supreme Ventures,2025-03
+329,1384,Talento Humano,2025-03
+3,1810,TeFío Shop,2025-03
+43,382,Team APPS,2025-03
+20419,1844,Tienda Branchos,2025-03
+43,1946,Total Education Program,2025-03
+33460,183,Tracklink,2025-03
+1835,1880,TransSky,2025-03
+1683,1953,TuSupperAhorro,2025-03
+9272,823,Tuenti POC,2025-03
+14421,1890,Tuenti Vendedores,2025-03
+44,807,Universidad de las Artes,2025-03
+161,2089,VIRTUALTEK,2025-03
+142029,95,Veris,2025-03
+3,1942,Viaxperta,2025-03
+56,1860,Vitapro,2025-03
+340,1133,Vivalia,2025-03
+258329,1696,XTRIM,2025-03
+4590,353,Yomp,2025-03
+141,1964,ZHM Seguros,2025-03
+75,2236,11 Gallery Tattoo,2025-04
+25,1102,Agritop,2025-04
+6,1562,Aldeamo,2025-04
+2,1642,Alianza del Valle,2025-04
+705,2031,Alpha Trading,2025-04
+595,462,Ambiente QA,2025-04
+44,1896,Arca Continental Argentina,2025-04
+139841,362,Arca PE,2025-04
+216,1068,Arca PE Ecommerce,2025-04
+25713,470,Arca PE Proyecto Frío,2025-04
+158,1940,Arca camiones,2025-04
+826,1849,Arca movil,2025-04
+21,2233,Arca pe Turbo,2025-04
+37,317,Aurea,2025-04
+10309,2183,Automekano,2025-04
+757,1974,BCP Cobranza,2025-04
+121,2156,BCP Cuenta Sueldo,2025-04
+914,1973,BCP Sendsei,2025-04
+12853,1245,BG - Banco del Barrio 2,2025-04
+24292,741,Bajaj,2025-04
+10936,1584,Banco Comercial Manabí,2025-04
+67,1993,Banco Delta,2025-04
+2418883,155,Banco Guayaquil,2025-04
+1,1919,Banco Internacional Hackaton,2025-04
+2594,1737,Banco Union,2025-04
+1250,133,Banco del Austro,2025-04
+33705,417,Banisi,2025-04
+116626,692,Banisi Chat,2025-04
+13,2010,Base Pocket Account,2025-04
+2091,11,BdP,2025-04
+175,2079,Borja Cedeño Olga Raquel,2025-04
+6,1649,Bruno,2025-04
+24,2047,CBC,2025-04
+7290,1848,CIVE,2025-04
+75,2111,Calle Tenorio Jorge David,2025-04
+25338,138,Cervecería Nacional,2025-04
+150,75,Chubb,2025-04
+81,1898,Cibernetica,2025-04
+5,1847,Ck Comercializadora,2025-04
+58949,1559,Coca Cola en tu hogar,2025-04
+1078,2048,Coca-Cola FEMSA,2025-04
+721,2255,Computron,2025-04
+765,2049,Conauto,2025-04
+91,1992,Contapro BCP,2025-04
+1997,1694,Cooperativa Daquilema,2025-04
+29370,855,Cooperativa El Sagrario,2025-04
+35,1881,Cooperativa Policía Nacional,2025-04
+312,1760,Danec,2025-04
+632,35,Datafast,2025-04
+958,1926,Datilmedia S.A.,2025-04
+1,1531,Dave The Magical Cheese Wizard,2025-04
+185,2230,Demo partners,2025-04
+306417,150,Deprati,2025-04
+12,1602,Descuentos y Beneficios,2025-04
+1456,5,DevLab,2025-04
+45,1512,Dialogus,2025-04
+19095,110,Dipaso,2025-04
+8,1304,Doctorio,2025-04
+874,2073,Donutterapia,2025-04
+240,2235,Dreamers Fútbol Club,2025-04
+1864,1945,Duragas,2025-04
+38,2254,ESCUELA DE FOTOGRAFOS,2025-04
+94,1053,EclipSoft,2025-04
+6179,2110,Ecugenius S.A.,2025-04
+15030,28,El Rosado,2025-04
+11,1160,Expand,2025-04
+171,1951,FPV Seguros,2025-04
+188,121,Facephi<>Peigo,2025-04
+1680,2032,Figueroa Merchan Jose Luis,2025-04
+206,1758,Finanza AI,2025-04
+31317,1937,Flexi,2025-04
+164392,124,GEA Ecuador,2025-04
+24,148,Generali,2025-04
+622,2095,Gigmax,2025-04
+323,2100,Holaenfermera-Ec S.A.S.,2025-04
+2763,1925,INDI BCP,2025-04
+16,368,Innovat Latam.,2025-04
+229,2139,Intervalores,2025-04
+788,1955,Italika,2025-04
+948,1957,Jelou Banking,2025-04
+637,135,Jelou Dev,2025-04
+750,1944,Jelou Marketplace,2025-04
+12081,361,Jelou Pay,2025-04
+1068,331,Jelou Producto,2025-04
+69,2033,Jelou Revenue,2025-04
+1040,322,Jelou Shop,2025-04
+1,1044,Jelou Ventas,2025-04
+50,288,Junta de Beneficencia,2025-04
+188,2025,KIVETI S.A.,2025-04
+103,1266,Katherine del Carmen Ovando,2025-04
+978,1718,Kaufmann,2025-04
+14,997,La Finestra SAS,2025-04
+12,1988,La casa de los abuelos,2025-04
+2513,935,Lavca,2025-04
+560,965,Livansud,2025-04
+5,2053,Lopez Lopez Jaime Fernando,2025-04
+4,1640,Lotería Costa Rica,2025-04
+2870,2125,Lotería Nacional EC,2025-04
+6,1798,Luz Verde Cobranza,2025-04
+1848,258,Luzverde,2025-04
+122,2044,M&C Travel S.A,2025-04
+8050,404,MONGO'S,2025-04
+4059,745,Mail Boxes Etc,2025-04
+9,940,Mardis,2025-04
+3472,1950,Marriott,2025-04
+52217,405,Massline,2025-04
+921,1648,Medexcard,2025-04
+199,2181,Mindmatter Academy,2025-04
+130,2043,Morphosis,2025-04
+1,967,N5,2025-04
+23,2019,NATURALESMEJOR S.A.,2025-04
+1388,1482,Naturisa,2025-04
+1328406,147,Netlife,2025-04
+4,2223,Netlife - Ecuanet Telemarketing,2025-04
+10,2260,ORIGAMI ECUADOR,2025-04
+368,1962,Ondu Cloud,2025-04
+1753,1480,Oriental,2025-04
+217,2176,PROALCONSULTING,2025-04
+25013,337,Piloto Creditia,2025-04
+15,1379,Pocket Tienda Prototipo,2025-04
+1,1547,PopCornComunication,2025-04
+4,2017,Punta Azul,2025-04
+197101,54,Pycca,2025-04
+198,1903,Rabbit,2025-04
+500,2239,Racevents,2025-04
+1413,1633,SaludSA,2025-04
+367499,123,Security Data,2025-04
+284,1845,Seguros Confianza,2025-04
+87,358,Seguros Liberty,2025-04
+30,452,Seguros Pacífico,2025-04
+793,1984,Semvra,2025-04
+5082,1,Shippify,2025-04
+1278,1566,Siigo,2025-04
+79,1811,Sistecrédito,2025-04
+50572,1761,Solca,2025-04
+7,1865,Start Co,2025-04
+472,1641,Supreme Ventures,2025-04
+10,2242,TIA Shopper,2025-04
+382,1384,Talento Humano,2025-04
+12,382,Team APPS,2025-04
+32761,1844,Tienda Branchos,2025-04
+113,1946,Total Education Program,2025-04
+5903,183,Tracklink,2025-04
+1942,1880,TransSky,2025-04
+336,1953,TuSupperAhorro,2025-04
+9081,823,Tuenti POC,2025-04
+12730,1890,Tuenti Vendedores,2025-04
+449,2205,Universidad Insurgente,2025-04
+65,807,Universidad de las Artes,2025-04
+3130,2089,VIRTUALTEK,2025-04
+20,2121,VITAMINWORLD,2025-04
+162356,95,Veris,2025-04
+190,1860,Vitapro,2025-04
+248,1133,Vivalia,2025-04
+423043,1696,XTRIM,2025-04
+2,1220,Yalti Solutions,2025-04
+22162,353,Yomp,2025-04
+37,1964,ZHM Seguros,2025-04
+160,2236,11 Gallery Tattoo,2025-05
+51426,312,ABInBev Colombia,2025-05
+10,1102,Agritop,2025-05
+2014,2031,Alpha Trading,2025-05
+344,462,Ambiente QA,2025-05
+13,1896,Arca Continental Argentina,2025-05
+28,2292,Arca MX Atencion AC,2025-05
+170128,362,Arca PE,2025-05
+192,1068,Arca PE Ecommerce,2025-05
+28709,470,Arca PE Proyecto Frío,2025-05
+271,1940,Arca camiones,2025-05
+57,1849,Arca movil,2025-05
+603,2233,Arca pe Turbo,2025-05
+75,317,Aurea,2025-05
+4,1639,Automation QA Test,2025-05
+8697,2183,Automekano,2025-05
+178147,1974,BCP Cobranza,2025-05
+351,1973,BCP Sendsei,2025-05
+13936,1245,BG - Banco del Barrio 2,2025-05
+35689,741,Bajaj,2025-05
+7492,1584,Banco Comercial Manabí,2025-05
+93,1993,Banco Delta,2025-05
+2491639,155,Banco Guayaquil,2025-05
+1,424,Banco Internacional,2025-05
+5182,1737,Banco Union,2025-05
+4503,417,Banisi,2025-05
+155391,692,Banisi Chat,2025-05
+642,11,BdP,2025-05
+36,2079,Borja Cedeño Olga Raquel,2025-05
+125,1649,Bruno,2025-05
+27,2047,CBC,2025-05
+7008,1848,CIVE,2025-05
+91,2030,COLLSERV,2025-05
+6,2111,Calle Tenorio Jorge David,2025-05
+1533,316,CasaPlan MotorPlan,2025-05
+24491,138,Cervecería Nacional,2025-05
+53,75,Chubb,2025-05
+153,1898,Cibernetica,2025-05
+63432,1559,Coca Cola en tu hogar,2025-05
+75,2048,Coca-Cola FEMSA,2025-05
+41923,2255,Computron,2025-05
+622,2049,Conauto,2025-05
+192,1992,Contapro BCP,2025-05
+1708,1694,Cooperativa Daquilema,2025-05
+23806,855,Cooperativa El Sagrario,2025-05
+3,1881,Cooperativa Policía Nacional,2025-05
+295,2241,Coral Hipermercados,2025-05
+852,2130,Cresa,2025-05
+329,1760,Danec,2025-05
+506,35,Datafast,2025-05
+882,1926,Datilmedia S.A.,2025-05
+43,1531,Dave The Magical Cheese Wizard,2025-05
+199,2309,Demo Pocket Retail,2025-05
+21,2230,Demo partners,2025-05
+277865,150,Deprati,2025-05
+1404,5,DevLab,2025-05
+670,1512,Dialogus,2025-05
+22743,110,Dipaso,2025-05
+89,1304,Doctorio,2025-05
+1696,2073,Donutterapia,2025-05
+734,2235,Dreamers Fútbol Club,2025-05
+2998,1945,Duragas,2025-05
+22,2254,ESCUELA DE FOTOGRAFOS,2025-05
+101,1053,EclipSoft,2025-05
+1486,2110,Ecugenius S.A.,2025-05
+16728,28,El Rosado,2025-05
+3,1160,Expand,2025-05
+37,1828,FD CENTER,2025-05
+71,1951,FPV Seguros,2025-05
+177,121,Facephi<>Peigo,2025-05
+47,2276,Falabella,2025-05
+528,2032,Figueroa Merchan Jose Luis,2025-05
+159,1758,Finanza AI,2025-05
+42910,1937,Flexi,2025-05
+5,423,GEA Costa Rica,2025-05
+157943,124,GEA Ecuador,2025-05
+6,305,GEA Guatemala,2025-05
+11,422,GEA Honduras,2025-05
+8,2312,GRUPASA,2025-05
+7,1280,Gea Colombia,2025-05
+1312,2095,Gigmax,2025-05
+7,2291,GreenLife,2025-05
+42,2100,Holaenfermera-Ec S.A.S.,2025-05
+2269,1925,INDI BCP,2025-05
+17,368,Innovat Latam.,2025-05
+54,2139,Intervalores,2025-05
+707,1955,Italika,2025-05
+697,1957,Jelou Banking,2025-05
+854,135,Jelou Dev,2025-05
+464,1944,Jelou Marketplace,2025-05
+25932,361,Jelou Pay,2025-05
+747,331,Jelou Producto,2025-05
+1243,322,Jelou Shop,2025-05
+81,2025,KIVETI S.A.,2025-05
+10,2029,KPI Digital,2025-05
+44,1266,Katherine del Carmen Ovando,2025-05
+97,1718,Kaufmann,2025-05
+2,2253,LABORATORIOS ASIMED ASIMEDLAB,2025-05
+32,997,La Finestra SAS,2025-05
+101,1988,La casa de los abuelos,2025-05
+1234,935,Lavca,2025-05
+10,2053,Lopez Lopez Jaime Fernando,2025-05
+3739,2125,Lotería Nacional EC,2025-05
+2,1798,Luz Verde Cobranza,2025-05
+1856,258,Luzverde,2025-05
+80,2044,M&C Travel S.A,2025-05
+8,2298,MAYA PIONEER,2025-05
+9538,404,MONGO'S,2025-05
+4202,745,Mail Boxes Etc,2025-05
+3763,1950,Marriott,2025-05
+54966,405,Massline,2025-05
+613,1648,Medexcard,2025-05
+15,1507,Michael’s Delivery,2025-05
+19,2181,Mindmatter Academy,2025-05
+111,2043,Morphosis,2025-05
+5,339,Movil Group,2025-05
+4,967,N5,2025-05
+19,2019,NATURALESMEJOR S.A.,2025-05
+1671,1482,Naturisa,2025-05
+1645721,147,Netlife,2025-05
+1703,2223,Netlife - Ecuanet Telemarketing,2025-05
+5,2324,Netlife SMBS,2025-05
+17,2260,ORIGAMI ECUADOR,2025-05
+294,1962,Ondu Cloud,2025-05
+1973,1480,Oriental,2025-05
+1,2176,PROALCONSULTING,2025-05
+118562,337,Piloto Creditia,2025-05
+10,1379,Pocket Tienda Prototipo,2025-05
+1,1547,PopCornComunication,2025-05
+1,2321,Prueba William SMB,2025-05
+9,2017,Punta Azul,2025-05
+180026,54,Pycca,2025-05
+43,1903,Rabbit,2025-05
+1710,2239,Racevents,2025-05
+25,2277,Rappipay,2025-05
+258,2259,Roniki Professional Ecuador,2025-05
+2241,1633,SaludSA,2025-05
+312809,123,Security Data,2025-05
+242,1845,Seguros Confianza,2025-05
+31,358,Seguros Liberty,2025-05
+36,452,Seguros Pacífico,2025-05
+48,1984,Semvra,2025-05
+10777,1,Shippify,2025-05
+1890,1566,Siigo,2025-05
+143,1811,Sistecrédito,2025-05
+44632,1761,Solca,2025-05
+195,1641,Supreme Ventures,2025-05
+504,2242,TIA Shopper,2025-05
+27,2299,TOYS & HOBBIES,2025-05
+329,1384,Talento Humano,2025-05
+2,1810,TeFío Shop,2025-05
+11,382,Team APPS,2025-05
+19653,1844,Tienda Branchos,2025-05
+284,1946,Total Education Program,2025-05
+264,2014,Totalplay,2025-05
+5890,183,Tracklink,2025-05
+1571,1880,TransSky,2025-05
+79,2001,TransSky Cobranzas,2025-05
+91,1953,TuSupperAhorro,2025-05
+8632,823,Tuenti POC,2025-05
+21915,1890,Tuenti Vendedores,2025-05
+170,2205,Universidad Insurgente,2025-05
+175,807,Universidad de las Artes,2025-05
+655,2258,VACAN ELECTRODOMESTICOS,2025-05
+311,2121,VITAMINWORLD,2025-05
+176555,95,Veris,2025-05
+251,1860,Vitapro,2025-05
+237,1133,Vivalia,2025-05
+429403,1696,XTRIM,2025-05
+48,2310,Yappy,2025-05
+25738,353,Yomp,2025-05
+297,1964,ZHM Seguros,2025-05
+1,2323,test new company 28 05,2025-05
+362,2236,11 Gallery Tattoo,2025-06
+101,2325,4 Me,2025-06
+85332,312,ABInBev Colombia,2025-06
+18,2300,ABS,2025-06
+1097,2031,Alpha Trading,2025-06
+37,462,Ambiente QA,2025-06
+6,2365,Andrés ontiveros,2025-06
+3,1896,Arca Continental Argentina,2025-06
+11,2292,Arca MX Atencion AC,2025-06
+216411,362,Arca PE,2025-06
+352,1068,Arca PE Ecommerce,2025-06
+27458,470,Arca PE Proyecto Frío,2025-06
+135,1940,Arca camiones,2025-06
+59,1849,Arca movil,2025-06
+611,2233,Arca pe Turbo,2025-06
+25,317,Aurea,2025-06
+1,1639,Automation QA Test,2025-06
+9575,2183,Automekano,2025-06
+247731,1974,BCP Cobranza,2025-06
+15,2297,BCP Pagos recurrentes,2025-06
+56,1973,BCP Sendsei,2025-06
+13156,1245,BG - Banco del Barrio 2,2025-06
+39,2347,BIAgents - Innovation Challenge de Banco Internacional,2025-06
+37708,741,Bajaj,2025-06
+1137,307,Banco Amazonas,2025-06
+6254,1584,Banco Comercial Manabí,2025-06
+179,1993,Banco Delta,2025-06
+2166488,155,Banco Guayaquil,2025-06
+512975,424,Banco Internacional,2025-06
+10106,1737,Banco Union,2025-06
+87,133,Banco del Austro,2025-06
+2251,417,Banisi,2025-06
+186564,692,Banisi Chat,2025-06
+942,11,BdP,2025-06
+2,2361,Bodega Germania,2025-06
+11,1649,Bruno,2025-06
+46,2354,CAMARA DE INDUSTRIAS DE GUAYAQUIL,2025-06
+136,2394,CB-CENTRO DE CAPACITACIÓN TÉCNICA Y TECNOLÓGICA,2025-06
+63,2047,CBC,2025-06
+104,2380,CHASKIGO,2025-06
+7477,1848,CIVE,2025-06
+328,2030,COLLSERV,2025-06
+2,2111,Calle Tenorio Jorge David,2025-06
+1183,316,CasaPlan MotorPlan,2025-06
+39289,138,Cervecería Nacional,2025-06
+63,2346,Chip Makers - Innovation Challenge de Banco Internacional,2025-06
+335,2345,Chip Minds - Innovation Challenge de Banco Internacional,2025-06
+197,1898,Cibernetica,2025-06
+51555,1559,Coca Cola en tu hogar,2025-06
+1,2048,Coca-Cola FEMSA,2025-06
+32319,2255,Computron,2025-06
+565,2049,Conauto,2025-06
+1,2398,Consultorio xxx,2025-06
+42,1992,Contapro BCP,2025-06
+1637,1694,Cooperativa Daquilema,2025-06
+19825,855,Cooperativa El Sagrario,2025-06
+18,1881,Cooperativa Policía Nacional,2025-06
+70,2241,Coral Hipermercados,2025-06
+804,2130,Cresa,2025-06
+233,1975,CristoArts- Refrielectric,2025-06
+3,1960,Cámara de construcción de Guayaquil,2025-06
+9,2326,DELTASEGUROS,2025-06
+215,1760,Danec,2025-06
+386,35,Datafast,2025-06
+651,1926,Datilmedia S.A.,2025-06
+92,2309,Demo Pocket Retail,2025-06
+137,2230,Demo partners,2025-06
+283303,150,Deprati,2025-06
+1440,5,DevLab,2025-06
+346,1512,Dialogus,2025-06
+31361,110,Dipaso,2025-06
+26,1304,Doctorio,2025-06
+1452,2073,Donutterapia,2025-06
+641,2235,Dreamers Fútbol Club,2025-06
+3076,1945,Duragas,2025-06
+73,2254,ESCUELA DE FOTOGRAFOS,2025-06
+60,1053,EclipSoft,2025-06
+1261,2110,Ecugenius S.A.,2025-06
+15071,28,El Rosado,2025-06
+331,311,Espol,2025-06
+2,2377,Esteban company 15,2025-06
+2,2378,Esteban company 16,2025-06
+2,2362,Esteban prueba 11,2025-06
+1,2356,Esteban prueba 3,2025-06
+2,2381,Esteban pruebas 17,2025-06
+10,1160,Expand,2025-06
+230,1828,FD CENTER,2025-06
+53,1951,FPV Seguros,2025-06
+8,121,Facephi<>Peigo,2025-06
+79423,2276,Falabella,2025-06
+672,2032,Figueroa Merchan Jose Luis,2025-06
+4,1758,Finanza AI,2025-06
+68709,1937,Flexi,2025-06
+147412,124,GEA Ecuador,2025-06
+528,149,GEA Recursos Humanos,2025-06
+1046,2095,Gigmax,2025-06
+1469,2291,GreenLife,2025-06
+726,2264,GrupoMas - Claro,2025-06
+1,2400,HuellitasVet,2025-06
+2017,1925,INDI BCP,2025-06
+43,2348,InnovAi - Innovation Challenge de Banco Internacional,2025-06
+24,368,Innovat Latam.,2025-06
+108,2139,Intervalores,2025-06
+501,1955,Italika,2025-06
+1,2374,Jabier doctor prueba ,2025-06
+1085,1957,Jelou Banking,2025-06
+518,135,Jelou Dev,2025-06
+1499,1944,Jelou Marketplace,2025-06
+30422,361,Jelou Pay,2025-06
+734,331,Jelou Producto,2025-06
+18,2033,Jelou Revenue,2025-06
+1731,322,Jelou Shop,2025-06
+4,2366,Juan Pérez ,2025-06
+2,2358,Juanse Prueba,2025-06
+20,2025,KIVETI S.A.,2025-06
+1,2029,KPI Digital,2025-06
+79,1266,Katherine del Carmen Ovando,2025-06
+476,1718,Kaufmann,2025-06
+1,2253,LABORATORIOS ASIMED ASIMEDLAB,2025-06
+7,997,La Finestra SAS,2025-06
+275,1988,La casa de los abuelos,2025-06
+21,2404,Lafesana,2025-06
+1006,935,Lavca,2025-06
+1,2053,Lopez Lopez Jaime Fernando,2025-06
+94910,2125,Lotería Nacional EC,2025-06
+6,1798,Luz Verde Cobranza,2025-06
+910,258,Luzverde,2025-06
+18,2044,M&C Travel S.A,2025-06
+178,2298,MAYA PIONEER,2025-06
+216,2388,MODO BURN,2025-06
+7821,404,MONGO'S,2025-06
+2820,745,Mail Boxes Etc,2025-06
+3676,1950,Marriott,2025-06
+2,2399,MascotasCO,2025-06
+55214,405,Massline,2025-06
+826,1648,Medexcard,2025-06
+10,2181,Mindmatter Academy,2025-06
+49,2043,Morphosis,2025-06
+14,967,N5,2025-06
+7,2019,NATURALESMEJOR S.A.,2025-06
+2300,1482,Naturisa,2025-06
+411,2349,NeoCrew - Innovation Challenge de Banco Internacional,2025-06
+1781732,147,Netlife,2025-06
+10,2324,Netlife SMBS,2025-06
+2,1329,Nutrarte,2025-06
+99,1658,Nutricionista Verónica Martínez,2025-06
+43,2260,ORIGAMI ECUADOR,2025-06
+393,1962,Ondu Cloud,2025-06
+1869,1480,Oriental,2025-06
+159,1861,PLUVIALE,2025-06
+1,2176,PROALCONSULTING,2025-06
+3,2364,Peluqueria Juanse,2025-06
+111388,337,Piloto Creditia,2025-06
+1,2373,Pocket Pruebas,2025-06
+4,1379,Pocket Tienda Prototipo,2025-06
+1,2383,Probando JH,2025-06
+263392,54,Pycca,2025-06
+155,2379,QPay,2025-06
+225,2322,RELIV,2025-06
+56,1903,Rabbit,2025-06
+303,2239,Racevents,2025-06
+210,2277,Rappipay,2025-06
+1,2389,Rebecca pelos,2025-06
+9,2259,Roniki Professional Ecuador,2025-06
+1341,1633,SaludSA,2025-06
+309054,123,Security Data,2025-06
+239,1845,Seguros Confianza,2025-06
+2,358,Seguros Liberty,2025-06
+28,452,Seguros Pacífico,2025-06
+140,1984,Semvra,2025-06
+21152,1,Shippify,2025-06
+2405,1566,Siigo,2025-06
+72,1811,Sistecrédito,2025-06
+69543,1761,Solca,2025-06
+635,1641,Supreme Ventures,2025-06
+22,2001,TCLOG,2025-06
+68,2242,TIA Shopper,2025-06
+5,1995,TNT Control Plagas,2025-06
+451,2299,TOYS & HOBBIES,2025-06
+344,1384,Talento Humano,2025-06
+2,1810,TeFío Shop,2025-06
+16602,1844,Tienda Branchos,2025-06
+8,2357,Tienda prueba 4,2025-06
+293,1946,Total Education Program,2025-06
+6433,183,Tracklink,2025-06
+1243,1880,TransSky,2025-06
+123,2001,TransSky Cobranzas,2025-06
+6,1953,TuSupperAhorro,2025-06
+7673,823,Tuenti POC,2025-06
+19879,1890,Tuenti Vendedores,2025-06
+10036,125,UTPL Consultas,2025-06
+2420,2205,Universidad Insurgente,2025-06
+164,807,Universidad de las Artes,2025-06
+537,2258,VACAN ELECTRODOMESTICOS,2025-06
+382,2121,VITAMINWORLD,2025-06
+115,2359,VMT Dev,2025-06
+78,2252,Valorenz,2025-06
+182739,95,Veris,2025-06
+6,2006,Viamatica,2025-06
+191,1860,Vitapro,2025-06
+343,1133,Vivalia,2025-06
+1,2386,Vivi dental ,2025-06
+485524,1696,XTRIM,2025-06
+212,2310,Yappy,2025-06
+23474,353,Yomp,2025-06
+36,1964,ZHM Seguros,2025-06
+5,2323,test new company 28 05,2025-06
+764,2236,11 Gallery Tattoo,2025-07
+18,2325,4 Me,2025-07
+93202,312,ABInBev Colombia,2025-07
+267,2300,ABS,2025-07
+177,2419,Algesta,2025-07
+140,2031,Alpha Trading,2025-07
+25,462,Ambiente QA,2025-07
+4,2447,AontiverosTax,2025-07
+3,2314,Apptividad,2025-07
+293808,362,Arca PE,2025-07
+144,1068,Arca PE Ecommerce,2025-07
+26764,470,Arca PE Proyecto Frío,2025-07
+79,1940,Arca camiones,2025-07
+1,1849,Arca movil,2025-07
+183,2233,Arca pe Turbo,2025-07
+118,2401,Aseguradora del Sur,2025-07
+295,2458,Audaz,2025-07
+39,317,Aurea,2025-07
+9303,2183,Automekano,2025-07
+192774,1974,BCP Cobranza,2025-07
+7,2156,BCP Cuenta Sueldo,2025-07
+118,2297,BCP Pagos recurrentes,2025-07
+8,1973,BCP Sendsei,2025-07
+4163,1245,BG - Banco del Barrio 2,2025-07
+123,2347,BIAgents - Innovation Challenge de Banco Internacional,2025-07
+36420,741,Bajaj,2025-07
+191,2396,Balcones del paraiso,2025-07
+6682,307,Banco Amazonas,2025-07
+463,930,Banco Bolivariano Cobranzas,2025-07
+7840,1584,Banco Comercial Manabí,2025-07
+209,1993,Banco Delta,2025-07
+2323574,155,Banco Guayaquil,2025-07
+740818,424,Banco Internacional,2025-07
+17,2408,Banco Mercantil,2025-07
+409,1028,Banco Solidario 2,2025-07
+46173,1737,Banco Union,2025-07
+305,133,Banco del Austro,2025-07
+3374,417,Banisi,2025-07
+310017,692,Banisi Chat,2025-07
+23,2393,Barça Academy,2025-07
+436,11,BdP,2025-07
+4,2509,BeenCakes Pastelería,2025-07
+2,2500,"Bienes Raíces,  Venta de propiedades ",2025-07
+567,1649,Bruno,2025-07
+35,2354,CAMARA DE INDUSTRIAS DE GUAYAQUIL,2025-07
+103,2426,CASCEP Capacitaciones,2025-07
+80,2394,CB-CENTRO DE CAPACITACIÓN TÉCNICA Y TECNOLÓGICA,2025-07
+630,2047,CBC,2025-07
+143,2243,CEPSA,2025-07
+72,2380,CHASKIGO,2025-07
+9535,1848,CIVE,2025-07
+122,2030,COLLSERV,2025-07
+115,2395,Cafering Eventos,2025-07
+2103,316,CasaPlan MotorPlan,2025-07
+7,2473,Centro Médico Dr Pocket,2025-07
+22185,138,Cervecería Nacional,2025-07
+25,2346,Chip Makers - Innovation Challenge de Banco Internacional,2025-07
+151,2345,Chip Minds - Innovation Challenge de Banco Internacional,2025-07
+241,1898,Cibernetica,2025-07
+55210,1559,Coca Cola en tu hogar,2025-07
+1,2048,Coca-Cola FEMSA,2025-07
+55,2413,Comfama,2025-07
+1,2439,Company SMB V2 Test 07074,2025-07
+36721,2255,Computron,2025-07
+598,2049,Conauto,2025-07
+21,1992,Contapro BCP,2025-07
+2998,1694,Cooperativa Daquilema,2025-07
+21106,855,Cooperativa El Sagrario,2025-07
+6,1881,Cooperativa Policía Nacional,2025-07
+10669,2130,Cresa,2025-07
+368,1975,CristoArts- Refrielectric,2025-07
+315,2326,DELTASEGUROS,2025-07
+2,2461,DIGRAL,2025-07
+229,1760,Danec,2025-07
+288,35,Datafast,2025-07
+304,1926,Datilmedia S.A.,2025-07
+192,2309,Demo Pocket Retail,2025-07
+22,2230,Demo partners,2025-07
+303478,150,Deprati,2025-07
+1397,5,DevLab,2025-07
+450,1512,Dialogus,2025-07
+27005,110,Dipaso,2025-07
+1,2537,Doctor Salazar,2025-07
+4,2405,Doctor said ,2025-07
+1,2409,Doctor test,2025-07
+1613,2073,Donutterapia,2025-07
+314,2235,Dreamers Fútbol Club,2025-07
+4708,1945,Duragas,2025-07
+2,2254,ESCUELA DE FOTOGRAFOS,2025-07
+14,2385,Easysoft,2025-07
+29,1053,EclipSoft,2025-07
+488,2110,Ecugenius S.A.,2025-07
+16158,28,El Rosado,2025-07
+708,311,Espol,2025-07
+1,2443,Esteban prueba 14,2025-07
+43,1160,Expand,2025-07
+994,1828,FD CENTER,2025-07
+295,1951,FPV Seguros,2025-07
+30,121,Facephi<>Peigo,2025-07
+167193,2276,Falabella,2025-07
+2,2533,Ferretería Samuel ,2025-07
+32,2454,Ferridescuentos1,2025-07
+283,2032,Figueroa Merchan Jose Luis,2025-07
+22,1758,Finanza AI,2025-07
+42387,1937,Flexi,2025-07
+318,2421,Fun Tech Ecuador,2025-07
+5,2406,Futbol Town,2025-07
+154593,124,GEA Ecuador,2025-07
+399,149,GEA Recursos Humanos,2025-07
+782,2095,Gigmax,2025-07
+1,2491,Good Clean,2025-07
+491,2291,GreenLife,2025-07
+218,2452,Grupo Carrera - Rodrigo Carrera,2025-07
+516,2264,GrupoMas - Claro,2025-07
+44,2481,Huawei Demo,2025-07
+3552,1925,INDI BCP,2025-07
+75,2466,INSTITUTO SERVUGON S.A.S.,2025-07
+145,2348,InnovAi - Innovation Challenge de Banco Internacional,2025-07
+15,368,Innovat Latam.,2025-07
+546910,85,Interagua GEA,2025-07
+74,2139,Intervalores,2025-07
+376,1955,Italika,2025-07
+701,2414,JINKE ECUADOR,2025-07
+18,2485,JORGE SANCHEZ - Universidad Rumiñahui,2025-07
+1376,1957,Jelou Banking,2025-07
+673,135,Jelou Dev,2025-07
+1982,1944,Jelou Marketplace,2025-07
+18125,361,Jelou Pay,2025-07
+782,331,Jelou Producto,2025-07
+6,2033,Jelou Revenue,2025-07
+857,322,Jelou Shop,2025-07
+157,1266,Katherine del Carmen Ovando,2025-07
+130,1718,Kaufmann,2025-07
+588,2397,Kitton,2025-07
+181,997,La Finestra SAS,2025-07
+51,1988,La casa de los abuelos,2025-07
+702,2404,Lafesana,2025-07
+1320,935,Lavca,2025-07
+104293,2125,Lotería Nacional EC,2025-07
+2,2508,Lovender,2025-07
+1877,258,Luzverde,2025-07
+5,2298,MAYA PIONEER,2025-07
+442,2388,MODO BURN,2025-07
+8008,404,MONGO'S,2025-07
+3107,745,Mail Boxes Etc,2025-07
+2,2450,Manamovil,2025-07
+3,2546,Manproa,2025-07
+7748,1950,Marriott,2025-07
+51956,405,Massline,2025-07
+1719,2351,Matter,2025-07
+639,1648,Medexcard,2025-07
+81,2479,Mi Banco POC,2025-07
+10,2412,Miguel Bonifaz ,2025-07
+75,2424,Miss Lashes,2025-07
+12,2043,Morphosis,2025-07
+177,111,Muebles El Bosque,2025-07
+8,967,N5,2025-07
+4,2019,NATURALESMEJOR S.A.,2025-07
+4,2535,Natural fruit tea,2025-07
+2081,1482,Naturisa,2025-07
+173,2349,NeoCrew - Innovation Challenge de Banco Internacional,2025-07
+1605668,147,Netlife,2025-07
+30,2324,Netlife SMBS,2025-07
+83,1565,Nextgen,2025-07
+3,1329,Nutrarte,2025-07
+54,2260,ORIGAMI ECUADOR,2025-07
+560,1962,Ondu Cloud,2025-07
+2025,1480,Oriental,2025-07
+107779,337,Piloto Creditia,2025-07
+9,1379,Pocket Tienda Prototipo,2025-07
+1,1547,PopCornComunication,2025-07
+11,2462,Postal Agencia - POMBOZA CARVAJAL,2025-07
+2,2437,Prueba / Spa Jelou,2025-07
+187019,54,Pycca,2025-07
+1513,2379,QPay,2025-07
+1397,2322,RELIV,2025-07
+88,1903,Rabbit,2025-07
+2,2239,Racevents,2025-07
+2,2529,Richard Agila ,2025-07
+7,1633,SaludSA,2025-07
+386,2457,Scotiabank,2025-07
+373890,123,Security Data,2025-07
+189,1845,Seguros Confianza,2025-07
+24,452,Seguros Pacífico,2025-07
+728,1984,Semvra,2025-07
+26329,1,Shippify,2025-07
+3191,1566,Siigo,2025-07
+96,1811,Sistecrédito,2025-07
+78599,1761,Solca,2025-07
+88,2427,Startup,2025-07
+301,1641,Supreme Ventures,2025-07
+6,2516,Suquisoft,2025-07
+78,2001,TCLOG,2025-07
+679,2242,TIA Shopper,2025-07
+159,1995,TNT Control Plagas,2025-07
+117,2299,TOYS & HOBBIES,2025-07
+342,1384,Talento Humano,2025-07
+2,2446,TaxAo,2025-07
+3,1810,TeFío Shop,2025-07
+22645,1844,Tienda Branchos,2025-07
+875,1946,Total Education Program,2025-07
+7018,183,Tracklink,2025-07
+422,1880,TransSky,2025-07
+7617,823,Tuenti POC,2025-07
+19158,1890,Tuenti Vendedores,2025-07
+2,2472,UNIQO,2025-07
+86051,125,UTPL Consultas,2025-07
+37,2050,Universe Hub SAS,2025-07
+1288,2205,Universidad Insurgente,2025-07
+2381,807,Universidad de las Artes,2025-07
+302,2258,VACAN ELECTRODOMESTICOS,2025-07
+1363,2121,VITAMINWORLD,2025-07
+9,2252,Valorenz,2025-07
+199202,95,Veris,2025-07
+162,1860,Vitapro,2025-07
+209,1133,Vivalia,2025-07
+432130,1696,XTRIM,2025-07
+2,2501,YA GANASTE ,2025-07
+1,2310,Yappy,2025-07
+4,2502,Yas Fuxion ,2025-07
+22162,353,Yomp,2025-07
+19,1964,ZHM Seguros,2025-07
+141,2563,"""	 DPIKEOS S.A.S. - Jean Carlos Garcia",2025-08
+513,2236,11 Gallery Tattoo,2025-08
+87,2325,4 Me,2025-08
+88769,312,ABInBev Colombia,2025-08
+86,2300,ABS,2025-08
+210,2548,AGNOZ FITNESS HOUSE,2025-08
+161,2597,Academia de música Franz Liszt,2025-08
+151,2419,Algesta,2025-08
+162,2031,Alpha Trading,2025-08
+9,462,Ambiente QA,2025-08
+406,2314,Apptividad,2025-08
+92,359,Arca EC,2025-08
+293155,362,Arca PE,2025-08
+50,1068,Arca PE Ecommerce,2025-08
+26589,470,Arca PE Proyecto Frío,2025-08
+614,2233,Arca pe Turbo,2025-08
+347,2401,Aseguradora del Sur,2025-08
+131,2458,Audaz,2025-08
+36,317,Aurea,2025-08
+8849,2183,Automekano,2025-08
+4,2609,Autotapiceria y carpas Blessing ,2025-08
+174979,1974,BCP Cobranza,2025-08
+59,2156,BCP Cuenta Sueldo,2025-08
+26,2297,BCP Pagos recurrentes,2025-08
+11,1973,BCP Sendsei,2025-08
+28619,741,Bajaj,2025-08
+70,2396,Balcones del paraiso,2025-08
+5088,307,Banco Amazonas,2025-08
+1006,930,Banco Bolivariano Cobranzas,2025-08
+4979,1584,Banco Comercial Manabí,2025-08
+600,1993,Banco Delta,2025-08
+2617412,155,Banco Guayaquil,2025-08
+767268,424,Banco Internacional,2025-08
+308,1028,Banco Solidario 2,2025-08
+50957,1737,Banco Union,2025-08
+53,133,Banco del Austro,2025-08
+2808,417,Banisi,2025-08
+289769,692,Banisi Chat,2025-08
+500,2393,Barça Academy,2025-08
+715427,11,BdP,2025-08
+488,2602,BetCell,2025-08
+105,2629,Big Bang EC,2025-08
+1416,253,Bivi,2025-08
+1683,1649,Bruno,2025-08
+13,2653,Bundental,2025-08
+2,2354,CAMARA DE INDUSTRIAS DE GUAYAQUIL,2025-08
+2,2426,CASCEP Capacitaciones,2025-08
+117,2047,CBC,2025-08
+56,2243,CEPSA,2025-08
+38,2380,CHASKIGO,2025-08
+8776,1848,CIVE,2025-08
+86,2030,COLLSERV,2025-08
+393,2395,Cafering Eventos,2025-08
+4,2581,Carlos Guillén ,2025-08
+2330,316,CasaPlan MotorPlan,2025-08
+19209,138,Cervecería Nacional,2025-08
+6,2587,Chef Macchiavello ,2025-08
+659,1898,Cibernetica,2025-08
+70104,1559,Coca Cola en tu hogar,2025-08
+1,2048,Coca-Cola FEMSA,2025-08
+258,2413,Comfama,2025-08
+31109,2255,Computron,2025-08
+1,1674,Conaplas,2025-08
+661,2049,Conauto,2025-08
+294,1992,Contapro BCP,2025-08
+1276,1694,Cooperativa Daquilema,2025-08
+22372,855,Cooperativa El Sagrario,2025-08
+18,1881,Cooperativa Policía Nacional,2025-08
+67,2241,Coral Hipermercados,2025-08
+8836,2130,Cresa,2025-08
+659,2326,DELTASEGUROS,2025-08
+137,2461,DIGRAL,2025-08
+224,2563,DPIKEOS S.A.S. - Jean Carlos Garcia,2025-08
+185,1760,Danec,2025-08
+132,2525,Dannalate - SILVIA HERRERA,2025-08
+313,35,Datafast,2025-08
+341,1926,Datilmedia S.A.,2025-08
+142,2309,Demo Pocket Retail,2025-08
+54,2230,Demo partners,2025-08
+313285,150,Deprati,2025-08
+4,2547,Dermus Estética,2025-08
+1604,5,DevLab,2025-08
+157,1512,Dialogus,2025-08
+37933,110,Dipaso,2025-08
+1156,2073,Donutterapia,2025-08
+216,2235,Dreamers Fútbol Club,2025-08
+1774,1945,Duragas,2025-08
+59,2560,EN LAS NUBES - Michelle Aviles,2025-08
+128,1053,EclipSoft,2025-08
+413,2110,Ecugenius S.A.,2025-08
+212,2526,Educación Multicolor,2025-08
+16568,28,El Rosado,2025-08
+55,2527,Escuela Mi Ecuador,2025-08
+889,311,Espol,2025-08
+3,1160,Expand,2025-08
+599,1828,FD CENTER,2025-08
+13,2482,FOODLINE,2025-08
+3661,1951,FPV Seguros,2025-08
+126,121,Facephi<>Peigo,2025-08
+130288,2276,Falabella,2025-08
+186,2454,Ferridescuentos1,2025-08
+40,2455,Fideval,2025-08
+15,2032,Figueroa Merchan Jose Luis,2025-08
+11,1758,Finanza AI,2025-08
+38245,1937,Flexi,2025-08
+2,2421,Fun Tech Ecuador,2025-08
+18,2234,FÍE,2025-08
+160092,124,GEA Ecuador,2025-08
+210,149,GEA Recursos Humanos,2025-08
+48,2012,GEOMIL,2025-08
+1,2616,GRUPO SUEÑO ETERNO,2025-08
+536,2095,Gigmax,2025-08
+4408,2291,GreenLife,2025-08
+140,2452,Grupo Carrera - Rodrigo Carrera,2025-08
+15,2456,Grupo ElJuri,2025-08
+79,2264,GrupoMas - Claro,2025-08
+2874,1925,INDI BCP,2025-08
+290,2466,INSTITUTO SERVUGON S.A.S.,2025-08
+25,2611,INSTITUTO SUPERIOR TECNOLOGICO EUROAMERICANO,2025-08
+2,2571,Ideamadera,2025-08
+500,1655,Implementaciones Training,2025-08
+16,368,Innovat Latam.,2025-08
+859826,85,Interagua GEA,2025-08
+61,2139,Intervalores,2025-08
+560,1955,Italika,2025-08
+732,2414,JINKE ECUADOR,2025-08
+1308,1957,Jelou Banking,2025-08
+582,135,Jelou Dev,2025-08
+1671,1944,Jelou Marketplace,2025-08
+20009,361,Jelou Pay,2025-08
+801,331,Jelou Producto,2025-08
+8,2033,Jelou Revenue,2025-08
+811,322,Jelou Shop,2025-08
+1,2029,KPI Digital,2025-08
+91,1266,Katherine del Carmen Ovando,2025-08
+199,2397,Kitton,2025-08
+9,2656,LEGALIX - Olvis Quintana,2025-08
+58,2612,LINKHOME,2025-08
+90,2471,La Fabril,2025-08
+8,997,La Finestra SAS,2025-08
+63,1988,La casa de los abuelos,2025-08
+997,935,Lavca,2025-08
+12,2484,Legado motors,2025-08
+187763,2125,Lotería Nacional EC,2025-08
+1023,258,Luzverde,2025-08
+2,2567,METALBUIL,2025-08
+25,2625,MMG BANK,2025-08
+8856,404,MONGO'S,2025-08
+19,2614,MUSE ACADEMY,2025-08
+4292,745,Mail Boxes Etc,2025-08
+3792,1950,Marriott,2025-08
+46375,405,Massline,2025-08
+923,2479,Mi Banco POC,2025-08
+2,2619,Mi tienda es de bienes y raíces inmobiliario,2025-08
+36,2181,Mindmatter Academy,2025-08
+83,2424,Miss Lashes,2025-08
+14,2043,Morphosis,2025-08
+23848,111,Muebles El Bosque,2025-08
+53,2545,Mundo Llanta,2025-08
+10,967,N5,2025-08
+1,2019,NATURALESMEJOR S.A.,2025-08
+1512,1482,Naturisa,2025-08
+2,2599,Nena Store,2025-08
+1,2349,NeoCrew - Innovation Challenge de Banco Internacional,2025-08
+1508676,147,Netlife,2025-08
+375,2324,Netlife SMBS,2025-08
+23,1565,Nextgen,2025-08
+69,2635,Nokdu - 	 DIANA RODRIGUEZ,2025-08
+6,2641,Nuevo negocio ,2025-08
+1,1658,Nutricionista Verónica Martínez,2025-08
+8,2460,OCTUPUSTECH,2025-08
+51,2260,ORIGAMI ECUADOR,2025-08
+560,1962,Ondu Cloud,2025-08
+1828,1480,Oriental,2025-08
+14,2572,Oro Cash,2025-08
+22,2528,PERSONAL CLEANER & CLEANERS S.A.,2025-08
+141,2605,Padelcity Cuenca,2025-08
+2,2658,Pedro Zambrano,2025-08
+112336,337,Piloto Creditia,2025-08
+14,2650,Pixel Media Ecu - Cristian Chicaiza,2025-08
+46,2618,Play Academy,2025-08
+188,45,Plus Services,2025-08
+5,2425,Plustelesmart,2025-08
+8,1379,Pocket Tienda Prototipo,2025-08
+1,2462,Postal Agencia - POMBOZA CARVAJAL,2025-08
+136340,54,Pycca,2025-08
+1928,2379,QPay,2025-08
+1091,2322,RELIV,2025-08
+7,1903,Rabbit,2025-08
+151,2239,Racevents,2025-08
+269,2606,Reybanpac,2025-08
+7,2558,SEGURIDAD INDUSTRIAL SALUD OCUPACIONAL SEINSAO CIA LTDA,2025-08
+13,2623,SILHO - Dr. Edwin Ayala,2025-08
+58,2457,Scotiabank,2025-08
+325236,123,Security Data,2025-08
+132,1845,Seguros Confianza,2025-08
+29,452,Seguros Pacífico,2025-08
+210,1984,Semvra,2025-08
+39,2654,Sendifico agendamiento ,2025-08
+28414,1,Shippify,2025-08
+4585,1566,Siigo,2025-08
+80,1811,Sistecrédito,2025-08
+65120,1761,Solca,2025-08
+2,2621,Sparkles,2025-08
+150,2427,Startup,2025-08
+653,1641,Supreme Ventures,2025-08
+74,2001,TCLOG,2025-08
+62,2242,TIA Shopper,2025-08
+187,1995,TNT Control Plagas,2025-08
+251,2299,TOYS & HOBBIES,2025-08
+351,1384,Talento Humano,2025-08
+9,1810,TeFío Shop,2025-08
+67,2600,Tecnodescuento,2025-08
+12,2613,Ten en Ten México,2025-08
+7241,1844,Tienda Branchos,2025-08
+4,2575,Tienda Pablo Jelou,2025-08
+586,1946,Total Education Program,2025-08
+186,2014,Totalplay,2025-08
+4888,183,Tracklink,2025-08
+303,1880,TransSky,2025-08
+6749,823,Tuenti POC,2025-08
+22130,1890,Tuenti Vendedores,2025-08
+9,2459,ULDATECH,2025-08
+113734,125,UTPL Consultas,2025-08
+3550,2205,Universidad Insurgente,2025-08
+418,807,Universidad de las Artes,2025-08
+106,2258,VACAN ELECTRODOMESTICOS,2025-08
+13,2121,VITAMINWORLD,2025-08
+1,2359,VMT Dev,2025-08
+192,2252,Valorenz,2025-08
+190154,95,Veris,2025-08
+11,2006,Viamatica,2025-08
+205,1860,Vitapro,2025-08
+466,1133,Vivalia,2025-08
+455711,1696,XTRIM,2025-08
+1,2310,Yappy,2025-08
+23034,353,Yomp,2025-08
+14,1964,ZHM Seguros,2025-08
+10,2577,teknosoft,2025-08
+65,2469,101 Grados,2025-09
+359,2236,11 Gallery Tattoo,2025-09
+3,2325,4 Me,2025-09
+4,2649,ABI PERÚ,2025-09
+90197,312,ABInBev Colombia,2025-09
+90,2300,ABS,2025-09
+141,2548,AGNOZ FITNESS HOUSE,2025-09
+4,2705,AM PUBLICIDAD,2025-09
+99,2597,Academia de música Franz Liszt,2025-09
+137,2419,Algesta,2025-09
+176,2031,Alpha Trading,2025-09
+167,2679,Altar de la Tierra MX,2025-09
+42,462,Ambiente QA,2025-09
+8,2695,Amo Mis Rizos by Yuyi,2025-09
+795,2314,Apptividad,2025-09
+100,359,Arca EC,2025-09
+222938,362,Arca PE,2025-09
+17,1068,Arca PE Ecommerce,2025-09
+27046,470,Arca PE Proyecto Frío,2025-09
+1,1940,Arca camiones,2025-09
+2360,2233,Arca pe Turbo,2025-09
+229,2401,Aseguradora del Sur,2025-09
+4,2458,Audaz,2025-09
+22,317,Aurea,2025-09
+11308,2183,Automekano,2025-09
+200244,1974,BCP Cobranza,2025-09
+5,2156,BCP Cuenta Sueldo,2025-09
+128,2297,BCP Pagos recurrentes,2025-09
+9,1973,BCP Sendsei,2025-09
+931,1245,BG - Banco del Barrio 2,2025-09
+21702,741,Bajaj,2025-09
+825,307,Banco Amazonas,2025-09
+883,930,Banco Bolivariano Cobranzas,2025-09
+7903,1584,Banco Comercial Manabí,2025-09
+7,1993,Banco Delta,2025-09
+2471551,155,Banco Guayaquil,2025-09
+731010,424,Banco Internacional,2025-09
+814,1028,Banco Solidario 2,2025-09
+63534,1737,Banco Union,2025-09
+1986,417,Banisi,2025-09
+247628,692,Banisi Chat,2025-09
+736,2393,Barça Academy,2025-09
+2094833,11,BdP,2025-09
+654,2602,BetCell,2025-09
+7,2685,Bilib Usa Corp,2025-09
+5195,253,Bivi,2025-09
+2072,2628,Boticas Barcia,2025-09
+826,1649,Bruno,2025-09
+4,2653,Bundental,2025-09
+110,2047,CBC,2025-09
+33,2243,CEPSA,2025-09
+1,2380,CHASKIGO,2025-09
+3516,1848,CIVE,2025-09
+4,2668,CNT,2025-09
+396,438,CNT Ecuador,2025-09
+74,2030,COLLSERV,2025-09
+169,2395,Cafering Eventos,2025-09
+12,2687,Calma y Alma - Jhonny Moreno,2025-09
+2368,316,CasaPlan MotorPlan,2025-09
+397,2675,Centromed,2025-09
+19656,138,Cervecería Nacional,2025-09
+82,1898,Cibernetica,2025-09
+1,1847,Ck Comercializadora,2025-09
+59529,1559,Coca Cola en tu hogar,2025-09
+9,2691,Colecciones Jonathan-S,2025-09
+1816,2413,Comfama,2025-09
+33561,2255,Computron,2025-09
+832,2049,Conauto,2025-09
+12,2672,Consultorio Alma&Calma,2025-09
+4,2653,Consultorio Odontológico Salud Bucal - ANGULO OSUNA JOSE LUIS,2025-09
+2828,1992,Contapro BCP,2025-09
+3037,1694,Cooperativa Daquilema,2025-09
+5035,855,Cooperativa El Sagrario,2025-09
+11,1881,Cooperativa Policía Nacional,2025-09
+17,2241,Coral Hipermercados,2025-09
+11073,2130,Cresa,2025-09
+2,2696,Crystal,2025-09
+1093,2326,DELTASEGUROS,2025-09
+7,2667,DIGITALNET,2025-09
+11,2461,DIGRAL,2025-09
+19,2617,DKB LTD. SOCIEDAD POR ACCIONES SIMPLIFICADA,2025-09
+107,2563,DPIKEOS S.A.S. - Jean Carlos Garcia,2025-09
+193,1760,Danec,2025-09
+274,2525,Dannalate - SILVIA HERRERA,2025-09
+310,35,Datafast,2025-09
+285,1926,Datilmedia S.A.,2025-09
+166,2309,Demo Pocket Retail,2025-09
+11,2230,Demo partners,2025-09
+317138,150,Deprati,2025-09
+1920,5,DevLab,2025-09
+98,1512,Dialogus,2025-09
+34343,110,Dipaso,2025-09
+1372,2073,Donutterapia,2025-09
+368,2235,Dreamers Fútbol Club,2025-09
+1234,1945,Duragas,2025-09
+8,2560,EN LAS NUBES - Michelle Aviles,2025-09
+74,1053,EclipSoft,2025-09
+455,2110,Ecugenius S.A.,2025-09
+887,2526,Educación Multicolor,2025-09
+17878,28,El Rosado,2025-09
+1732,2662,El gaucho artesano,2025-09
+38,2671,Encantos del Corazón,2025-09
+3,2527,Escuela Mi Ecuador,2025-09
+1135,311,Espol,2025-09
+414,1828,FD CENTER,2025-09
+2,2482,FOODLINE,2025-09
+2512,1951,FPV Seguros,2025-09
+127,2686,FUNDACION REYSOL - GARCIA SIERRA CHRISTIAN NICOLAY,2025-09
+18,121,Facephi<>Peigo,2025-09
+405,2190,Fadesa,2025-09
+138132,2276,Falabella,2025-09
+2,2710,Fantasy Go,2025-09
+3159,2455,Fideval,2025-09
+2,2646,Financiera Efectiva,2025-09
+11,1758,Finanza AI,2025-09
+39153,1937,Flexi,2025-09
+4,2234,FÍE,2025-09
+153248,124,GEA Ecuador,2025-09
+198,149,GEA Recursos Humanos,2025-09
+171,2012,GEOMIL,2025-09
+12,2312,GRUPASA,2025-09
+364,2615,Games and Geeks,2025-09
+105,2095,Gigmax,2025-09
+555,2642,Granasa,2025-09
+328,2291,GreenLife,2025-09
+26,2452,Grupo Carrera - Rodrigo Carrera,2025-09
+107,2456,Grupo ElJuri,2025-09
+4,2264,GrupoMas - Claro,2025-09
+106,2670,HFIT,2025-09
+78,2655,Haceb,2025-09
+358,2636,Hangover593 - NANCI VILLALVA,2025-09
+2718,1925,INDI BCP,2025-09
+144,2466,INSTITUTO SERVUGON S.A.S.,2025-09
+2,1655,Implementaciones Training,2025-09
+2338,368,Innovat Latam.,2025-09
+868414,85,Interagua GEA,2025-09
+49,2139,Intervalores,2025-09
+421,1955,Italika,2025-09
+678,2414,JINKE ECUADOR,2025-09
+37,2559,JOSBEEC S.A.S,2025-09
+992,1957,Jelou Banking,2025-09
+25,2601,Jelou Clientes,2025-09
+589,135,Jelou Dev,2025-09
+1690,1944,Jelou Marketplace,2025-09
+18937,361,Jelou Pay,2025-09
+616,331,Jelou Producto,2025-09
+7,2033,Jelou Revenue,2025-09
+1178,322,Jelou Shop,2025-09
+43,2692,KUMAMOTO,2025-09
+12,1266,Katherine del Carmen Ovando,2025-09
+4714,2397,Kitton,2025-09
+268,2656,LEGALIX - Olvis Quintana,2025-09
+31,2612,LINKHOME,2025-09
+387,2471,La Fabril,2025-09
+3,997,La Finestra SAS,2025-09
+16,2523,La buena tradición MEX,2025-09
+106,1988,La casa de los abuelos,2025-09
+896,935,Lavca,2025-09
+104,2661,Llama Shop - Cristian Chicaiza,2025-09
+184739,2125,Lotería Nacional EC,2025-09
+514,258,Luzverde,2025-09
+6563,404,MONGO'S,2025-09
+14,2614,MUSE ACADEMY,2025-09
+3,2698,MUVIMAR - Alina Munoz,2025-09
+4332,745,Mail Boxes Etc,2025-09
+4661,1950,Marriott,2025-09
+43966,405,Massline,2025-09
+7624,2479,Mi Banco POC,2025-09
+201,2677,MiBanco Colombia,2025-09
+3,2181,Mindmatter Academy,2025-09
+96,2424,Miss Lashes,2025-09
+25416,111,Muebles El Bosque,2025-09
+40,2545,Mundo Llanta,2025-09
+10,967,N5,2025-09
+12,2019,NATURALESMEJOR S.A.,2025-09
+21,2506,NOE,2025-09
+15,2663,Natfit implementos deportivos,2025-09
+1539,1482,Naturisa,2025-09
+1684340,147,Netlife,2025-09
+594,2324,Netlife SMBS,2025-09
+8,1565,Nextgen,2025-09
+195,2676,Nexxia - Grupo Salinas,2025-09
+76,2635,Nokdu - 	 DIANA RODRIGUEZ,2025-09
+2,2694,Novadental,2025-09
+5,1658,Nutricionista Verónica Martínez,2025-09
+51,2260,ORIGAMI ECUADOR,2025-09
+666,1962,Ondu Cloud,2025-09
+40,2683,Ophira,2025-09
+31,2693,Opti+ - David Chavez,2025-09
+1513,1480,Oriental,2025-09
+333,2528,PERSONAL CLEANER & CLEANERS S.A.,2025-09
+173,2610,PUERTACOLORCORP SA,2025-09
+78,2605,Padelcity Cuenca,2025-09
+111660,337,Piloto Creditia,2025-09
+32,2650,Pixel Media Ecu - Cristian Chicaiza,2025-09
+2,2618,Play Academy,2025-09
+325,45,Plus Services,2025-09
+198,2425,Plustelesmart,2025-09
+4,1379,Pocket Tienda Prototipo,2025-09
+21,2709,Poliwellness accesos,2025-09
+1,1547,PopCornComunication,2025-09
+1,2017,Punta Azul,2025-09
+50067,54,Pycca,2025-09
+1349,2379,QPay,2025-09
+28,2690,RCM Relojeria,2025-09
+1138,2322,RELIV,2025-09
+150,2239,Racevents,2025-09
+157,2681,Rayros Motors  - CO,2025-09
+226,1975,Refrielectric,2025-09
+43,2606,Reybanpac,2025-09
+45,2558,SEGURIDAD INDUSTRIAL SALUD OCUPACIONAL SEINSAO CIA LTDA,2025-09
+4,2623,SILHO - Dr. Edwin Ayala,2025-09
+39,1633,SaludSA,2025-09
+37,2457,Scotiabank,2025-09
+339475,123,Security Data,2025-09
+203,1845,Seguros Confianza,2025-09
+20,452,Seguros Pacífico,2025-09
+95,1984,Semvra,2025-09
+344,2654,Sendifico agendamiento ,2025-09
+25384,1,Shippify,2025-09
+7,2699,Shot Creativo,2025-09
+6657,1566,Siigo,2025-09
+102,1811,Sistecrédito,2025-09
+71909,1761,Solca,2025-09
+58,2427,Startup,2025-09
+180,1641,Supreme Ventures,2025-09
+73,2688,Swimlab -  Juan Pablo,2025-09
+61,2001,TCLOG,2025-09
+102,2242,TIA Shopper,2025-09
+92,1995,TNT Control Plagas,2025-09
+258,2299,TOYS & HOBBIES,2025-09
+424,1384,Talento Humano,2025-09
+2,382,Team APPS,2025-09
+252,2600,Tecnodescuento,2025-09
+461,2613,Ten en Ten México,2025-09
+12,2673,The Skincare Club,2025-09
+718,1946,Total Education Program,2025-09
+19,2014,Totalplay,2025-09
+8548,183,Tracklink,2025-09
+222,257,Tracklink Área Financiera,2025-09
+201,1880,TransSky,2025-09
+5141,823,Tuenti POC,2025-09
+17017,1890,Tuenti Vendedores,2025-09
+130942,125,UTPL Consultas,2025-09
+38307,2205,Universidad Insurgente,2025-09
+1071,807,Universidad de las Artes,2025-09
+4,2549,Uno punto uno,2025-09
+384,2684,Uraga,2025-09
+115,2258,VACAN ELECTRODOMESTICOS,2025-09
+65,2252,Valorenz,2025-09
+198207,95,Veris,2025-09
+170,2006,Viamatica,2025-09
+156,1860,Vitapro,2025-09
+511,1133,Vivalia,2025-09
+1676,2415,Wonderthings,2025-09
+479687,1696,XTRIM,2025-09
+1,2310,Yappy,2025-09
+22751,353,Yomp,2025-09
+55,1964,ZHM Seguros,2025-09
+15,2577,teknosoft,2025-09
+23,2469,101 Grados,2025-10
+684,2236,11 Gallery Tattoo,2025-10
+38,2325,4 Me,2025-10
+89310,312,ABInBev Colombia,2025-10
+44,2300,ABS,2025-10
+6,2760,AEROCARGOEC S.A.S,2025-10
+8,2705,AM PUBLICIDAD,2025-10
+16,2522,AQAGYM,2025-10
+106,2597,Academia de música Franz Liszt,2025-10
+858,2419,Algesta,2025-10
+754,2031,Alpha Trading,2025-10
+1379,2679,Altar de la Tierra MX,2025-10
+27,462,Ambiente QA,2025-10
+28,2695,Amo Mis Rizos by Yuyi,2025-10
+20,2314,Apptividad,2025-10
+110,359,Arca EC,2025-10
+1,2292,Arca MX Atencion AC,2025-10
+153363,362,Arca PE,2025-10
+596,1068,Arca PE Ecommerce,2025-10
+27234,470,Arca PE Proyecto Frío,2025-10
+33,1940,Arca camiones,2025-10
+5881,2233,Arca pe Turbo,2025-10
+11,2743,Arkadia - Disruptiva360,2025-10
+98,2401,Aseguradora del Sur,2025-10
+23,317,Aurea,2025-10
+12740,2183,Automekano,2025-10
+239629,1974,BCP Cobranza,2025-10
+36,2156,BCP Cuenta Sueldo,2025-10
+234,2297,BCP Pagos recurrentes,2025-10
+1217,1245,BG - Banco del Barrio 2,2025-10
+16821,741,Bajaj,2025-10
+3205,307,Banco Amazonas,2025-10
+978,930,Banco Bolivariano Cobranzas,2025-10
+8870,1584,Banco Comercial Manabí,2025-10
+4,1993,Banco Delta,2025-10
+3031752,155,Banco Guayaquil,2025-10
+842330,424,Banco Internacional,2025-10
+1345,1028,Banco Solidario,2025-10
+1148,1028,Banco Solidario 2,2025-10
+57729,1737,Banco Union,2025-10
+59,133,Banco del Austro,2025-10
+1825,417,Banisi,2025-10
+184010,692,Banisi Chat,2025-10
+43,2393,Barça Academy,2025-10
+1954647,11,BdP,2025-10
+1886,2602,BetCell,2025-10
+5,2685,Bilib Usa Corp,2025-10
+4869,253,Bivi,2025-10
+65,2744,Bolos Capricho - Jonathan Bermello,2025-10
+5323,2628,Boticas Barcia,2025-10
+977,1649,Bruno,2025-10
+98,2740,Buho Barber,2025-10
+2,2047,CBC,2025-10
+356,2243,CEPSA,2025-10
+6,2380,CHASKIGO,2025-10
+10547,1848,CIVE,2025-10
+15303,438,CNT Ecuador,2025-10
+6,2030,COLLSERV,2025-10
+9,2752,CONSORCIO FLXJSA SAS,2025-10
+19,2736,CONSULES DE PAZ MUNDIAL,2025-10
+218,2395,Cafering Eventos,2025-10
+2391,316,CasaPlan MotorPlan,2025-10
+992,1983,Centric,2025-10
+19942,138,Cervecería Nacional,2025-10
+12,75,Chubb,2025-10
+209,1898,Cibernetica,2025-10
+10,2737,Citas & Agendas ,2025-10
+11,1847,Ck Comercializadora,2025-10
+42730,1559,Coca Cola en tu hogar,2025-10
+9,2691,Colecciones Jonathan-S,2025-10
+1380,2413,Comfama,2025-10
+35250,2255,Computron,2025-10
+848,2049,Conauto,2025-10
+7,2768,Confort Sport,2025-10
+41,2653,Consultorio Odontológico Salud Bucal - ANGULO OSUNA JOSE LUIS,2025-10
+4099,1694,Cooperativa Daquilema,2025-10
+13372,855,Cooperativa El Sagrario,2025-10
+12,1881,Cooperativa Policía Nacional,2025-10
+4,2241,Coral Hipermercados,2025-10
+16625,2130,Cresa,2025-10
+166,2696,Crystal,2025-10
+850,2326,DELTASEGUROS,2025-10
+8,2461,DIGRAL,2025-10
+16,2617,DKB LTD. SOCIEDAD POR ACCIONES SIMPLIFICADA,2025-10
+146,2563,DPIKEOS S.A.S. - Jean Carlos Garcia,2025-10
+101,1760,Danec,2025-10
+240,35,Datafast,2025-10
+404,1926,Datilmedia S.A.,2025-10
+202,2309,Demo Pocket Retail,2025-10
+15,2230,Demo partners,2025-10
+323160,150,Deprati,2025-10
+1971,5,DevLab,2025-10
+397,1512,Dialogus,2025-10
+37760,110,Dipaso,2025-10
+78,2711,Don Pescao,2025-10
+1199,2073,Donutterapia,2025-10
+314,2235,Dreamers Fútbol Club,2025-10
+2197,1945,Duragas,2025-10
+92,1053,EclipSoft,2025-10
+384,2603,Ecuaimco,2025-10
+1199,2110,Ecugenius S.A.,2025-10
+313,2526,Educación Multicolor,2025-10
+24013,28,El Rosado,2025-10
+3044,2662,El gaucho artesano,2025-10
+6,2671,Encantos del Corazón,2025-10
+567,311,Espol,2025-10
+1612,1828,FD CENTER,2025-10
+25,2482,FOODLINE,2025-10
+1589,1951,FPV Seguros,2025-10
+49,2686,FUNDACION REYSOL - GARCIA SIERRA CHRISTIAN NICOLAY,2025-10
+1,121,Facephi<>Peigo,2025-10
+77,2190,Fadesa,2025-10
+226595,2276,Falabella,2025-10
+4,2710,Fantasy Go,2025-10
+3937,2455,Fideval,2025-10
+134,2646,Financiera Efectiva,2025-10
+2,1758,Finanza AI,2025-10
+63885,1937,Flexi,2025-10
+147812,124,GEA Ecuador,2025-10
+136,149,GEA Recursos Humanos,2025-10
+58,2012,GEOMIL,2025-10
+183,2312,GRUPASA,2025-10
+8,2739,Gail,2025-10
+342,2615,Games and Geeks,2025-10
+16,2095,Gigmax,2025-10
+3894,2642,Granasa,2025-10
+98,2452,Grupo Carrera - Rodrigo Carrera,2025-10
+2,2456,Grupo ElJuri,2025-10
+195,2754,HEAD Ecuador,2025-10
+218,2670,HFIT,2025-10
+76,2655,Haceb,2025-10
+3,2636,Hangover593 - NANCI VILLALVA,2025-10
+1951,1925,INDI - RECAUDACIONES,2025-10
+4,2466,INSTITUTO SERVUGON S.A.S.,2025-10
+79,368,Innovat Latam.,2025-10
+905785,85,Interagua GEA,2025-10
+64,2139,Intervalores,2025-10
+344,1955,Italika,2025-10
+141,2414,JINKE ECUADOR,2025-10
+154,2559,JOSBEEC S.A.S,2025-10
+829,1957,Jelou Banking,2025-10
+61,2601,Jelou Clientes,2025-10
+194,135,Jelou Dev,2025-10
+1326,1944,Jelou Marketplace,2025-10
+17232,361,Jelou Pay,2025-10
+1124,331,Jelou Producto,2025-10
+3,2645,Jelou Security,2025-10
+974,322,Jelou Shop,2025-10
+5695,288,Junta de Beneficencia,2025-10
+6,2717,KABOOM SHOW&amp;EVENTOS,2025-10
+575,2505,KOBE,2025-10
+217,2692,KUMAMOTO,2025-10
+29,1266,Katherine del Carmen Ovando,2025-10
+6264,2397,Kitton,2025-10
+125,2762,LA CASA DEL CARRETON,2025-10
+362,2656,LEGALIX - Olvis Quintana,2025-10
+129,2612,LINKHOME,2025-10
+679,2471,La Fabril,2025-10
+2,2523,La buena tradición MEX,2025-10
+90,1988,La casa de los abuelos,2025-10
+927,935,Lavca,2025-10
+18,2484,Legado motors,2025-10
+16,1640,Lotería Costa Rica,2025-10
+172432,2125,Lotería Nacional EC,2025-10
+708,258,Luzverde,2025-10
+75,2716,MANKA SAN JUAN,2025-10
+50,2298,MAYA PIONEER,2025-10
+8,2614,MUSE ACADEMY,2025-10
+5551,745,Mail Boxes Etc,2025-10
+4232,1950,Marriott,2025-10
+46862,405,Massline,2025-10
+44941,2479,Mi Banco POC,2025-10
+17,2677,MiBanco Colombia,2025-10
+39,2424,Miss Lashes,2025-10
+27517,111,Muebles El Bosque,2025-10
+4,2545,Mundo Llanta,2025-10
+2,967,N5,2025-10
+186,2506,NOE,2025-10
+84,2663,Natfit implementos deportivos,2025-10
+1829,1482,Naturisa,2025-10
+1649782,147,Netlife,2025-10
+19,2324,Netlife SMBS,2025-10
+1672,2676,Nexxia - Grupo Salinas,2025-10
+435,1962,Ondu Cloud,2025-10
+4,2683,Ophira,2025-10
+136,2693,Opti David Chavez,2025-10
+53,2693,Opti+ - David Chavez,2025-10
+1186,1480,Oriental,2025-10
+7,2572,Oro Cash,2025-10
+19036,1992,P2P - BCP,2025-10
+92,2755,PADFIT - Centro Deportivo Integral,2025-10
+364,2528,PERSONAL CLEANER & CLEANERS S.A.,2025-10
+250,2610,PUERTACOLORCORP SA,2025-10
+56,2605,Padelcity Cuenca,2025-10
+534,2745,Panda - Sonax,2025-10
+104920,337,Piloto Creditia,2025-10
+5,2748,Pinturas Stop,2025-10
+1,2678,Pizza Planet SMBs,2025-10
+79,45,Plus Services,2025-10
+776,2425,Plustelesmart,2025-10
+1,1379,Pocket Tienda Prototipo,2025-10
+299,2709,Poliwellness accesos,2025-10
+50540,54,Pycca,2025-10
+2395,2379,QPay,2025-10
+4,2690,RCM Relojeria,2025-10
+51,2728,REF,2025-10
+359,2322,RELIV,2025-10
+285,2239,Racevents,2025-10
+102,2277,Rappipay,2025-10
+52,2681,Rayros Motors  - CO,2025-10
+1884,1975,Refrielectric,2025-10
+6,2606,Reybanpac,2025-10
+3,2558,SEGURIDAD INDUSTRIAL SALUD OCUPACIONAL SEINSAO CIA LTDA,2025-10
+11,1633,SaludSA,2025-10
+32,2457,Scotiabank,2025-10
+294462,123,Security Data,2025-10
+189,1845,Seguros Confianza,2025-10
+38,358,Seguros Liberty,2025-10
+22,452,Seguros Pacífico,2025-10
+166,1984,Semvra,2025-10
+22851,1,Shippify,2025-10
+1,2699,Shot Creativo,2025-10
+8145,1566,Siigo,2025-10
+88,1811,Sistecrédito,2025-10
+66708,1761,Solca,2025-10
+14,2759,Somos + Broker de seguros,2025-10
+4,1865,Start Co,2025-10
+5,2427,Startup,2025-10
+229,1641,Supreme Ventures,2025-10
+96,2688,Swimlab -  Juan Pablo,2025-10
+49,2001,TCLOG,2025-10
+65,2704,TECFORPRO S.A.S,2025-10
+136,2242,TIA Shopper,2025-10
+80,1995,TNT Control Plagas,2025-10
+163,2299,TOYS & HOBBIES,2025-10
+388,1384,Talento Humano,2025-10
+301,2600,Tecnodescuento,2025-10
+71,2613,Ten en Ten México,2025-10
+271,1946,Total Education Program,2025-10
+19,2014,Totalplay,2025-10
+7151,183,Tracklink,2025-10
+698,257,Tracklink Área Financiera,2025-10
+45,1880,TransSky,2025-10
+6424,823,Tuenti POC,2025-10
+17380,1890,Tuenti Vendedores,2025-10
+74306,125,UTPL Consultas,2025-10
+150,2721,Universidad Anglo Hispano Mexicana,2025-10
+12,2738,Universidad Iberoamericana,2025-10
+2358,2205,Universidad Insurgente,2025-10
+514,807,Universidad de las Artes,2025-10
+779,2684,Uraga,2025-10
+342,2258,VACAN ELECTRODOMESTICOS,2025-10
+62,2252,Valorenz,2025-10
+197452,95,Veris,2025-10
+17,2006,Viamatica,2025-10
+105,1860,Vitapro,2025-10
+535,1133,Vivalia,2025-10
+50,2753,WATERSUPPLY EC,2025-10
+15,2415,Wonderthings,2025-10
+397859,1696,XTRIM,2025-10
+1,2310,Yappy,2025-10
+21712,353,Yomp,2025-10
+7,2469,101 Grados,2025-11
+200,2236,11 Gallery Tattoo,2025-11
+4,2325,4 Me,2025-11
+89831,312,ABInBev Colombia,2025-11
+6,2300,ABS,2025-11
+184,2760,AEROCARGOEC S.A.S,2025-11
+2,2705,AM PUBLICIDAD,2025-11
+89,2597,Academia de música Franz Liszt,2025-11
+169,2419,Algesta,2025-11
+1057,2031,Alpha Trading,2025-11
+867,2679,Altar de la Tierra MX,2025-11
+13,462,Ambiente QA,2025-11
+10,2695,Amo Mis Rizos by Yuyi,2025-11
+16,2925,Anaid Nutriologa,2025-11
+3,2314,Apptividad,2025-11
+89,359,Arca EC,2025-11
+115135,362,Arca PE,2025-11
+120,1068,Arca PE Ecommerce,2025-11
+19776,470,Arca PE Proyecto Frío,2025-11
+9,1940,Arca camiones,2025-11
+6841,2233,Arca pe Turbo,2025-11
+14,2743,Arkadia - Disruptiva360,2025-11
+161,2401,Aseguradora del Sur,2025-11
+34,2458,Audaz,2025-11
+21,317,Aurea,2025-11
+179,2742,AutoSky,2025-11
+10926,2183,Automekano,2025-11
+203422,1974,BCP Cobranza,2025-11
+100,2156,BCP Cuenta Sueldo,2025-11
+365,2297,BCP Pagos recurrentes,2025-11
+17,1973,BCP Sendsei,2025-11
+1146,1245,BG - Banco del Barrio 2,2025-11
+168,2918,BORN GLOBAL ECUADOR BGE S.A.S,2025-11
+19091,741,Bajaj,2025-11
+1,2396,Balcones del paraiso,2025-11
+2476,307,Banco Amazonas,2025-11
+922,930,Banco Bolivariano Cobranzas,2025-11
+7237,1584,Banco Comercial Manabí,2025-11
+3,1993,Banco Delta,2025-11
+2936524,155,Banco Guayaquil,2025-11
+124,811,Banco Guayaquil Cobranzas,2025-11
+70,2750,Banco Industrial,2025-11
+787259,424,Banco Internacional,2025-11
+2339,1028,Banco Solidario,2025-11
+50683,1737,Banco Union,2025-11
+8,133,Banco del Austro,2025-11
+1536,417,Banisi,2025-11
+160904,692,Banisi Chat,2025-11
+6,2393,Barça Academy,2025-11
+1761592,11,BdP,2025-11
+2419,2602,BetCell,2025-11
+12580,253,Bivi,2025-11
+253,2744,Bolos Capricho - Jonathan Bermello,2025-11
+6464,2628,Boticas Barcia,2025-11
+125,1649,Bruno,2025-11
+2,2740,Buho Barber,2025-11
+16,2810,Buro Estrategico - Stephannie Macias,2025-11
+1,2426,CASCEP Capacitaciones,2025-11
+182,2243,CEPSA,2025-11
+39,2380,CHASKIGO,2025-11
+8293,1848,CIVE,2025-11
+32296,438,CNT Ecuador,2025-11
+7,2030,COLLSERV,2025-11
+160,2882,COMERCIO OLLAGUE Dermage,2025-11
+110,2752,CONSORCIO FLXJSA SAS,2025-11
+334,2896,Cable Magico,2025-11
+252,2395,Cafering Eventos,2025-11
+1925,316,CasaPlan MotorPlan,2025-11
+94,1983,Centric,2025-11
+13825,138,Cervecería Nacional,2025-11
+8,75,Chubb,2025-11
+29,1898,Cibernetica,2025-11
+6,2737,Citas & Agendas ,2025-11
+52815,1559,Coca Cola en tu hogar,2025-11
+5,2048,Coca-Cola FEMSA,2025-11
+3,2691,Colecciones Jonathan-S,2025-11
+4275,2413,Comfama,2025-11
+51539,2255,Computron,2025-11
+694,2049,Conauto,2025-11
+764,2768,Confort Sport,2025-11
+143,2653,Consultorio Odontológico Salud Bucal - ANGULO OSUNA JOSE LUIS,2025-11
+3722,1694,Cooperativa Daquilema,2025-11
+15040,855,Cooperativa El Sagrario,2025-11
+27048,2130,Cresa,2025-11
+712,2326,DELTASEGUROS,2025-11
+5,2667,DIGITALNET,2025-11
+2,2461,DIGRAL,2025-11
+59,2617,DKB LTD. SOCIEDAD POR ACCIONES SIMPLIFICADA,2025-11
+226,2563,DPIKEOS S.A.S. - Jean Carlos Garcia,2025-11
+93,1760,Danec,2025-11
+248,35,Datafast,2025-11
+193,1926,Datilmedia S.A.,2025-11
+376,2309,Demo Pocket Retail,2025-11
+7,2230,Demo partners,2025-11
+428132,150,Deprati,2025-11
+2025,5,DevLab,2025-11
+188,1512,Dialogus,2025-11
+54246,110,Dipaso,2025-11
+5,2042,Disensa,2025-11
+76,2711,Don Pescao,2025-11
+896,2073,Donutterapia,2025-11
+5,2934,Dr Manuel Cedeño,2025-11
+263,2235,Dreamers Fútbol Club,2025-11
+2730,1945,Duragas,2025-11
+65,1053,EclipSoft,2025-11
+10,2703,Ecotec,2025-11
+1513,2603,Ecuaimco,2025-11
+55,2808,Ecufrutta - David Labanda,2025-11
+781,2110,Ecugenius S.A.,2025-11
+191,2526,Educación Multicolor,2025-11
+20185,28,El Rosado,2025-11
+563,2662,El gaucho artesano,2025-11
+2,2902,Elektra,2025-11
+8,2527,Escuela Mi Ecuador,2025-11
+639,311,Espol,2025-11
+377,2809,Evalua Academy - Monica Coronel,2025-11
+4,1160,Expand,2025-11
+614,1828,FD CENTER,2025-11
+10,2482,FOODLINE,2025-11
+392,1951,FPV Seguros,2025-11
+66,2686,FUNDACION REYSOL - GARCIA SIERRA CHRISTIAN NICOLAY,2025-11
+16,121,Facephi<>Peigo,2025-11
+2103,2190,Fadesa,2025-11
+284647,2276,Falabella,2025-11
+4,2524,Farmacias Danna Carolina,2025-11
+132,2880,Ferretería 3H,2025-11
+7423,2455,Fideval,2025-11
+249,2646,Financiera Efectiva,2025-11
+77954,1937,Flexi,2025-11
+12,2234,FÍE,2025-11
+128712,124,GEA Ecuador,2025-11
+170,149,GEA Recursos Humanos,2025-11
+56,2012,GEOMIL,2025-11
+16,2312,GRUPASA,2025-11
+20,2739,Gail,2025-11
+79,2615,Games and Geeks,2025-11
+2497,2642,Granasa,2025-11
+6,2452,Grupo Carrera - Rodrigo Carrera,2025-11
+18,2456,Grupo ElJuri,2025-11
+146,2754,HEAD Ecuador,2025-11
+165,2670,HFIT,2025-11
+206,2655,Haceb,2025-11
+20,2770,IMPORTADORA KING,2025-11
+3763,1925,INDI - RECAUDACIONES,2025-11
+1,2466,INSTITUTO SERVUGON S.A.S.,2025-11
+59,2800,INSTITUTO SUPERIOR TECNOLOGICO KRUGER TEK,2025-11
+9,368,Innovat Latam.,2025-11
+826160,85,Interagua GEA,2025-11
+15,321,Interoc,2025-11
+72,2139,Intervalores,2025-11
+158,1955,Italika,2025-11
+40,2559,JOSBEEC S.A.S,2025-11
+955,1957,Jelou Banking,2025-11
+129,2601,Jelou Clientes,2025-11
+293,135,Jelou Dev,2025-11
+801,1944,Jelou Marketplace,2025-11
+21489,361,Jelou Pay,2025-11
+522,331,Jelou Producto,2025-11
+10,2033,Jelou Revenue,2025-11
+454,322,Jelou Shop,2025-11
+3,2833,Juan Test SMBs 4,2025-11
+51726,288,Junta de Beneficencia,2025-11
+28,2717,KABOOM SHOW&amp;EVENTOS,2025-11
+681,2505,KOBE,2025-11
+20,2692,KUMAMOTO,2025-11
+40,1266,Katherine del Carmen Ovando,2025-11
+7679,2397,Kitton,2025-11
+165,2762,LA CASA DEL CARRETON,2025-11
+49,2656,LEGALIX - Olvis Quintana,2025-11
+19,2612,LINKHOME,2025-11
+431,2471,La Fabril,2025-11
+85,1988,La casa de los abuelos,2025-11
+1691,935,Lavca,2025-11
+8,2484,Legado motors,2025-11
+129272,2125,Lotería Nacional EC,2025-11
+1,2951,Luis Personal,2025-11
+125,2774,Luné Skin and Massage - MONICA SANCHEZ,2025-11
+549,258,Luzverde,2025-11
+4,2801,M&M,2025-11
+36,2716,MANKA SAN JUAN,2025-11
+71,2298,MAYA PIONEER,2025-11
+23,2893,MERCADER M593,2025-11
+4,2625,MMG BANK,2025-11
+26,2614,MUSE ACADEMY,2025-11
+6040,745,Mail Boxes Etc,2025-11
+65,2842,Mantenimiento Automotriz Ortega,2025-11
+5685,1950,Marriott,2025-11
+41273,405,Massline,2025-11
+147934,2479,Mi Banco POC,2025-11
+2,2677,MiBanco Colombia,2025-11
+75,2424,Miss Lashes,2025-11
+53896,111,Muebles El Bosque,2025-11
+6,967,N5,2025-11
+335,2506,NOE,2025-11
+16,2663,Natfit implementos deportivos,2025-11
+1196,1482,Naturisa,2025-11
+1432421,147,Netlife,2025-11
+397,2676,Nexxia - Grupo Salinas,2025-11
+2,2694,Novadental,2025-11
+269,1962,Ondu Cloud,2025-11
+44,2683,Ophira,2025-11
+357,2693,Opti David Chavez,2025-11
+1207,1480,Oriental,2025-11
+31693,1992,P2P - BCP,2025-11
+2,2755,PADFIT - Centro Deportivo Integral,2025-11
+383,2528,PERSONAL CLEANER & CLEANERS S.A.,2025-11
+99,2729,PTM,2025-11
+198,2610,PUERTACOLORCORP SA,2025-11
+7,2890,Pacifico Seguros,2025-11
+46,2605,Padelcity Cuenca,2025-11
+2348,2745,Panda - Sonax,2025-11
+3829,2799,Partylovers,2025-11
+124193,337,Piloto Creditia,2025-11
+14,2748,Pinturas Stop,2025-11
+1167,2678,Pizza Planet SMBs,2025-11
+112,45,Plus Services,2025-11
+1532,2425,Plustelesmart,2025-11
+3,2844,Prueba JSHF,2025-11
+79098,54,Pycca,2025-11
+316,2379,QPay,2025-11
+93,2870,RAVENROCK-DIEGO CASTRO,2025-11
+9,2690,RCM Relojeria,2025-11
+9,2728,REF,2025-11
+818,2322,RELIV,2025-11
+4,2910,RP3,2025-11
+5,2239,Racevents,2025-11
+22,2277,Rappipay,2025-11
+1257,1975,Refrielectric,2025-11
+2,2606,Reybanpac,2025-11
+236,2775,SANTANA BREWING,2025-11
+2,2623,SILHO - Dr. Edwin Ayala,2025-11
+58,1633,SaludSA,2025-11
+393,2457,Scotiabank,2025-11
+307883,123,Security Data,2025-11
+142,1845,Seguros Confianza,2025-11
+28,452,Seguros Pacífico,2025-11
+22,1984,Semvra,2025-11
+2,2840,Serie,2025-11
+22715,1,Shippify,2025-11
+6787,1566,Siigo,2025-11
+98,1811,Sistecrédito,2025-11
+55979,1761,Solca,2025-11
+2,2858,Soma Ring,2025-11
+35,2759,Somos + Broker de seguros,2025-11
+2,1865,Start Co,2025-11
+2,2836,Super self service test,2025-11
+238,1641,Supreme Ventures,2025-11
+256,2688,Swimlab -  Juan Pablo,2025-11
+57,2001,TCLOG,2025-11
+4,2704,TECFORPRO S.A.S,2025-11
+126,2242,TIA Shopper,2025-11
+24,1995,TNT Control Plagas,2025-11
+364,2299,TOYS & HOBBIES,2025-11
+369,1384,Talento Humano,2025-11
+11,2600,Tecnodescuento,2025-11
+3,2613,Ten en Ten México,2025-11
+67,1946,Total Education Program,2025-11
+5,2014,Totalplay,2025-11
+6905,183,Tracklink,2025-11
+703,257,Tracklink Área Financiera,2025-11
+7196,823,Tuenti POC,2025-11
+18388,1890,Tuenti Vendedores,2025-11
+91938,125,UTPL Consultas,2025-11
+91,2721,Universidad Anglo Hispano Mexicana,2025-11
+1,2738,Universidad Iberoamericana,2025-11
+937,2205,Universidad Insurgente,2025-11
+1196,807,Universidad de las Artes,2025-11
+3,2549,Uno punto uno,2025-11
+104,2684,Uraga,2025-11
+90,2258,VACAN ELECTRODOMESTICOS,2025-11
+25,2252,Valorenz,2025-11
+213904,95,Veris,2025-11
+76,1860,Vitapro,2025-11
+408,1133,Vivalia,2025-11
+6,2828,Vivobook,2025-11
+1,2753,WATERSUPPLY EC,2025-11
+376691,1696,XTRIM,2025-11
+3,2310,Yappy,2025-11
+22763,353,Yomp,2025-11
+3,2838,alain+test001@jelou.ai,2025-11
+4,2866,vidaintegraoficial,2025-11
+18,2469,101 Grados,2025-12
+168,2236,11 Gallery Tattoo,2025-12
+178,2325,4 Me,2025-12
+99027,312,ABInBev Colombia,2025-12
+1,2300,ABS,2025-12
+552,2760,AEROCARGOEC S.A.S,2025-12
+1,2705,AM PUBLICIDAD,2025-12
+77,3119,ARCA,2025-12
+45,2597,Academia de música Franz Liszt,2025-12
+85,2419,Algesta,2025-12
+144,2031,Alpha Trading,2025-12
+102,462,Ambiente QA,2025-12
+64,2314,Apptividad,2025-12
+95,359,Arca EC,2025-12
+62778,362,Arca PE,2025-12
+285,1068,Arca PE Ecommerce,2025-12
+30535,470,Arca PE Proyecto Frío,2025-12
+2,1940,Arca camiones,2025-12
+8307,2233,Arca pe Turbo,2025-12
+11,2743,Arkadia - Disruptiva360,2025-12
+4,2802,Armorstorec,2025-12
+62,2401,Aseguradora del Sur,2025-12
+41,317,Aurea,2025-12
+7658,2742,AutoSky,2025-12
+28156,2183,Automekano,2025-12
+272781,1974,BCP Cobranza,2025-12
+12,2156,BCP Cuenta Sueldo,2025-12
+22891,1992,BCP Indi recaudaciones,2025-12
+1195,1925,BCP P2P,2025-12
+638,2297,BCP Pagos recurrentes,2025-12
+760,1245,BG - Banco del Barrio 2,2025-12
+83,3132,BITELNET S.A.S.,2025-12
+302,2918,BORN GLOBAL ECUADOR BGE S.A.S,2025-12
+21038,741,Bajaj,2025-12
+4627,307,Banco Amazonas,2025-12
+1369,930,Banco Bolivariano Cobranzas,2025-12
+8407,1584,Banco Comercial Manabí,2025-12
+1,1993,Banco Delta,2025-12
+3128215,155,Banco Guayaquil,2025-12
+161,811,Banco Guayaquil Cobranzas,2025-12
+187,2750,Banco Industrial,2025-12
+823479,424,Banco Internacional,2025-12
+1733,1028,Banco Solidario,2025-12
+49873,1737,Banco Union,2025-12
+11,133,Banco del Austro,2025-12
+1523,417,Banisi,2025-12
+172524,692,Banisi Chat,2025-12
+46,2393,Barça Academy,2025-12
+1830345,11,BdP,2025-12
+9682,2602,BetCell,2025-12
+117,2955,Biodigestor Ecuador,2025-12
+12154,253,Bivi,2025-12
+48,2744,Bolos Capricho - Jonathan Bermello,2025-12
+5682,2628,Boticas Barcia,2025-12
+196,1649,Bruno,2025-12
+6,2047,CBC,2025-12
+115,2243,CEPSA,2025-12
+6126,1848,CIVE,2025-12
+19426,438,CNT Ecuador,2025-12
+6,2030,COLLSERV,2025-12
+215,2882,COMERCIO OLLAGUE Dermage,2025-12
+6,2876,COMSUCRE,2025-12
+50,2752,CONSORCIO FLXJSA SAS,2025-12
+2215,2896,Cable Magico,2025-12
+973,2395,Cafering Eventos,2025-12
+1728,316,CasaPlan MotorPlan,2025-12
+322,1983,Centric,2025-12
+19906,138,Cervecería Nacional,2025-12
+12,1898,Cibernetica,2025-12
+6,2737,Citas & Agendas ,2025-12
+1,1847,Ck Comercializadora,2025-12
+47617,1559,Coca Cola en tu hogar,2025-12
+1,2691,Colecciones Jonathan-S,2025-12
+1231,2413,Comfama,2025-12
+2,3047,CompanyTest2,2025-12
+7,3088,Compañia SMBS 2,2025-12
+46886,2255,Computron,2025-12
+703,2049,Conauto,2025-12
+298,2768,Confort Sport,2025-12
+8,2653,Consultorio Odontológico Salud Bucal - ANGULO OSUNA JOSE LUIS,2025-12
+3598,1694,Cooperativa Daquilema,2025-12
+15011,855,Cooperativa El Sagrario,2025-12
+24929,2130,Cresa,2025-12
+38,3011,CristianLLC,2025-12
+603,2326,DELTASEGUROS,2025-12
+13,3142,DETMEDECUADOR S.A.S.,2025-12
+2,2461,DIGRAL,2025-12
+1,2617,DKB LTD. SOCIEDAD POR ACCIONES SIMPLIFICADA,2025-12
+456,2563,DPIKEOS S.A.S. - Jean Carlos Garcia,2025-12
+88,1760,Danec,2025-12
+675,35,Datafast,2025-12
+379,1926,Datilmedia S.A.,2025-12
+392,2309,Demo Pocket Retail,2025-12
+6,2230,Demo partners,2025-12
+19,2971,Denny Schuldt + Prueba,2025-12
+460539,150,Deprati,2025-12
+2418,5,DevLab,2025-12
+94,1512,Dialogus,2025-12
+39750,110,Dipaso,2025-12
+887,2042,Disensa,2025-12
+623,2711,Don Pescao,2025-12
+1224,2073,Donutterapia,2025-12
+23,3100,Dr Fernando Guzman - Cirujano Urologo,2025-12
+98,2934,Dr Manuel Cedeño,2025-12
+73,2235,Dreamers Fútbol Club,2025-12
+1393,1945,Duragas,2025-12
+3,3140,Dyadent,2025-12
+5,2987,EPA,2025-12
+239,1053,EclipSoft,2025-12
+6,2703,Ecotec,2025-12
+1085,2603,Ecuaimco,2025-12
+566,2808,Ecufrutta - David Labanda,2025-12
+970,2110,Ecugenius S.A.,2025-12
+193,2526,Educación Multicolor,2025-12
+20732,28,El Rosado,2025-12
+183,2902,Elektra,2025-12
+124,311,Espol,2025-12
+369,2809,Evalua Academy - Monica Coronel,2025-12
+51,1160,Expand,2025-12
+1317,1828,FD CENTER,2025-12
+4,3120,FIBERGO CR,2025-12
+10,2482,FOODLINE,2025-12
+621,1951,FPV Seguros,2025-12
+38,2686,FUNDACION REYSOL - GARCIA SIERRA CHRISTIAN NICOLAY,2025-12
+2131,2190,Fadesa,2025-12
+350608,2276,Falabella,2025-12
+4,2524,Farmacias Danna Carolina,2025-12
+4,2856,Fernando Alvarado,2025-12
+260,2880,Ferretería 3H,2025-12
+5610,2455,Fideval,2025-12
+36,2646,Financiera Efectiva,2025-12
+1,1758,Finanza AI,2025-12
+72337,1937,Flexi,2025-12
+141937,124,GEA Ecuador,2025-12
+203,149,GEA Recursos Humanos,2025-12
+75,2012,GEOMIL,2025-12
+2041,2312,GRUPASA,2025-12
+2626,2642,Granasa,2025-12
+401,2452,Grupo Carrera - Rodrigo Carrera,2025-12
+5054,2456,Grupo ElJuri,2025-12
+19,2264,GrupoMas - Claro,2025-12
+14,3037,HB + Juanse,2025-12
+113,2754,HEAD Ecuador,2025-12
+102,2670,HFIT,2025-12
+909,2985,HHS COMEX DISTRIBUCION S.A.S.,2025-12
+357,2655,Haceb,2025-12
+52,2770,IMPORTADORA KING,2025-12
+1271,1925,INDI - RECAUDACIONES,2025-12
+38,2977,INSPECTEN,2025-12
+4,3016,INSPECTEN SMBs,2025-12
+7,2466,INSTITUTO SERVUGON S.A.S.,2025-12
+39,2800,INSTITUTO SUPERIOR TECNOLOGICO KRUGER TEK,2025-12
+98,1655,Implementaciones Training,2025-12
+8,368,Innovat Latam.,2025-12
+25,2999,Integración Genesys Test,2025-12
+779932,85,Interagua GEA,2025-12
+270,321,Interoc,2025-12
+672,450,Interoc EC,2025-12
+39,2139,Intervalores,2025-12
+93,1955,Italika,2025-12
+387,1957,Jelou Banking,2025-12
+911,2601,Jelou Clientes,2025-12
+409,135,Jelou Dev,2025-12
+1578,1944,Jelou Marketplace,2025-12
+14662,361,Jelou Pay,2025-12
+847,331,Jelou Producto,2025-12
+30,2033,Jelou Revenue,2025-12
+447,322,Jelou Shop,2025-12
+5,3078,JelouAI,2025-12
+27,3072,Jeloullc,2025-12
+44421,288,Junta de Beneficencia,2025-12
+2,2717,KABOOM SHOW&amp;EVENTOS,2025-12
+669,2505,KOBE,2025-12
+1,2692,KUMAMOTO,2025-12
+86,1266,Katherine del Carmen Ovando,2025-12
+3,2959,Kim Self Service,2025-12
+7630,2397,Kitton,2025-12
+95,2762,LA CASA DEL CARRETON,2025-12
+28,2656,LEGALIX - Olvis Quintana,2025-12
+23,2612,LINKHOME,2025-12
+160,2471,La Fabril,2025-12
+717,1988,La casa de los abuelos,2025-12
+3095,935,Lavca,2025-12
+2,2484,Legado motors,2025-12
+153092,2125,Lotería Nacional EC,2025-12
+3768,2929,Lucha Campesina,2025-12
+8,2951,Luis Personal,2025-12
+667,2774,Luné Skin and Massage - MONICA SANCHEZ,2025-12
+595,258,Luzverde,2025-12
+1,2716,MANKA SAN JUAN,2025-12
+7,2298,MAYA PIONEER,2025-12
+307,2893,MERCADER M593,2025-12
+300,2625,MMG BANK,2025-12
+11,2614,MUSE ACADEMY,2025-12
+7048,745,Mail Boxes Etc,2025-12
+35,2842,Mantenimiento Automotriz Ortega,2025-12
+4946,1950,Marriott,2025-12
+52876,405,Massline,2025-12
+196961,2479,Mi Banco POC,2025-12
+49,2424,Miss Lashes,2025-12
+53832,111,Muebles El Bosque,2025-12
+361,2506,NOE,2025-12
+202,2663,Natfit implementos deportivos,2025-12
+939,1482,Naturisa,2025-12
+1520563,147,Netlife,2025-12
+1253,2676,Nexxia - Grupo Salinas,2025-12
+2,2694,Novadental,2025-12
+97,2957,Oficina de Admisiones Universidad B - UBE,2025-12
+443,1962,Ondu Cloud,2025-12
+4,2683,Ophira,2025-12
+149,2693,Opti David Chavez,2025-12
+39,3004,Organización de prueba test,2025-12
+2487,1480,Oriental,2025-12
+14771,1992,P2P - BCP,2025-12
+542,2528,PERSONAL CLEANER & CLEANERS S.A.,2025-12
+813,2729,PTM,2025-12
+113,2610,PUERTACOLORCORP SA,2025-12
+196,2890,Pacifico Seguros,2025-12
+66,2605,Padelcity Cuenca,2025-12
+64,2745,Panda - Sonax,2025-12
+77,2799,Partylovers,2025-12
+20,304,Picker,2025-12
+112695,337,Piloto Creditia,2025-12
+7,2769,Pitz,2025-12
+1206,2678,Pizza Planet SMBs,2025-12
+78,45,Plus Services,2025-12
+2673,2425,Plustelesmart,2025-12
+91293,54,Pycca,2025-12
+55,2379,QPay,2025-12
+2,2620,Quality Assurance,2025-12
+50,2870,RAVENROCK-DIEGO CASTRO,2025-12
+2,2690,RCM Relojeria,2025-12
+46,2728,REF,2025-12
+373,2322,RELIV,2025-12
+11,2239,Racevents,2025-12
+34,2277,Rappipay,2025-12
+264,1975,Refrielectric,2025-12
+782,2775,SANTANA BREWING,2025-12
+2,2623,SILHO - Dr. Edwin Ayala,2025-12
+10,3169,SMBs Test,2025-12
+64,2669,Sajú,2025-12
+1784,1633,SaludSA,2025-12
+1,2499,Sanamente,2025-12
+4,3085,Santa Marina BH,2025-12
+34,2457,Scotiabank,2025-12
+326832,123,Security Data,2025-12
+74,3006,Securityrisk,2025-12
+156,1845,Seguros Confianza,2025-12
+80,452,Seguros Pacífico,2025-12
+5,1984,Semvra,2025-12
+21002,1,Shippify,2025-12
+10012,1566,Siigo,2025-12
+150,1811,Sistecrédito,2025-12
+2,2998,Smart Services,2025-12
+46568,1761,Solca,2025-12
+3,2759,Somos + Broker de seguros,2025-12
+1,1865,Start Co,2025-12
+69,1641,Supreme Ventures,2025-12
+183,2688,Swimlab -  Juan Pablo,2025-12
+69,2001,TCLOG,2025-12
+334,2242,TIA Shopper,2025-12
+59,1995,TNT Control Plagas,2025-12
+310,2299,TOYS & HOBBIES,2025-12
+2,2961,TRUKEL X ,2025-12
+513,1384,Talento Humano,2025-12
+1,3007,TecnoSanpar,2025-12
+106,1946,Total Education Program,2025-12
+5685,183,Tracklink,2025-12
+1553,257,Tracklink Área Financiera,2025-12
+27,3015,Tu Tienda en Casa,2025-12
+103,3076,TuGOU - Hiperlicores,2025-12
+7717,823,Tuenti POC,2025-12
+20464,1890,Tuenti Vendedores,2025-12
+76712,125,UTPL Consultas,2025-12
+104,2721,Universidad Anglo Hispano Mexicana,2025-12
+684,2205,Universidad Insurgente,2025-12
+1129,807,Universidad de las Artes,2025-12
+20,2684,Uraga,2025-12
+41,2258,VACAN ELECTRODOMESTICOS,2025-12
+13,2089,VIRTUALTEK,2025-12
+216943,95,Veris,2025-12
+99,1860,Vitapro,2025-12
+3,3128,Vitapro Comunicación interna,2025-12
+221,1133,Vivalia,2025-12
+12,2753,WATERSUPPLY EC,2025-12
+304156,1696,XTRIM,2025-12
+25727,353,Yomp,2025-12
+2,1964,ZHM Seguros,2025-12
+1,3135,restaurante,2025-12

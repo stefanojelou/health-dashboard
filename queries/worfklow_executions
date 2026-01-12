@@ -1,0 +1,32 @@
+[
+  {
+    "$match": {
+      "createdAt": { 
+        "$gte": ISODate("2025-01-01T00:00:00Z"), 
+        "$lt": ISODate("2026-01-01T00:00:00Z") 
+      }
+    }
+  },
+  {
+    "$group": {
+      "_id": {
+        "companyId": "$company.id",
+        "companyName": "$company.name",
+        "month": { "$dateToString": { "format": "%Y-%m", "date": "$createdAt" } }
+      },
+      "execution_count": { "$sum": "$total" } // Change to "$sum": 1 if each doc = 1 execution
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "companyId": "$_id.companyId",
+      "companyName": "$_id.companyName",
+      "month": "$_id.month",
+      "execution_count": 1
+    }
+  },
+  {
+    "$sort": { "month": 1, "companyName": 1 }
+  }
+]
