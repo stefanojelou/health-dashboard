@@ -130,6 +130,11 @@ def load_data():
     df_dau = pd.read_csv('data/logsM.ai_daily_active_users.csv')
     df_workflow = pd.read_csv('data/builder.workflow_executions_logs.csv')
     
+    # Combine MARKETING and MARKETING_LITE into a single MARKETING category
+    df_billing['conversationType'] = df_billing['conversationType'].replace({
+        'MARKETING_LITE': 'MARKETING',
+    })
+    
     # Pivot billing data to have conversation types as separate columns
     df_billing_pivot = df_billing.pivot_table(
         index=['companyId', 'month'],
@@ -188,14 +193,11 @@ with st.sidebar.expander("📖 Glosario de Variables"):
     **execution_count**  
     Número de ejecuciones de workflows (Brain). Indica uso de automatizaciones.
     
-    **MARKETING_LITE**  
-    HSMs de campañas de marketing (plantillas promocionales de WhatsApp).
+    **MARKETING**  
+    HSMs de campañas de marketing (incluye MARKETING y MARKETING_LITE - plantillas promocionales de WhatsApp).
     
     **UTILITY**  
     HSMs transaccionales/utility (confirmaciones, notificaciones, alertas).
-    
-    **MARKETING**  
-    HSMs de marketing tradicional (si aplica).
     
     **dau_count**  
     Daily Active Users - suma de usuarios activos por día en el mes.
@@ -231,8 +233,8 @@ if view == "📈 Overview":
         st.metric("Total Executions", f"{total_executions:,.0f}" if pd.notna(total_executions) else "N/A")
     
     with col2:
-        total_marketing_lite = df_month['MARKETING_LITE'].sum() if 'MARKETING_LITE' in df_month.columns else 0
-        st.metric("Marketing Lite", f"{total_marketing_lite:,.0f}" if pd.notna(total_marketing_lite) else "N/A")
+        total_marketing = df_month['MARKETING'].sum() if 'MARKETING' in df_month.columns else 0
+        st.metric("Marketing", f"{total_marketing:,.0f}" if pd.notna(total_marketing) else "N/A")
     
     with col3:
         total_utility = df_month['UTILITY'].sum() if 'UTILITY' in df_month.columns else 0
@@ -475,8 +477,7 @@ elif view == "📊 Distributions":
     # Define thresholds for each metric to cap the distribution
     metric_thresholds = {
         'execution_count': 100000,
-        'MARKETING_LITE': 100000,
-        'MARKETING': 50000,
+        'MARKETING': 100000,
         'UTILITY': 50000,
         'dau_count': 10000,
         'unique_users_count': 5000
