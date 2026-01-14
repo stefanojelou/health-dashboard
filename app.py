@@ -267,20 +267,20 @@ if view == "📈 Overview":
         st.plotly_chart(fig, use_container_width=True)
     
     with col2:
-        # Billing by conversation type over time
+        # Billing by conversation type over time - stacked bar chart
         billing_by_month = df.groupby('month')[conv_type_cols].sum().reset_index()
         fig = go.Figure()
         colors = ['#00d4ff', '#ff6b6b', '#ffd93d', '#00ff88']
         for i, col in enumerate(conv_type_cols):
-            fig.add_trace(go.Scatter(
+            fig.add_trace(go.Bar(
                 x=billing_by_month['month'],
                 y=billing_by_month[col],
-                mode='lines+markers',
                 name=col,
-                line=dict(color=colors[i % len(colors)])
+                marker_color=colors[i % len(colors)]
             ))
         fig.update_layout(
             title='Billable Count by Conversation Type',
+            barmode='stack',
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
             font_color='#ccd6f6',
@@ -290,9 +290,13 @@ if view == "📈 Overview":
     
     col1, col2 = st.columns(2)
     
+    # Calculate shared y-axis range for DAU and Unique Users
+    dau_by_month = df.groupby('month')['dau_count'].sum().reset_index()
+    users_by_month = df.groupby('month')['unique_users_count'].sum().reset_index()
+    max_y_users = max(dau_by_month['dau_count'].max(), users_by_month['unique_users_count'].max()) * 1.1
+    
     with col1:
         # DAU over time
-        dau_by_month = df.groupby('month')['dau_count'].sum().reset_index()
         fig = px.line(dau_by_month, x='month', y='dau_count',
                       title='Daily Active Users Over Time',
                       markers=True)
@@ -300,14 +304,14 @@ if view == "📈 Overview":
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
             font_color='#ccd6f6',
-            title_font_color='#00d4ff'
+            title_font_color='#00d4ff',
+            yaxis=dict(range=[0, max_y_users])
         )
         fig.update_traces(line_color='#ff6b6b', marker_color='#ffd93d')
         st.plotly_chart(fig, use_container_width=True)
     
     with col2:
         # Unique users over time
-        users_by_month = df.groupby('month')['unique_users_count'].sum().reset_index()
         fig = px.line(users_by_month, x='month', y='unique_users_count',
                       title='Unique Users Over Time',
                       markers=True)
@@ -315,7 +319,8 @@ if view == "📈 Overview":
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
             font_color='#ccd6f6',
-            title_font_color='#00d4ff'
+            title_font_color='#00d4ff',
+            yaxis=dict(range=[0, max_y_users])
         )
         fig.update_traces(line_color='#00ff88', marker_color='#00d4ff')
         st.plotly_chart(fig, use_container_width=True)
@@ -467,25 +472,55 @@ elif view == "📊 Distributions":
     available_metrics = [m for m in available_metrics if m in df_month.columns]
     metric = st.selectbox("Select Metric", available_metrics)
     
+    # Define thresholds for each metric to cap the distribution
+    metric_thresholds = {
+        'execution_count': 100000,
+        'MARKETING_LITE': 100000,
+        'MARKETING': 50000,
+        'UTILITY': 50000,
+        'dau_count': 10000,
+        'unique_users_count': 5000
+    }
+    threshold = metric_thresholds.get(metric, 100000)
+    
+    # Create capped data for histogram
+    df_month_capped = df_month.copy()
+    df_month_capped[f'{metric}_capped'] = df_month_capped[metric].apply(
+        lambda x: threshold if pd.notna(x) and x > threshold else x
+    )
+    
+    # Count outliers
+    outliers_count = (df_month[metric] > threshold).sum()
+    normal_count = (df_month[metric] <= threshold).sum()
+    
     col1, col2 = st.columns(2)
     
     with col1:
-        # Histogram
-        fig = px.histogram(df_month, x=metric, nbins=50,
-                          title=f'Distribution of {metric}')
+        # Histogram with capped values
+        # Create bins from 0 to threshold, plus one bin for outliers
+        df_for_hist = df_month[df_month[metric].notna()].copy()
+        df_normal = df_for_hist[df_for_hist[metric] <= threshold]
+        
+        fig = px.histogram(df_normal, x=metric, nbins=50,
+                          title=f'Distribution of {metric} (0 to {threshold:,})')
         fig.update_layout(
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
             font_color='#ccd6f6',
-            title_font_color='#00d4ff'
+            title_font_color='#00d4ff',
+            xaxis=dict(range=[0, threshold])
         )
         fig.update_traces(marker_color='#00d4ff')
         st.plotly_chart(fig, use_container_width=True)
+        
+        # Show outliers info
+        if outliers_count > 0:
+            st.info(f"📊 **{outliers_count} companies** have {metric} > {threshold:,} (not shown in histogram)")
     
     with col2:
-        # Box plot
+        # Box plot (keep original for full picture)
         fig = px.box(df_month, y=metric,
-                    title=f'Box Plot of {metric}')
+                    title=f'Box Plot of {metric} (full range)')
         fig.update_layout(
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
@@ -506,21 +541,50 @@ elif view == "📊 Distributions":
     col4.metric("Min", f"{stats['min']:,.0f}" if pd.notna(stats['min']) else "N/A")
     col5.metric("Max", f"{stats['max']:,.0f}" if pd.notna(stats['max']) else "N/A")
     
-    # Top companies for this metric
-    st.subheader(f"🏆 Top 15 Companies by {metric}")
-    top = df_month.nlargest(15, metric)[['companyId', 'companyName', metric]]
+    # Top companies for this metric - with grouped outliers bar
+    st.subheader(f"🏆 Top Companies by {metric}")
     
-    fig = px.bar(top, x='companyName', y=metric, 
-                 title=f'Top 15 Companies by {metric}')
-    fig.update_layout(
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)',
-        font_color='#ccd6f6',
-        title_font_color='#00d4ff',
-        xaxis_tickangle=-45
-    )
-    fig.update_traces(marker_color='#00d4ff')
-    st.plotly_chart(fig, use_container_width=True)
+    # Get top 10 companies above threshold as "Power Users"
+    top_outliers = df_month[df_month[metric] > threshold].nlargest(10, metric)
+    top_normal = df_month[df_month[metric] <= threshold].nlargest(15, metric)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        # Power users (above threshold)
+        st.markdown(f"**🚀 Power Users (>{threshold:,})**")
+        if not top_outliers.empty:
+            fig = px.bar(top_outliers, x='companyName', y=metric, 
+                         title=f'Top {len(top_outliers)} Power Users')
+            fig.update_layout(
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#ccd6f6',
+                title_font_color='#00d4ff',
+                xaxis_tickangle=-45
+            )
+            fig.update_traces(marker_color='#ff6b6b')
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info(f"No companies with {metric} > {threshold:,}")
+    
+    with col2:
+        # Normal range top companies
+        st.markdown(f"**📊 Top Companies (≤{threshold:,})**")
+        if not top_normal.empty:
+            fig = px.bar(top_normal, x='companyName', y=metric, 
+                         title=f'Top {len(top_normal)} in Normal Range')
+            fig.update_layout(
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#ccd6f6',
+                title_font_color='#00d4ff',
+                xaxis_tickangle=-45
+            )
+            fig.update_traces(marker_color='#00d4ff')
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("No companies in normal range")
 
 elif view == "📉 MoM Analysis":
     st.header("📉 Month-over-Month Analysis")
