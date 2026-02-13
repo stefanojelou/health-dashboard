@@ -1,0 +1,68 @@
+[
+  {
+    "$match": {
+      "createdAt": {
+        "$gte": ISODate("2025-01-01T00:00:00Z"),
+        "$lt": ISODate("2026-01-01T00:00:00Z")
+      },
+      "companyId": { "$ne": null },
+      "referenceId": { "$ne": null }
+    }
+  },
+  {
+    "$project": {
+      "companyId": 1,
+      "referenceId": 1,
+      "month": { "$dateToString": { "format": "%Y-%m", "date": "$createdAt" } },
+      "day": { "$dateToString": { "format": "%Y-%m-%d", "date": "$createdAt" } }
+    }
+  },
+  {
+    "$group": {
+      "_id": {
+        "companyId": "$companyId",
+        "month": "$month",
+        "day": "$day"
+      },
+      "daily_users": { "$addToSet": "$referenceId" }
+    }
+  },
+  {
+    "$project": {
+      "_id": 1,
+      "daily_unique_users": { "$size": "$daily_users" },
+      "daily_users": 1
+    }
+  },
+  {
+    "$group": {
+      "_id": {
+        "companyId": "$_id.companyId",
+        "month": "$_id.month"
+      },
+      "dau_count": { "$sum": "$daily_unique_users" },
+      "daily_user_sets": { "$push": "$daily_users" }
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "companyId": "$_id.companyId",
+      "month": "$_id.month",
+      "dau_count": 1,
+      "unique_users_count": {
+        "$size": {
+          "$reduce": {
+            "input": "$daily_user_sets",
+            "initialValue": [],
+            "in": { "$setUnion": ["$$value", "$$this"] }
+          }
+        }
+      }
+    }
+  },
+  {
+    "$sort": { "month": 1, "companyId": 1 }
+  }
+]
+
