@@ -2,8 +2,7 @@
   {
     "$match": {
       "createdAt": {
-        "$gte": ISODate("2025-01-01T00:00:00Z"),
-        "$lt": ISODate("2026-01-01T00:00:00Z")
+        "$gte": ISODate("2025-01-01T00:00:00Z")
       },
       "companyId": { "$ne": null },
       "referenceId": { "$ne": null }
@@ -13,7 +12,18 @@
     "$project": {
       "companyId": 1,
       "referenceId": 1,
-      "month": { "$dateToString": { "format": "%Y-%m", "date": "$createdAt" } },
+      "isoDay": { "$isoDayOfWeek": "$createdAt" },
+      "week_end_sunday": {
+        "$dateToString": {
+          "format": "%Y-%m-%d",
+          "date": {
+            "$add": [
+              "$createdAt",
+              { "$multiply": [{ "$subtract": [7, { "$isoDayOfWeek": "$createdAt" }] }, 86400000] }
+            ]
+          }
+        }
+      },
       "day": { "$dateToString": { "format": "%Y-%m-%d", "date": "$createdAt" } }
     }
   },
@@ -21,7 +31,7 @@
     "$group": {
       "_id": {
         "companyId": "$companyId",
-        "month": "$month",
+        "week_end_sunday": "$week_end_sunday",
         "day": "$day"
       },
       "daily_users": { "$addToSet": "$referenceId" }
@@ -38,7 +48,7 @@
     "$group": {
       "_id": {
         "companyId": "$_id.companyId",
-        "month": "$_id.month"
+        "week_end_sunday": "$_id.week_end_sunday"
       },
       "dau_count": { "$sum": "$daily_unique_users" },
       "daily_user_sets": { "$push": "$daily_users" }
@@ -48,7 +58,7 @@
     "$project": {
       "_id": 0,
       "companyId": "$_id.companyId",
-      "month": "$_id.month",
+      "week_end_sunday": "$_id.week_end_sunday",
       "dau_count": 1,
       "unique_users_count": {
         "$size": {
@@ -62,7 +72,7 @@
     }
   },
   {
-    "$sort": { "month": 1, "companyId": 1 }
+    "$sort": { "week_end_sunday": 1, "companyId": 1 }
   }
 ]
 

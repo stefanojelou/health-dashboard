@@ -1,20 +1,47 @@
 [
   {
     "$match": {
-      "createdAt": { 
-        "$gte": ISODate("2025-01-01T00:00:00Z"), 
-        "$lt": ISODate("2026-01-01T00:00:00Z") 
-      }
+      "createdAt": {
+        "$gte": ISODate("2025-01-01T00:00:00Z")
+      },
+      "company.id": { "$ne": null }
+    }
+  },
+  {
+    "$project": {
+      "companyId": "$company.id",
+      "companyName": "$company.name",
+      "isoDay": { "$isoDayOfWeek": "$createdAt" },
+      "createdAt": 1,
+      "total": 1
+    }
+  },
+  {
+    "$project": {
+      "companyId": 1,
+      "companyName": 1,
+      "week_end_sunday": {
+        "$dateToString": {
+          "format": "%Y-%m-%d",
+          "date": {
+            "$add": [
+              "$createdAt",
+              { "$multiply": [{ "$subtract": [7, "$isoDay"] }, 86400000] }
+            ]
+          }
+        }
+      },
+      "total": 1
     }
   },
   {
     "$group": {
       "_id": {
-        "companyId": "$company.id",
-        "companyName": "$company.name",
-        "month": { "$dateToString": { "format": "%Y-%m", "date": "$createdAt" } }
+        "companyId": "$companyId",
+        "companyName": "$companyName",
+        "week_end_sunday": "$week_end_sunday"
       },
-      "execution_count": { "$sum": "$total" } // Change to "$sum": 1 if each doc = 1 execution
+      "execution_count": { "$sum": "$total" }
     }
   },
   {
@@ -22,11 +49,11 @@
       "_id": 0,
       "companyId": "$_id.companyId",
       "companyName": "$_id.companyName",
-      "month": "$_id.month",
+      "week_end_sunday": "$_id.week_end_sunday",
       "execution_count": 1
     }
   },
   {
-    "$sort": { "month": 1, "companyName": 1 }
+    "$sort": { "week_end_sunday": 1, "companyName": 1 }
   }
 ]
