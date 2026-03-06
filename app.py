@@ -148,45 +148,100 @@ def load_data():
     ]
     company_metric_cols = [c for c in company_metric_cols if c in df.columns]
 
-    weekly_totals = df.groupby('week_end_sunday', as_index=False)[company_metric_cols].sum()
-    if {'week_end_sunday', 'signups', 'self_service', 'enterprise', 'other_plans'}.issubset(df.columns):
-        signup_weekly = (
-            df[['week_end_sunday', 'signups', 'self_service', 'enterprise', 'other_plans']]
+    return df, company_metric_cols
+
+
+def build_period_data(df, company_metric_cols, frequency):
+    signup_cols = ['signups', 'self_service', 'enterprise', 'other_plans']
+    available_signup_cols = [c for c in signup_cols if c in df.columns]
+
+    if frequency == "Weekly":
+        period_col = 'week_end_sunday'
+        period_label = "Week (Sunday end)"
+
+        df_period = df.copy()
+        totals = df_period.groupby(period_col, as_index=False)[company_metric_cols].sum()
+
+        if available_signup_cols:
+            signup_weekly = (
+                df_period[[period_col] + available_signup_cols]
+                .drop_duplicates(subset=[period_col])
+                .sort_values(period_col)
+            )
+            totals = totals.merge(signup_weekly, on=period_col, how='left')
+
+        return df_period, totals, period_col, period_label
+
+    # Monthly aggregation from weekly input
+    period_col = 'month_start'
+    period_label = "Month"
+
+    df_month = df.copy()
+    df_month[period_col] = df_month['week_end_sunday'].dt.to_period('M').dt.to_timestamp()
+
+    agg_map = {metric: 'sum' for metric in company_metric_cols}
+    if 'companyName' in df_month.columns:
+        agg_map['companyName'] = 'first'
+
+    df_period = (
+        df_month
+        .groupby(['companyId', period_col], as_index=False)
+        .agg(agg_map)
+    )
+
+    # Keep a consistent companyName fallback after aggregation
+    if 'companyName' in df_period.columns:
+        df_period['companyName'] = df_period['companyName'].fillna('Unknown')
+
+    totals = df_period.groupby(period_col, as_index=False)[company_metric_cols].sum()
+
+    if available_signup_cols:
+        signup_monthly = (
+            df_month[['week_end_sunday'] + available_signup_cols]
             .drop_duplicates(subset=['week_end_sunday'])
-            .sort_values('week_end_sunday')
+            .assign(month_start=lambda x: x['week_end_sunday'].dt.to_period('M').dt.to_timestamp())
+            .groupby('month_start', as_index=False)[available_signup_cols]
+            .sum()
         )
-        weekly_totals = weekly_totals.merge(signup_weekly, on='week_end_sunday', how='left')
+        totals = totals.merge(signup_monthly, on='month_start', how='left')
 
-    return df, weekly_totals, company_metric_cols
+    return df_period, totals, period_col, period_label
 
 
-def add_wow_columns(df, metrics):
-    """Add WoW change columns for each metric."""
-    df_with_wow = df.copy()
+def add_period_change_columns(df, metrics, period_col):
+    """Add period-over-period change columns for each metric."""
+    df_with_change = df.copy()
+    df_with_change = df_with_change.sort_values(['companyId', period_col])
     for metric in metrics:
-        if metric in df_with_wow.columns:
-            df_with_wow[f'{metric}_wow'] = df_with_wow.groupby('companyId')[metric].pct_change() * 100
-    return df_with_wow
+        if metric in df_with_change.columns:
+            df_with_change[f'{metric}_wow'] = df_with_change.groupby('companyId')[metric].pct_change() * 100
+    return df_with_change
 
 
 # Load data
-df, weekly_totals, company_metric_cols = load_data()
-df_with_wow = add_wow_columns(df, company_metric_cols)
+df_raw, company_metric_cols = load_data()
 
 # Sidebar
 st.sidebar.markdown("## 🎛️ Filters")
+frequency = st.sidebar.selectbox("Frequency", ["Weekly", "Monthly"], index=0)
 
-# Week filter
-weeks = sorted(weekly_totals['week_end_sunday'].dropna().unique())
-if not weeks:
-    st.error("No weekly data available. Refresh data exports and notebook output.")
+df, weekly_totals, period_col, period_label = build_period_data(df_raw, company_metric_cols, frequency)
+df_with_wow = add_period_change_columns(df, company_metric_cols, period_col)
+
+change_label = "WoW" if frequency == "Weekly" else "MoM"
+period_short = "Week" if frequency == "Weekly" else "Month"
+
+# Period filter
+periods = sorted(weekly_totals[period_col].dropna().unique())
+if not periods:
+    st.error(f"No {frequency.lower()} data available. Refresh data exports and notebook output.")
     st.stop()
-selected_week = st.sidebar.selectbox("Select Week (Sunday end)", weeks, index=len(weeks)-1)
-selected_week = pd.Timestamp(selected_week)
-selected_week_label = selected_week.strftime('%Y-%m-%d')
+selected_period = st.sidebar.selectbox(f"Select {period_label}", periods, index=len(periods)-1)
+selected_period = pd.Timestamp(selected_period)
+selected_period_label = selected_period.strftime('%Y-%m-%d') if frequency == "Weekly" else selected_period.strftime('%Y-%m')
 
 # View selector
-view = st.sidebar.radio("View", ["📈 Overview", "🔍 Company Lookup", "📊 Distributions", "📉 WoW Analysis"])
+view = st.sidebar.radio("View", ["📈 Overview", "🔍 Company Lookup", "📊 Distributions", f"📉 {change_label} Analysis"])
 
 # Main content
 st.title("📊 Salud Cuentas Dashboard")
@@ -219,24 +274,24 @@ with st.sidebar.expander("📖 Glosario de Variables"):
     Signups semanales y Nuevos SMBs (`other_plans`).
 
     **_wow**  
-    Week-over-Week change (%) - cambio porcentual vs semana anterior.
+    Cambio porcentual vs periodo anterior ({change_label}).
     """)
 
 if view == "📈 Overview":
-    st.header(f"Overview - Week ending {selected_week_label}")
+    st.header(f"Overview - {period_short}: {selected_period_label}")
     
     st.markdown("""
     <div style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid #00d4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
         <strong>📋 ¿Qué muestra esta vista?</strong><br>
-        Resumen ejecutivo semanal con métricas agregadas de todo el portafolio.<br><br>
+        Resumen ejecutivo por periodo con métricas agregadas de todo el portafolio.<br><br>
         <strong>🎯 Métricas clave:</strong> Workflow Executions, DAU, Connect Licenses, WhatsApp por tipo, Sign Ups y Nuevos SMBs.<br><br>
-        <strong>💡 Qué aprendes:</strong> Salud general semanal y tendencia de crecimiento/decrecimiento.
+        <strong>💡 Qué aprendes:</strong> Salud general del periodo y tendencia de crecimiento/decrecimiento.
     </div>
     """, unsafe_allow_html=True)
 
-    week_row = weekly_totals[weekly_totals['week_end_sunday'] == selected_week]
+    week_row = weekly_totals[weekly_totals[period_col] == selected_period]
     if week_row.empty:
-        st.warning("No data for selected week.")
+        st.warning(f"No data for selected {period_short.lower()}.")
         st.stop()
     week_row = week_row.iloc[0]
 
@@ -244,11 +299,11 @@ if view == "📈 Overview":
     with col1:
         st.metric("Workflow Executions", f"{week_row.get('execution_count', 0):,.0f}")
     with col2:
-        st.metric("DAU (weekly)", f"{week_row.get('dau_count', 0):,.0f}")
+        st.metric(f"DAU ({frequency.lower()})", f"{week_row.get('dau_count', 0):,.0f}")
     with col3:
         st.metric("Connect Licenses", f"{week_row.get('connect_licenses', 0):,.0f}")
     with col4:
-        active_companies = df[df['week_end_sunday'] == selected_week]['companyId'].nunique()
+        active_companies = df[df[period_col] == selected_period]['companyId'].nunique()
         st.metric("Active Companies", f"{active_companies:,}")
 
     col1, col2, col3, col4 = st.columns(4)
@@ -265,8 +320,8 @@ if view == "📈 Overview":
 
     col1, col2 = st.columns(2)
     with col1:
-        fig = px.line(weekly_totals, x='week_end_sunday', y='execution_count',
-                      title='Workflow Executions Over Time (Weekly)',
+        fig = px.line(weekly_totals, x=period_col, y='execution_count',
+                      title=f'Workflow Executions Over Time ({frequency})',
                       markers=True)
         fig.update_layout(
             plot_bgcolor='rgba(0,0,0,0)',
@@ -283,13 +338,13 @@ if view == "📈 Overview":
         colors = ['#00d4ff', '#ff6b6b', '#ffd93d']
         for i, col in enumerate(wpp_cols):
             fig.add_trace(go.Bar(
-                x=weekly_totals['week_end_sunday'],
+                x=weekly_totals[period_col],
                 y=weekly_totals[col],
                 name=col,
                 marker_color=colors[i % len(colors)]
             ))
         fig.update_layout(
-            title='WhatsApp Billable Count by Type (Weekly)',
+            title=f'WhatsApp Billable Count by Type ({frequency})',
             barmode='stack',
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
@@ -300,8 +355,8 @@ if view == "📈 Overview":
 
     col1, col2 = st.columns(2)
     with col1:
-        fig = px.line(weekly_totals, x='week_end_sunday', y='dau_count',
-                      title='Daily Active Users Over Time (Weekly)',
+        fig = px.line(weekly_totals, x=period_col, y='dau_count',
+                      title=f'Daily Active Users Over Time ({frequency})',
                       markers=True)
         fig.update_layout(
             plot_bgcolor='rgba(0,0,0,0)',
@@ -313,8 +368,8 @@ if view == "📈 Overview":
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
-        fig = px.line(weekly_totals, x='week_end_sunday', y='connect_licenses',
-                      title='Connect Licenses Over Time (Weekly)',
+        fig = px.line(weekly_totals, x=period_col, y='connect_licenses',
+                      title=f'Connect Licenses Over Time ({frequency})',
                       markers=True)
         fig.update_layout(
             plot_bgcolor='rgba(0,0,0,0)',
@@ -325,8 +380,8 @@ if view == "📈 Overview":
         fig.update_traces(line_color='#00ff88', marker_color='#00d4ff')
         st.plotly_chart(fig, use_container_width=True)
 
-    st.subheader("🏢 Top Companies This Week")
-    df_week = df[df['week_end_sunday'] == selected_week]
+    st.subheader(f"🏢 Top Companies This {period_short}")
+    df_week = df[df[period_col] == selected_period]
     display_cols = [
         'companyId', 'companyName', 'execution_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION',
@@ -343,8 +398,8 @@ elif view == "🔍 Company Lookup":
     st.markdown("""
     <div style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid #00d4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
         <strong>📋 ¿Qué muestra esta vista?</strong><br>
-        Deep-dive semanal en una cuenta específica con toda su historia.<br><br>
-        <strong>🎯 Métricas clave:</strong> Valores actuales de cada métrica, cambio WoW (%) y gráficos de evolución semanal.<br><br>
+        Deep-dive por periodo en una cuenta específica con toda su historia.<br><br>
+        <strong>🎯 Métricas clave:</strong> Valores actuales de cada métrica, cambio {change_label} (%) y gráficos de evolución temporal.<br><br>
         <strong>💡 Qué aprendes:</strong> ¿Esta cuenta está creciendo o decayendo? ¿Qué features usa más (workflows vs campañas)? Preparación para llamadas de CS o renovaciones.
     </div>
     """, unsafe_allow_html=True)
@@ -357,7 +412,7 @@ elif view == "🔍 Company Lookup":
     selected_company_id = company_options[selected_company_label]
     
     # Filter data for selected company
-    df_company = df_with_wow[df_with_wow['companyId'] == selected_company_id].sort_values('week_end_sunday')
+    df_company = df_with_wow[df_with_wow['companyId'] == selected_company_id].sort_values(period_col)
     
     if not df_company.empty:
         st.subheader(f"📋 Data for {selected_company_label}")
@@ -377,7 +432,7 @@ elif view == "🔍 Company Lookup":
                 val = latest[metric]
                 wow_col = f'{metric}_wow'
                 wow = latest[wow_col] if wow_col in latest.index else None
-                delta = f"{wow:+.1f}%" if pd.notna(wow) else None
+                delta = f"{change_label}: {wow:+.1f}%" if pd.notna(wow) else None
                 label = metric.replace('_', ' ').title()
                 st.metric(label, f"{val:,.0f}" if pd.notna(val) else "N/A", delta=delta)
         
@@ -387,8 +442,8 @@ elif view == "🔍 Company Lookup":
         col1, col2 = st.columns(2)
         
         with col1:
-            fig = px.bar(df_company, x='week_end_sunday', y='execution_count',
-                        title='Workflow Executions by Week')
+            fig = px.bar(df_company, x=period_col, y='execution_count',
+                        title=f'Workflow Executions by {period_short}')
             fig.update_layout(
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
@@ -404,13 +459,13 @@ elif view == "🔍 Company Lookup":
             for i, col in enumerate(['MARKETING', 'UTILITY', 'AUTHENTICATION']):
                 if col in df_company.columns:
                     fig.add_trace(go.Bar(
-                        x=df_company['week_end_sunday'],
+                        x=df_company[period_col],
                         y=df_company[col],
                         name=col,
                         marker_color=colors[i % len(colors)]
                     ))
             fig.update_layout(
-                title='WhatsApp Billable Count by Type (Weekly)',
+                title=f'WhatsApp Billable Count by Type ({frequency})',
                 barmode='stack',
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
@@ -422,8 +477,8 @@ elif view == "🔍 Company Lookup":
         col1, col2 = st.columns(2)
         
         with col1:
-            fig = px.bar(df_company, x='week_end_sunday', y='dau_count',
-                        title='DAU by Week')
+            fig = px.bar(df_company, x=period_col, y='dau_count',
+                        title=f'DAU by {period_short}')
             fig.update_layout(
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
@@ -434,8 +489,8 @@ elif view == "🔍 Company Lookup":
             st.plotly_chart(fig, use_container_width=True)
         
         with col2:
-            fig = px.bar(df_company, x='week_end_sunday', y='connect_licenses',
-                        title='Connect Licenses by Week')
+            fig = px.bar(df_company, x=period_col, y='connect_licenses',
+                        title=f'Connect Licenses by {period_short}')
             fig.update_layout(
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
@@ -445,8 +500,8 @@ elif view == "🔍 Company Lookup":
             fig.update_traces(marker_color='#00ff88')
             st.plotly_chart(fig, use_container_width=True)
         
-        st.subheader("📊 Full History with WoW Changes")
-        display_cols = ['week_end_sunday', 'execution_count', 'execution_count_wow']
+        st.subheader(f"📊 Full History with {change_label} Changes")
+        display_cols = [period_col, 'execution_count', 'execution_count_wow']
         for col in ['MARKETING', 'UTILITY', 'AUTHENTICATION']:
             display_cols.extend([col, f'{col}_wow'])
         display_cols.extend([
@@ -460,7 +515,7 @@ elif view == "🔍 Company Lookup":
         st.warning("No data found for this company")
 
 elif view == "📊 Distributions":
-    st.header(f"📊 Distributions - {selected_week_label}")
+    st.header(f"📊 Distributions - {selected_period_label}")
     
     st.markdown("""
     <div style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid #00d4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
@@ -471,7 +526,7 @@ elif view == "📊 Distributions":
     </div>
     """, unsafe_allow_html=True)
     
-    df_week = df[df['week_end_sunday'] == selected_week]
+    df_week = df[df[period_col] == selected_period]
     
     available_metrics = [
         'execution_count', 'MARKETING', 'UTILITY',
@@ -584,14 +639,14 @@ elif view == "📊 Distributions":
         else:
             st.info("No companies in normal range")
 
-elif view == "📉 WoW Analysis":
-    st.header("📉 Week-over-Week Analysis")
+elif view == f"📉 {change_label} Analysis":
+    st.header(f"📉 {change_label} Analysis")
     
     st.markdown("""
     <div style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid #00d4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
         <strong>📋 ¿Qué muestra esta vista?</strong><br>
-        Cambios semana a semana a nivel portafolio y por cuenta.<br><br>
-        <strong>🎯 Visualizaciones:</strong> Evolución semanal del total, % cambio WoW (positivo/negativo), Top Gainers y Top Decliners.<br><br>
+        Cambios entre periodos a nivel portafolio y por cuenta.<br><br>
+        <strong>🎯 Visualizaciones:</strong> Evolución temporal del total, % cambio {change_label} (positivo/negativo), Top Gainers y Top Decliners.<br><br>
         <strong>💡 Qué aprendes:</strong> ¿Qué cuentas están en riesgo de churn? (decliners consistentes), ¿Qué cuentas están despegando? (gainers para upsell), Estacionalidad o patrones temporales.
     </div>
     """, unsafe_allow_html=True)
@@ -604,14 +659,14 @@ elif view == "📉 WoW Analysis":
     available_metrics = [m for m in available_metrics if m in weekly_totals.columns]
     metric = st.selectbox("Select Metric", available_metrics)
     
-    overall_wow = weekly_totals[['week_end_sunday', metric]].copy().sort_values('week_end_sunday')
+    overall_wow = weekly_totals[[period_col, metric]].copy().sort_values(period_col)
     overall_wow['wow_change'] = overall_wow[metric].pct_change() * 100
     
     col1, col2 = st.columns(2)
     
     with col1:
-        fig = px.bar(overall_wow, x='week_end_sunday', y=metric,
-                    title=f'Total {metric} by Week')
+        fig = px.bar(overall_wow, x=period_col, y=metric,
+                    title=f'Total {metric} by {period_short}')
         fig.update_layout(
             plot_bgcolor='rgba(0,0,0,0)',
             paper_bgcolor='rgba(0,0,0,0)',
@@ -622,8 +677,8 @@ elif view == "📉 WoW Analysis":
         st.plotly_chart(fig, use_container_width=True)
     
     with col2:
-        fig = px.bar(overall_wow, x='week_end_sunday', y='wow_change',
-                    title=f'WoW Change (%) for {metric}',
+        fig = px.bar(overall_wow, x=period_col, y='wow_change',
+                    title=f'{change_label} Change (%) for {metric}',
                     color='wow_change',
                     color_continuous_scale=['#ff6b6b', '#ffd93d', '#00ff88'])
         fig.update_layout(
@@ -634,18 +689,18 @@ elif view == "📉 WoW Analysis":
         )
         st.plotly_chart(fig, use_container_width=True)
     
-    st.subheader("📋 WoW Summary Table")
+    st.subheader(f"📋 {change_label} Summary Table")
     st.dataframe(overall_wow.round(2), use_container_width=True, hide_index=True)
     
     st.divider()
     
-    st.subheader(f"🔥 Biggest WoW Changes in {selected_week_label}")
+    st.subheader(f"🔥 Biggest {change_label} Changes in {selected_period_label}")
     
-    df_week_wow = df_with_wow[df_with_wow['week_end_sunday'] == selected_week].copy()
+    df_week_wow = df_with_wow[df_with_wow[period_col] == selected_period].copy()
     wow_col = f'{metric}_wow'
     
     if wow_col in df_week_wow.columns:
-        st.markdown("**🎯 Volume vs WoW Change (find big companies at risk)**")
+        st.markdown(f"**🎯 Volume vs {change_label} Change (find big companies at risk)**")
         df_scatter = df_week_wow[df_week_wow[metric].notna() & df_week_wow[wow_col].notna()].copy()
         
         if not df_scatter.empty:
@@ -658,8 +713,8 @@ elif view == "📉 WoW Analysis":
                 color='status',
                 color_discrete_map={'📉 Declining': '#ff6b6b', '📈 Growing': '#00ff88'},
                 hover_data=['companyName', 'companyId'],
-                title=f'{metric} vs WoW Change - Identify Big Accounts at Risk',
-                labels={metric: f'Total {metric}', wow_col: 'WoW Change (%)'}
+                title=f'{metric} vs {change_label} Change - Identify Big Accounts at Risk',
+                labels={metric: f'Total {metric}', wow_col: f'{change_label} Change (%)'}
             )
             
             fig.add_hline(y=0, line_dash="dash", line_color="#ffd93d", opacity=0.5)
@@ -673,7 +728,7 @@ elif view == "📉 WoW Analysis":
             fig.update_traces(marker=dict(size=10, opacity=0.7))
             st.plotly_chart(fig, use_container_width=True)
             
-            st.markdown("**⚠️ Big Accounts Declining (High Volume + Negative WoW)**")
+            st.markdown(f"**⚠️ Big Accounts Declining (High Volume + Negative {change_label})**")
             median_metric = df_scatter[metric].median()
             big_decliners = df_scatter[(df_scatter[metric] > median_metric) & (df_scatter[wow_col] < 0)].sort_values(wow_col)
             
@@ -700,7 +755,7 @@ elif view == "📉 WoW Analysis":
             top_decliners = df_week_wow.nsmallest(10, wow_col)[['companyId', 'companyName', metric, wow_col]]
             st.dataframe(top_decliners.round(2), use_container_width=True, hide_index=True)
     else:
-        st.info("WoW data not available for this metric")
+        st.info(f"{change_label} data not available for this metric")
 
 # Footer
 st.sidebar.divider()
