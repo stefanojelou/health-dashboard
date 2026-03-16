@@ -15,6 +15,7 @@ connect_items AS (
     SELECT
         s.id AS subscription_id,
         s.company_id AS companyId,
+        sp.name AS product_name,
         DATE(s.current_period_start) AS period_start,
         DATE(COALESCE(s.canceled_at, s.cancel_at, s.current_period_end, NOW())) AS period_end,
         COALESCE(NULLIF(si.quantity, 0), 1) AS license_qty
@@ -30,9 +31,10 @@ connect_items AS (
 SELECT
     wc.week_end_sunday,
     ci.companyId,
+    ci.product_name,
     SUM(ci.license_qty) AS connect_licenses
 FROM week_calendar wc
 JOIN connect_items ci
     ON wc.week_end_sunday BETWEEN ci.period_start AND ci.period_end
-GROUP BY wc.week_end_sunday, ci.companyId
-ORDER BY wc.week_end_sunday ASC, ci.companyId ASC;
+GROUP BY wc.week_end_sunday, ci.companyId, ci.product_name
+ORDER BY wc.week_end_sunday ASC, ci.companyId ASC, ci.product_name ASC;

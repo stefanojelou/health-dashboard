@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import re
 
 st.set_page_config(
     page_title="Salud Cuentas Dashboard",
@@ -127,12 +128,13 @@ st.markdown("""
 def load_data():
     df = pd.read_csv('data/merged_weekly_data.csv')
     df['week_end_sunday'] = pd.to_datetime(df['week_end_sunday'])
+    connect_plan_cols = [c for c in df.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
 
     numeric_cols = [
         'execution_count', 'dau_count', 'unique_users_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION', 'connect_licenses',
         'signups', 'self_service', 'enterprise', 'other_plans'
-    ]
+    ] + connect_plan_cols
     for col in numeric_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
@@ -146,14 +148,31 @@ def load_data():
         'execution_count', 'dau_count', 'unique_users_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION', 'connect_licenses'
     ]
+    company_metric_cols += connect_plan_cols
     company_metric_cols = [c for c in company_metric_cols if c in df.columns]
 
     return df, company_metric_cols
 
 
+def format_plan_column_name(col_name):
+    plan_text = re.sub(r'^connect_plan_', '', col_name)
+    return plan_text.replace('_', ' ').strip().title()
+
+
+def combine_plan_lists(series):
+    plans = set()
+    for value in series.dropna():
+        for item in str(value).split(','):
+            cleaned = item.strip()
+            if cleaned:
+                plans.add(cleaned)
+    return ', '.join(sorted(plans))
+
+
 def build_period_data(df, company_metric_cols, frequency):
     signup_cols = ['signups', 'self_service', 'enterprise', 'other_plans']
     available_signup_cols = [c for c in signup_cols if c in df.columns]
+    has_plan_list = 'connect_plan_list' in df.columns
 
     if frequency == "Weekly":
         period_col = 'week_end_sunday'
@@ -170,6 +189,16 @@ def build_period_data(df, company_metric_cols, frequency):
             )
             totals = totals.merge(signup_weekly, on=period_col, how='left')
 
+        if has_plan_list:
+            plan_weekly = (
+                df_period[['companyId', period_col, 'connect_plan_list']]
+                .groupby(['companyId', period_col], as_index=False)['connect_plan_list']
+                .agg(combine_plan_lists)
+            )
+            df_period = df_period.drop(columns=['connect_plan_list'], errors='ignore').merge(
+                plan_weekly, on=['companyId', period_col], how='left'
+            )
+
         return df_period, totals, period_col, period_label
 
     # Monthly aggregation from weekly input
@@ -182,6 +211,8 @@ def build_period_data(df, company_metric_cols, frequency):
     agg_map = {metric: 'sum' for metric in company_metric_cols}
     if 'companyName' in df_month.columns:
         agg_map['companyName'] = 'first'
+    if has_plan_list:
+        agg_map['connect_plan_list'] = combine_plan_lists
 
     df_period = (
         df_month
@@ -380,12 +411,36 @@ if view == "📈 Overview":
         fig.update_traces(line_color='#00ff88', marker_color='#00d4ff')
         st.plotly_chart(fig, use_container_width=True)
 
+    plan_cols = [c for c in weekly_totals.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
+    if plan_cols:
+        st.subheader(f"📦 Active Connect Plans by {period_short}")
+        fig = go.Figure()
+        plan_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6', '#1abc9c']
+        for i, col in enumerate(plan_cols):
+            fig.add_trace(go.Bar(
+                x=weekly_totals[period_col],
+                y=weekly_totals[col],
+                name=format_plan_column_name(col),
+                marker_color=plan_colors[i % len(plan_colors)]
+            ))
+        fig.update_layout(
+            title=f'Connect Active Plans Mix ({frequency})',
+            barmode='stack',
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)',
+            font_color='#ccd6f6',
+            title_font_color='#00d4ff',
+            xaxis_title=period_short,
+            yaxis_title='Active licenses'
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
     st.subheader(f"🏢 Top Companies This {period_short}")
     df_week = df[df[period_col] == selected_period]
     display_cols = [
         'companyId', 'companyName', 'execution_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION',
-        'dau_count', 'connect_licenses'
+        'dau_count', 'connect_licenses', 'connect_plan_list'
     ]
     display_cols = [c for c in display_cols if c in df_week.columns]
     top_companies = df_week.nlargest(10, 'execution_count')[display_cols]
@@ -418,6 +473,8 @@ elif view == "🔍 Company Lookup":
         st.subheader(f"📋 Data for {selected_company_label}")
         
         latest = df_company.iloc[-1].copy()
+        selected_company_period = df_company[df_company[period_col] == selected_period]
+        selected_company_period = selected_company_period.iloc[0] if not selected_company_period.empty else latest
         
         metric_cols = [
             'execution_count', 'MARKETING', 'UTILITY', 'AUTHENTICATION',
@@ -437,6 +494,19 @@ elif view == "🔍 Company Lookup":
                 st.metric(label, f"{val:,.0f}" if pd.notna(val) else "N/A", delta=delta)
         
         st.divider()
+
+        plan_cols_company = [c for c in df_company.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
+        if plan_cols_company:
+            st.subheader(f"📦 Active Connect Plans ({period_short}: {selected_period_label})")
+            active_plan_names = [
+                format_plan_column_name(c)
+                for c in plan_cols_company
+                if selected_company_period.get(c, 0) > 0
+            ]
+            if active_plan_names:
+                st.markdown("**Plans activos:** " + " | ".join(active_plan_names))
+            else:
+                st.info("No active Connect plans in selected period.")
         
         # Company time series
         col1, col2 = st.columns(2)
@@ -499,6 +569,29 @@ elif view == "🔍 Company Lookup":
             )
             fig.update_traces(marker_color='#00ff88')
             st.plotly_chart(fig, use_container_width=True)
+
+        if plan_cols_company:
+            st.subheader(f"📦 Connect Plan Mix by {period_short}")
+            fig = go.Figure()
+            plan_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6', '#1abc9c']
+            for i, col in enumerate(plan_cols_company):
+                fig.add_trace(go.Bar(
+                    x=df_company[period_col],
+                    y=df_company[col],
+                    name=format_plan_column_name(col),
+                    marker_color=plan_colors[i % len(plan_colors)]
+                ))
+            fig.update_layout(
+                title=f'Connect Active Plans - {selected_company_label}',
+                barmode='stack',
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#ccd6f6',
+                title_font_color='#00d4ff',
+                xaxis_title=period_short,
+                yaxis_title='Active licenses'
+            )
+            st.plotly_chart(fig, use_container_width=True)
         
         st.subheader(f"📊 Full History with {change_label} Changes")
         display_cols = [period_col, 'execution_count', 'execution_count_wow']
@@ -507,7 +600,8 @@ elif view == "🔍 Company Lookup":
         display_cols.extend([
             'dau_count', 'dau_count_wow',
             'unique_users_count', 'unique_users_count_wow',
-            'connect_licenses', 'connect_licenses_wow'
+            'connect_licenses', 'connect_licenses_wow',
+            'connect_plan_list'
         ])
         display_cols = [c for c in display_cols if c in df_company.columns]
         st.dataframe(df_company[display_cols].round(2), use_container_width=True, hide_index=True)
