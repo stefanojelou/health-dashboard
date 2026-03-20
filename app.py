@@ -181,13 +181,18 @@ def get_kyc_stage_total_cols(columns):
     present = [c for c in preferred if c in columns]
     if present:
         return present
-    return sorted([c for c in columns if c.startswith('kyc_') and c.endswith('_total') and c != 'kyc_total'])
+    return sorted([
+        c for c in columns
+        if c.startswith(('kyc_document_check_', 'kyc_liveness_', 'kyc_facematch_'))
+        and c.endswith('_total')
+        and c != 'kyc_total'
+    ])
 
 
 def get_kyc_status_cols(columns):
     return sorted([
         c for c in columns
-        if c.startswith('kyc_')
+        if c.startswith(('kyc_document_check_', 'kyc_liveness_', 'kyc_facematch_'))
         and not c.endswith('_total')
         and c not in {'kyc_total'}
         and not c.endswith('_wow')
@@ -700,6 +705,133 @@ elif view == "🔍 Company Lookup":
                 if status_rows:
                     st.markdown("**KYC status detail (selected period)**")
                     st.dataframe(pd.DataFrame(status_rows), use_container_width=True, hide_index=True)
+
+        hil_gov_base_cols = [
+            'kyc_sessions_total',
+            'kyc_gov_entity_queries',
+            'kyc_hil_sessions',
+            'kyc_hil_approved',
+            'kyc_hil_disapproved',
+        ]
+        if all(col in df_company.columns for col in hil_gov_base_cols):
+            st.subheader(f"🏛️ Gobierno + Human in the Loop ({period_short}: {selected_period_label})")
+
+            df_hil = df_company[[period_col] + hil_gov_base_cols].copy().sort_values(period_col).reset_index(drop=True)
+            for col in hil_gov_base_cols:
+                df_hil[col] = pd.to_numeric(df_hil[col], errors='coerce').fillna(0)
+
+            df_hil['kyc_hil_derivation_pct'] = (
+                df_hil['kyc_hil_sessions'] / df_hil['kyc_sessions_total'].replace(0, pd.NA) * 100
+            ).fillna(0)
+            df_hil['kyc_hil_resolution_total'] = df_hil['kyc_hil_approved'] + df_hil['kyc_hil_disapproved']
+            df_hil['kyc_hil_approval_rate_pct'] = (
+                df_hil['kyc_hil_approved'] / df_hil['kyc_hil_resolution_total'].replace(0, pd.NA) * 100
+            ).fillna(0)
+            df_hil['kyc_hil_disapproval_rate_pct'] = (
+                df_hil['kyc_hil_disapproved'] / df_hil['kyc_hil_resolution_total'].replace(0, pd.NA) * 100
+            ).fillna(0)
+
+            selected_rows = df_hil[df_hil[period_col] == selected_period]
+            selected_idx = int(selected_rows.index[-1]) if not selected_rows.empty else len(df_hil) - 1
+            current_hil = df_hil.iloc[selected_idx]
+            prev_hil = df_hil.iloc[selected_idx - 1] if selected_idx > 0 else None
+
+            def _delta_text(curr, prev, is_pct=False):
+                if prev is None or pd.isna(prev):
+                    return None
+                delta = curr - prev
+                if is_pct:
+                    return f"{delta:+.1f} pp"
+                return f"{delta:+,.0f}"
+
+            c1, c2, c3, c4 = st.columns(4)
+            with c1:
+                st.metric(
+                    "Consultas a entidad",
+                    f"{current_hil['kyc_gov_entity_queries']:,.0f}",
+                    _delta_text(
+                        current_hil['kyc_gov_entity_queries'],
+                        prev_hil['kyc_gov_entity_queries'] if prev_hil is not None else None
+                    ),
+                )
+            with c2:
+                st.metric(
+                    "% Derivación HIL",
+                    f"{current_hil['kyc_hil_derivation_pct']:.1f}%",
+                    _delta_text(
+                        current_hil['kyc_hil_derivation_pct'],
+                        prev_hil['kyc_hil_derivation_pct'] if prev_hil is not None else None,
+                        is_pct=True,
+                    ),
+                )
+            with c3:
+                st.metric(
+                    "Tasa aprobación HIL",
+                    f"{current_hil['kyc_hil_approval_rate_pct']:.1f}%",
+                    _delta_text(
+                        current_hil['kyc_hil_approval_rate_pct'],
+                        prev_hil['kyc_hil_approval_rate_pct'] if prev_hil is not None else None,
+                        is_pct=True,
+                    ),
+                )
+            with c4:
+                st.metric(
+                    "Tasa desaprobación HIL",
+                    f"{current_hil['kyc_hil_disapproval_rate_pct']:.1f}%",
+                    _delta_text(
+                        current_hil['kyc_hil_disapproval_rate_pct'],
+                        prev_hil['kyc_hil_disapproval_rate_pct'] if prev_hil is not None else None,
+                        is_pct=True,
+                    ),
+                )
+
+            col1, col2 = st.columns(2)
+            with col1:
+                fig = go.Figure()
+                fig.add_trace(go.Scatter(
+                    x=df_hil[period_col], y=df_hil['kyc_hil_derivation_pct'],
+                    mode='lines+markers', name='Derivación HIL %', line=dict(color='#00d4ff')
+                ))
+                fig.add_trace(go.Scatter(
+                    x=df_hil[period_col], y=df_hil['kyc_hil_approval_rate_pct'],
+                    mode='lines+markers', name='Aprobación HIL %', line=dict(color='#00ff88')
+                ))
+                fig.add_trace(go.Scatter(
+                    x=df_hil[period_col], y=df_hil['kyc_hil_disapproval_rate_pct'],
+                    mode='lines+markers', name='Desaprobación HIL %', line=dict(color='#ff6b6b')
+                ))
+                fig.update_layout(
+                    title=f'HIL Rates - {selected_company_label}',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    font_color='#ccd6f6',
+                    title_font_color='#00d4ff',
+                    xaxis_title=period_short,
+                    yaxis_title='Percent (%)'
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
+            with col2:
+                fig = go.Figure()
+                fig.add_trace(go.Bar(
+                    x=df_hil[period_col], y=df_hil['kyc_gov_entity_queries'],
+                    name='Consultas entidad', marker_color='#ffd93d'
+                ))
+                fig.add_trace(go.Bar(
+                    x=df_hil[period_col], y=df_hil['kyc_hil_sessions'],
+                    name='Sesiones HIL', marker_color='#9b59b6'
+                ))
+                fig.update_layout(
+                    title=f'Entidad vs HIL Volume - {selected_company_label}',
+                    barmode='group',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    font_color='#ccd6f6',
+                    title_font_color='#00d4ff',
+                    xaxis_title=period_short,
+                    yaxis_title='Count'
+                )
+                st.plotly_chart(fig, use_container_width=True)
         
         st.subheader(f"📊 Full History with {change_label} Changes")
         display_cols = [period_col, 'execution_count', 'execution_count_wow']
@@ -716,6 +848,9 @@ elif view == "🔍 Company Lookup":
             kyc_history_cols.append('kyc_total')
         for col in kyc_history_cols:
             display_cols.extend([col, f'{col}_wow'])
+        for col in ['kyc_sessions_total', 'kyc_gov_entity_queries', 'kyc_hil_sessions', 'kyc_hil_approved', 'kyc_hil_disapproved']:
+            if col in df_company.columns:
+                display_cols.extend([col, f'{col}_wow'])
         display_cols = [c for c in display_cols if c in df_company.columns]
         st.dataframe(df_company[display_cols].round(2), use_container_width=True, hide_index=True)
     else:
