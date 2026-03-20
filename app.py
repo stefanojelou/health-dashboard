@@ -129,12 +129,13 @@ def load_data():
     df = pd.read_csv('data/merged_weekly_data.csv')
     df['week_end_sunday'] = pd.to_datetime(df['week_end_sunday'])
     connect_plan_cols = [c for c in df.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
+    kyc_metric_cols = [c for c in df.columns if c.startswith('kyc_')]
 
     numeric_cols = [
         'execution_count', 'dau_count', 'unique_users_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION', 'connect_licenses',
         'signups', 'self_service', 'enterprise', 'other_plans'
-    ] + connect_plan_cols
+    ] + connect_plan_cols + kyc_metric_cols
     for col in numeric_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
@@ -148,7 +149,7 @@ def load_data():
         'execution_count', 'dau_count', 'unique_users_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION', 'connect_licenses'
     ]
-    company_metric_cols += connect_plan_cols
+    company_metric_cols += connect_plan_cols + kyc_metric_cols
     company_metric_cols = [c for c in company_metric_cols if c in df.columns]
 
     return df, company_metric_cols
@@ -167,6 +168,30 @@ def combine_plan_lists(series):
             if cleaned:
                 plans.add(cleaned)
     return ', '.join(sorted(plans))
+
+
+def format_kyc_stage_label(col_name):
+    stage_name = re.sub(r'^kyc_', '', col_name)
+    stage_name = re.sub(r'_total$', '', stage_name)
+    return stage_name.replace('_', ' ').strip().title()
+
+
+def get_kyc_stage_total_cols(columns):
+    preferred = ['kyc_document_check_total', 'kyc_liveness_total', 'kyc_facematch_total']
+    present = [c for c in preferred if c in columns]
+    if present:
+        return present
+    return sorted([c for c in columns if c.startswith('kyc_') and c.endswith('_total') and c != 'kyc_total'])
+
+
+def get_kyc_status_cols(columns):
+    return sorted([
+        c for c in columns
+        if c.startswith('kyc_')
+        and not c.endswith('_total')
+        and c not in {'kyc_total'}
+        and not c.endswith('_wow')
+    ])
 
 
 def build_period_data(df, company_metric_cols, frequency):
@@ -265,7 +290,10 @@ period_short = "Week" if frequency == "Weekly" else "Month"
 # Period filter
 periods = sorted(weekly_totals[period_col].dropna().unique())
 if not periods:
-    st.error(f"No {frequency.lower()} data available. Refresh data exports and notebook output.")
+    st.error(
+        f"No {frequency.lower()} data available. "
+        "Run `python update_dashboard_data.py` to regenerate `data/merged_weekly_data.csv`."
+    )
     st.stop()
 selected_period = st.sidebar.selectbox(f"Select {period_label}", periods, index=len(periods)-1)
 selected_period = pd.Timestamp(selected_period)
@@ -300,6 +328,9 @@ with st.sidebar.expander("📖 Glosario de Variables"):
     
     **connect_licenses**  
     Licencias Connect activas (ACTIVE/TRIALING) por semana.
+
+    **kyc_*_total / kyc_total**  
+    Volumen de pasos KYC por etapa (`document_check`, `liveness`, `facematch`) y total de pasos KYC por periodo.
 
     **signups / other_plans**  
     Signups semanales y Nuevos SMBs (`other_plans`).
@@ -432,6 +463,30 @@ if view == "📈 Overview":
             title_font_color='#00d4ff',
             xaxis_title=period_short,
             yaxis_title='Active licenses'
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+    kyc_stage_cols = get_kyc_stage_total_cols(weekly_totals.columns)
+    if kyc_stage_cols:
+        st.subheader(f"🛂 KYC Steps by Stage ({frequency})")
+        fig = go.Figure()
+        kyc_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6']
+        for i, col in enumerate(kyc_stage_cols):
+            fig.add_trace(go.Bar(
+                x=weekly_totals[period_col],
+                y=weekly_totals[col],
+                name=format_kyc_stage_label(col),
+                marker_color=kyc_colors[i % len(kyc_colors)]
+            ))
+        fig.update_layout(
+            title=f'KYC Steps Volume by Stage ({frequency})',
+            barmode='stack',
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)',
+            font_color='#ccd6f6',
+            title_font_color='#00d4ff',
+            xaxis_title=period_short,
+            yaxis_title='KYC steps'
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -592,6 +647,59 @@ elif view == "🔍 Company Lookup":
                 yaxis_title='Active licenses'
             )
             st.plotly_chart(fig, use_container_width=True)
+
+        kyc_stage_cols_company = get_kyc_stage_total_cols(df_company.columns)
+        if kyc_stage_cols_company:
+            st.subheader(f"🛂 KYC by Stage ({period_short}: {selected_period_label})")
+
+            kyc_metric_cards = list(kyc_stage_cols_company)
+            if 'kyc_total' in df_company.columns:
+                kyc_metric_cards.append('kyc_total')
+
+            kyc_card_cols = st.columns(len(kyc_metric_cards))
+            for i, metric in enumerate(kyc_metric_cards):
+                with kyc_card_cols[i]:
+                    value = selected_company_period.get(metric, 0)
+                    wow_col = f'{metric}_wow'
+                    wow = selected_company_period.get(wow_col) if wow_col in selected_company_period.index else None
+                    delta = f"{change_label}: {wow:+.1f}%" if pd.notna(wow) else None
+                    label = "KYC Total" if metric == 'kyc_total' else f"KYC {format_kyc_stage_label(metric)}"
+                    st.metric(label, f"{value:,.0f}" if pd.notna(value) else "N/A", delta=delta)
+
+            fig = go.Figure()
+            kyc_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6']
+            for i, col in enumerate(kyc_stage_cols_company):
+                fig.add_trace(go.Bar(
+                    x=df_company[period_col],
+                    y=df_company[col],
+                    name=format_kyc_stage_label(col),
+                    marker_color=kyc_colors[i % len(kyc_colors)]
+                ))
+            fig.update_layout(
+                title=f'KYC Stage Volume - {selected_company_label}',
+                barmode='stack',
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#ccd6f6',
+                title_font_color='#00d4ff',
+                xaxis_title=period_short,
+                yaxis_title='KYC steps'
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+            kyc_status_cols = get_kyc_status_cols(df_company.columns)
+            if kyc_status_cols:
+                status_rows = []
+                for col in kyc_status_cols:
+                    value = selected_company_period.get(col, 0)
+                    if pd.notna(value) and value > 0:
+                        status_rows.append({
+                            'KYC Stage + Status': col.replace('kyc_', '').replace('_', ' ').title(),
+                            'Count': int(value)
+                        })
+                if status_rows:
+                    st.markdown("**KYC status detail (selected period)**")
+                    st.dataframe(pd.DataFrame(status_rows), use_container_width=True, hide_index=True)
         
         st.subheader(f"📊 Full History with {change_label} Changes")
         display_cols = [period_col, 'execution_count', 'execution_count_wow']
@@ -603,6 +711,11 @@ elif view == "🔍 Company Lookup":
             'connect_licenses', 'connect_licenses_wow',
             'connect_plan_list'
         ])
+        kyc_history_cols = get_kyc_stage_total_cols(df_company.columns)
+        if 'kyc_total' in df_company.columns:
+            kyc_history_cols.append('kyc_total')
+        for col in kyc_history_cols:
+            display_cols.extend([col, f'{col}_wow'])
         display_cols = [c for c in display_cols if c in df_company.columns]
         st.dataframe(df_company[display_cols].round(2), use_container_width=True, hide_index=True)
     else:

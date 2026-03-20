@@ -1,6 +1,10 @@
 # Secrets - never commit!
 .streamlit/secrets.toml
+.env
+.env.*
+!.env.template
 .csv
+data/scheduled_pipeline.log
 # Python
 __pycache__/
 *.py[cod]
