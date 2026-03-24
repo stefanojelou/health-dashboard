@@ -61,6 +61,27 @@ MYSQL_QUERY_JOBS = {
             "kyc_steps_count",
         },
     },
+    "kyc_hil_government": {
+        "query_file": "kyc_hil_government_weekly.sql",
+        "output_file": "kyc_hil_government_weekly.csv",
+        "env_prefix": "MYSQL_IDENTITY",
+        "required_columns": {
+            "companyId",
+            "week_end_sunday",
+            "kyc_sessions_total",
+            "gov_validated",
+            "gov_not_validated",
+            "hil_doccheck_total",
+            "hil_doccheck_approved",
+            "hil_doccheck_disapproved",
+            "hil_liveness_total",
+            "hil_liveness_approved",
+            "hil_liveness_disapproved",
+            "hil_facematch_total",
+            "hil_facematch_approved",
+            "hil_facematch_disapproved",
+        },
+    },
 }
 
 
@@ -84,6 +105,18 @@ MONGO_QUERY_JOBS = {
             "db": ["MONGO_LOGSM_DB", "MONGO_DAU_DB"],
             "collection": ["MONGO_LOGSM_COLLECTION", "MONGO_DAU_COLLECTION"],
         },
+    },
+}
+
+
+QUERY_GROUPS = {
+    "kyc_and_billing": {
+        "mysql": ["billing_events", "connect_licenses", "kyc_steps", "kyc_hil_government"],
+        "mongo": [],
+    },
+    "rest": {
+        "mysql": ["signups"],
+        "mongo": ["workflow_executions", "daily_active_users"],
     },
 }
 
@@ -285,7 +318,7 @@ def export_mysql_query(job_name: str, job: dict, data_dir: Path) -> None:
         database=database or None,
         cursorclass=pymysql.cursors.DictCursor,
         connect_timeout=30,
-        read_timeout=300,
+        read_timeout=30000,
         write_timeout=300,
         charset="utf8mb4",
         autocommit=True,
@@ -357,8 +390,26 @@ def export_mongo_aggregation(job_name: str, job: dict, data_dir: Path) -> None:
 
 
 def run_query_extraction(data_dir: Path, *, allow_billing_fallback: bool = False) -> None:
+    run_selected_query_extraction(
+        data_dir,
+        mysql_job_names=list(MYSQL_QUERY_JOBS.keys()),
+        mongo_job_names=list(MONGO_QUERY_JOBS.keys()),
+        allow_billing_fallback=allow_billing_fallback,
+    )
+
+
+def run_selected_query_extraction(
+    data_dir: Path,
+    *,
+    mysql_job_names: Sequence[str],
+    mongo_job_names: Sequence[str],
+    allow_billing_fallback: bool = False,
+) -> None:
     log("EXTRACT", "Starting query extraction")
-    for name, job in MYSQL_QUERY_JOBS.items():
+    for name in mysql_job_names:
+        if name not in MYSQL_QUERY_JOBS:
+            raise ValidationError(f"Unknown MySQL job: {name}")
+        job = MYSQL_QUERY_JOBS[name]
         try:
             export_mysql_query(name, job, data_dir)
         except Exception as exc:
@@ -383,9 +434,36 @@ def run_query_extraction(data_dir: Path, *, allow_billing_fallback: bool = False
                     f"Using existing {fallback_file.name}."
                 ),
             )
-    for name, job in MONGO_QUERY_JOBS.items():
+    for name in mongo_job_names:
+        if name not in MONGO_QUERY_JOBS:
+            raise ValidationError(f"Unknown Mongo job: {name}")
+        job = MONGO_QUERY_JOBS[name]
         export_mongo_aggregation(name, job, data_dir)
     log("EXTRACT", "All source queries completed")
+
+
+def run_query_group(
+    group_name: str,
+    *,
+    env_file: Path = DEFAULT_ENV_PATH,
+    data_dir: Path = DEFAULT_DATA_DIR,
+    allow_billing_fallback: bool = False,
+) -> None:
+    if group_name not in QUERY_GROUPS:
+        raise ValidationError(f"Unknown query group: {group_name}")
+
+    data_dir = data_dir.resolve()
+    data_dir.mkdir(parents=True, exist_ok=True)
+    load_env_file(env_file.resolve())
+
+    group = QUERY_GROUPS[group_name]
+    log("GROUP", f"Running query group: {group_name}")
+    run_selected_query_extraction(
+        data_dir,
+        mysql_job_names=group["mysql"],
+        mongo_job_names=group["mongo"],
+        allow_billing_fallback=allow_billing_fallback,
+    )
 
 
 def normalize_company_id(series: pd.Series) -> pd.Series:
