@@ -1,0 +1,478 @@
+companyId,week_end_sunday,app_name,marketplace_install_count,marketplace_col
+1236,2025-11-02,Slack,1,marketplace_app_slack
+1,2025-11-09,Hubspot,1,marketplace_app_hubspot
+135,2025-11-09,Gmail,1,marketplace_app_gmail
+135,2025-11-09,Google Calendar,1,marketplace_app_google_calendar
+135,2025-11-16,Gmail,2,marketplace_app_gmail
+135,2025-11-16,Google Calendar,2,marketplace_app_google_calendar
+135,2025-11-16,Google Docs,1,marketplace_app_google_docs
+135,2025-11-16,Google Drive,1,marketplace_app_google_drive
+2276,2025-11-16,Gmail,1,marketplace_app_gmail
+2276,2025-11-16,Google Calendar,1,marketplace_app_google_calendar
+2801,2025-11-16,Google Calendar,1,marketplace_app_google_calendar
+2812,2025-11-16,Gmail,1,marketplace_app_gmail
+2815,2025-11-16,Slack,1,marketplace_app_slack
+2828,2025-11-16,Gmail,1,marketplace_app_gmail
+2828,2025-11-16,Google Calendar,1,marketplace_app_google_calendar
+2828,2025-11-16,Google Drive,1,marketplace_app_google_drive
+2828,2025-11-16,Google Sheets,1,marketplace_app_google_sheets
+2828,2025-11-16,Slack,1,marketplace_app_slack
+2830,2025-11-16,Google Calendar,1,marketplace_app_google_calendar
+2830,2025-11-16,Slack,1,marketplace_app_slack
+135,2025-11-23,Google Ads,2,marketplace_app_google_ads
+135,2025-11-23,Hubspot,2,marketplace_app_hubspot
+331,2025-11-23,Google Calendar,1,marketplace_app_google_calendar
+331,2025-11-23,Hubspot,2,marketplace_app_hubspot
+331,2025-11-23,Slack,2,marketplace_app_slack
+2844,2025-11-23,Google Calendar,1,marketplace_app_google_calendar
+2844,2025-11-23,Slack,1,marketplace_app_slack
+2851,2025-11-23,Google Calendar,1,marketplace_app_google_calendar
+2851,2025-11-23,Slack,1,marketplace_app_slack
+2867,2025-11-23,Google Calendar,1,marketplace_app_google_calendar
+2867,2025-11-23,Slack,1,marketplace_app_slack
+2879,2025-11-23,Gmail,1,marketplace_app_gmail
+2879,2025-11-23,Google Calendar,1,marketplace_app_google_calendar
+2879,2025-11-23,Google Docs,1,marketplace_app_google_docs
+2879,2025-11-23,Hubspot,1,marketplace_app_hubspot
+2879,2025-11-23,Slack,1,marketplace_app_slack
+135,2025-11-30,Gmail,1,marketplace_app_gmail
+135,2025-11-30,Google Ads,1,marketplace_app_google_ads
+135,2025-11-30,Google Calendar,4,marketplace_app_google_calendar
+135,2025-11-30,Google Docs,1,marketplace_app_google_docs
+135,2025-11-30,Google Drive,1,marketplace_app_google_drive
+135,2025-11-30,Siigo,1,marketplace_app_siigo
+135,2025-11-30,Slack,2,marketplace_app_slack
+135,2025-11-30,Stripe,2,marketplace_app_stripe
+135,2025-11-30,Supabase,2,marketplace_app_supabase
+331,2025-11-30,Supabase,1,marketplace_app_supabase
+462,2025-11-30,Gmail,1,marketplace_app_gmail
+462,2025-11-30,Google Calendar,1,marketplace_app_google_calendar
+462,2025-11-30,Google Sheets,1,marketplace_app_google_sheets
+462,2025-11-30,Slack,1,marketplace_app_slack
+2601,2025-11-30,Google Sheets,1,marketplace_app_google_sheets
+2838,2025-11-30,Google Calendar,1,marketplace_app_google_calendar
+2838,2025-11-30,Slack,1,marketplace_app_slack
+2909,2025-11-30,Google Calendar,1,marketplace_app_google_calendar
+2909,2025-11-30,Slack,1,marketplace_app_slack
+2911,2025-11-30,Google Calendar,1,marketplace_app_google_calendar
+2911,2025-11-30,Slack,1,marketplace_app_slack
+2945,2025-11-30,Hubspot,1,marketplace_app_hubspot
+2949,2025-11-30,Gmail,1,marketplace_app_gmail
+2949,2025-11-30,Google Calendar,1,marketplace_app_google_calendar
+2949,2025-11-30,Google Drive,1,marketplace_app_google_drive
+2949,2025-11-30,Google Sheets,1,marketplace_app_google_sheets
+135,2025-12-07,Contifico,1,marketplace_app_contifico
+135,2025-12-07,Gmail,3,marketplace_app_gmail
+135,2025-12-07,Google Analytics,1,marketplace_app_google_analytics
+135,2025-12-07,Google Calendar,1,marketplace_app_google_calendar
+135,2025-12-07,Google Drive,2,marketplace_app_google_drive
+135,2025-12-07,Slack,1,marketplace_app_slack
+331,2025-12-07,Contifico,1,marketplace_app_contifico
+331,2025-12-07,Supabase,1,marketplace_app_supabase
+1944,2025-12-07,Siigo,1,marketplace_app_siigo
+2601,2025-12-07,Slack,1,marketplace_app_slack
+2620,2025-12-07,Gmail,1,marketplace_app_gmail
+2951,2025-12-07,Gmail,1,marketplace_app_gmail
+2983,2025-12-07,Gmail,1,marketplace_app_gmail
+95,2025-12-14,Slack,1,marketplace_app_slack
+135,2025-12-14,Contifico,2,marketplace_app_contifico
+135,2025-12-14,Gmail,1,marketplace_app_gmail
+135,2025-12-14,Google Analytics,2,marketplace_app_google_analytics
+135,2025-12-14,Google Calendar,1,marketplace_app_google_calendar
+135,2025-12-14,Google Docs,1,marketplace_app_google_docs
+135,2025-12-14,Google Drive,1,marketplace_app_google_drive
+135,2025-12-14,Google Sheets,2,marketplace_app_google_sheets
+135,2025-12-14,Stripe,2,marketplace_app_stripe
+2983,2025-12-14,Gmail,1,marketplace_app_gmail
+2983,2025-12-14,Google Analytics,1,marketplace_app_google_analytics
+2983,2025-12-14,Google Calendar,1,marketplace_app_google_calendar
+2983,2025-12-14,Google Docs,1,marketplace_app_google_docs
+2983,2025-12-14,Google Drive,1,marketplace_app_google_drive
+3037,2025-12-14,Hubspot,1,marketplace_app_hubspot
+3058,2025-12-14,Slack,1,marketplace_app_slack
+135,2025-12-21,Calendly,2,marketplace_app_calendly
+135,2025-12-21,Datil,1,marketplace_app_datil
+135,2025-12-21,Google Analytics,1,marketplace_app_google_analytics
+135,2025-12-21,Meta Ads,1,marketplace_app_meta_ads
+135,2025-12-21,Slack,1,marketplace_app_slack
+331,2025-12-21,Datil,1,marketplace_app_datil
+331,2025-12-21,Odoo,1,marketplace_app_odoo
+361,2025-12-21,Meta Ads,1,marketplace_app_meta_ads
+462,2025-12-21,Supabase,1,marketplace_app_supabase
+1944,2025-12-21,Calendly,1,marketplace_app_calendly
+1944,2025-12-21,Gmail,1,marketplace_app_gmail
+3068,2025-12-21,Stripe,1,marketplace_app_stripe
+135,2025-12-28,Calendly,1,marketplace_app_calendly
+135,2025-12-28,Gmail,1,marketplace_app_gmail
+135,2025-12-28,Google Calendar,1,marketplace_app_google_calendar
+135,2025-12-28,Google Drive,1,marketplace_app_google_drive
+331,2025-12-28,Agenda Pro,3,marketplace_app_agenda_pro
+331,2025-12-28,Alegra,1,marketplace_app_alegra
+331,2025-12-28,Bitrix24,1,marketplace_app_bitrix24
+331,2025-12-28,Datil,1,marketplace_app_datil
+331,2025-12-28,Facturama,1,marketplace_app_facturama
+331,2025-12-28,Woocommerce,1,marketplace_app_woocommerce
+331,2025-12-28,shopify,1,marketplace_app_shopify
+2856,2025-12-28,Gmail,1,marketplace_app_gmail
+2856,2025-12-28,Woocommerce,1,marketplace_app_woocommerce
+2951,2025-12-28,Datil,1,marketplace_app_datil
+135,2026-01-04,Mercado Pago,1,marketplace_app_mercado_pago
+3084,2026-01-04,Google Sheets,1,marketplace_app_google_sheets
+5,2026-01-11,Amazon,1,marketplace_app_amazon
+5,2026-01-11,Gmail,1,marketplace_app_gmail
+5,2026-01-11,Slack,1,marketplace_app_slack
+5,2026-01-11,Stripe,1,marketplace_app_stripe
+135,2026-01-11,Agenda Pro,1,marketplace_app_agenda_pro
+135,2026-01-11,Alegra,1,marketplace_app_alegra
+135,2026-01-11,Google,1,marketplace_app_google
+135,2026-01-11,Google Docs,1,marketplace_app_google_docs
+135,2026-01-11,Google Drive,1,marketplace_app_google_drive
+135,2026-01-11,Google Photos,1,marketplace_app_google_photos
+135,2026-01-11,Microsoft Outlook,1,marketplace_app_microsoft_outlook
+135,2026-01-11,Slack,1,marketplace_app_slack
+331,2026-01-11,Bitrix24,1,marketplace_app_bitrix24
+331,2026-01-11,Google Calendar,1,marketplace_app_google_calendar
+331,2026-01-11,Notion,1,marketplace_app_notion
+331,2026-01-11,Slack,1,marketplace_app_slack
+462,2026-01-11,Stripe,1,marketplace_app_stripe
+2601,2026-01-11,Google Drive,1,marketplace_app_google_drive
+2856,2026-01-11,Notion,1,marketplace_app_notion
+2879,2026-01-11,Mercado Pago,1,marketplace_app_mercado_pago
+2951,2026-01-11,Plaid,1,marketplace_app_plaid
+3011,2026-01-11,Google Calendar,1,marketplace_app_google_calendar
+3011,2026-01-11,Google Tasks,1,marketplace_app_google_tasks
+3214,2026-01-11,Mercado Pago,1,marketplace_app_mercado_pago
+3229,2026-01-11,Gmail,1,marketplace_app_gmail
+3229,2026-01-11,Notion,1,marketplace_app_notion
+3260,2026-01-11,Gmail,1,marketplace_app_gmail
+5,2026-01-18,Agenda Pro,1,marketplace_app_agenda_pro
+5,2026-01-18,Slack,1,marketplace_app_slack
+135,2026-01-18,Add to Calendar PRO,1,marketplace_app_add_to_calendar_pro
+135,2026-01-18,Contifico,1,marketplace_app_contifico
+135,2026-01-18,Facturama,1,marketplace_app_facturama
+135,2026-01-18,Gmail,1,marketplace_app_gmail
+135,2026-01-18,Google Calendar,1,marketplace_app_google_calendar
+331,2026-01-18,Adalo,1,marketplace_app_adalo
+331,2026-01-18,Alegra,1,marketplace_app_alegra
+331,2026-01-18,Amazon Alexa,1,marketplace_app_amazon_alexa
+331,2026-01-18,Asana,1,marketplace_app_asana
+331,2026-01-18,Calendly,1,marketplace_app_calendly
+331,2026-01-18,ClickUp,1,marketplace_app_clickup
+331,2026-01-18,Gmail,1,marketplace_app_gmail
+331,2026-01-18,Google Calendar,1,marketplace_app_google_calendar
+331,2026-01-18,Microsoft Outlook,1,marketplace_app_microsoft_outlook
+331,2026-01-18,Microsoft Outlook Calendar,1,marketplace_app_microsoft_outlook_calendar
+1737,2026-01-18,Gmail,1,marketplace_app_gmail
+1944,2026-01-18,ClickUp,1,marketplace_app_clickup
+1944,2026-01-18,TheSportsDB,1,marketplace_app_thesportsdb
+2431,2026-01-18,Google Calendar,1,marketplace_app_google_calendar
+2601,2026-01-18,Microsoft Outlook Calendar,1,marketplace_app_microsoft_outlook_calendar
+2754,2026-01-18,Woocommerce,1,marketplace_app_woocommerce
+2987,2026-01-18,HubSpot,1,marketplace_app_hubspot
+2998,2026-01-18,Gmail,1,marketplace_app_gmail
+3011,2026-01-18,Slack,1,marketplace_app_slack
+3059,2026-01-18,Gmail,1,marketplace_app_gmail
+3059,2026-01-18,Mercado Pago,1,marketplace_app_mercado_pago
+3292,2026-01-18,Gmail,1,marketplace_app_gmail
+135,2026-01-25,ClickUp,1,marketplace_app_clickup
+135,2026-01-25,FireCrawl,2,marketplace_app_firecrawl
+135,2026-01-25,Google Calendar,1,marketplace_app_google_calendar
+135,2026-01-25,Google Sheets,1,marketplace_app_google_sheets
+135,2026-01-25,Microsoft Outlook Calendar,1,marketplace_app_microsoft_outlook_calendar
+135,2026-01-25,Woocommerce,1,marketplace_app_woocommerce
+331,2026-01-25,Google Sheets,1,marketplace_app_google_sheets
+462,2026-01-25,Google Calendar,1,marketplace_app_google_calendar
+462,2026-01-25,Slack,1,marketplace_app_slack
+2309,2026-01-25,Google Sheets,1,marketplace_app_google_sheets
+2768,2026-01-25,Woocommerce,1,marketplace_app_woocommerce
+2855,2026-01-25,ClickUp,1,marketplace_app_clickup
+3287,2026-01-25,FireCrawl,1,marketplace_app_firecrawl
+3292,2026-01-25,Google Calendar,1,marketplace_app_google_calendar
+3292,2026-01-25,Google Sheets,1,marketplace_app_google_sheets
+3374,2026-01-25,Agenda Pro,1,marketplace_app_agenda_pro
+135,2026-02-01,Bitrix24,1,marketplace_app_bitrix24
+135,2026-02-01,Home Assistant,1,marketplace_app_home_assistant
+331,2026-02-01,Google Calendar,1,marketplace_app_google_calendar
+1944,2026-02-01,Docusign,1,marketplace_app_docusign
+2190,2026-02-01,Gmail,1,marketplace_app_gmail
+2601,2026-02-01,ClickUp,2,marketplace_app_clickup
+2601,2026-02-01,Woocommerce,1,marketplace_app_woocommerce
+3200,2026-02-01,FireCrawl,1,marketplace_app_firecrawl
+3349,2026-02-01,Microsoft Power BI,1,marketplace_app_microsoft_power_bi
+3374,2026-02-01,Mercado Pago,1,marketplace_app_mercado_pago
+3374,2026-02-01,Supabase,1,marketplace_app_supabase
+135,2026-02-08,Google Sheets,1,marketplace_app_google_sheets
+331,2026-02-08,Siigo,1,marketplace_app_siigo
+331,2026-02-08,Woocommerce,1,marketplace_app_woocommerce
+2601,2026-02-08,Google Sheets,1,marketplace_app_google_sheets
+3059,2026-02-08,Supabase,1,marketplace_app_supabase
+3154,2026-02-08,Woocommerce,1,marketplace_app_woocommerce
+3374,2026-02-08,Google Calendar,1,marketplace_app_google_calendar
+3477,2026-02-08,Google Calendar,1,marketplace_app_google_calendar
+3512,2026-02-08,Gmail,1,marketplace_app_gmail
+3515,2026-02-08,Supabase,1,marketplace_app_supabase
+3519,2026-02-08,Gmail,1,marketplace_app_gmail
+5,2026-02-15,Gmail,1,marketplace_app_gmail
+5,2026-02-15,Siigo,1,marketplace_app_siigo
+135,2026-02-15,Gmail,1,marketplace_app_gmail
+135,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+135,2026-02-15,Security Data,1,marketplace_app_security_data
+135,2026-02-15,Slack,1,marketplace_app_slack
+331,2026-02-15,ClickUp,1,marketplace_app_clickup
+331,2026-02-15,Gmail,2,marketplace_app_gmail
+331,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+331,2026-02-15,Mercado Pago,1,marketplace_app_mercado_pago
+1944,2026-02-15,Mercado Pago,1,marketplace_app_mercado_pago
+1944,2026-02-15,Woocommerce,1,marketplace_app_woocommerce
+1944,2026-02-15,mercadopago-mcp,1,marketplace_app_mercadopago_mcp
+2601,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+2601,2026-02-15,SAP S/4HANA Cloud,1,marketplace_app_sap_s_4hana_cloud
+2951,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+3059,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+3231,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+3280,2026-02-15,ClickUp,1,marketplace_app_clickup
+3287,2026-02-15,Woocommerce,1,marketplace_app_woocommerce
+3362,2026-02-15,Supabase,1,marketplace_app_supabase
+3362,2026-02-15,my-mcp-server,1,marketplace_app_my_mcp_server
+3368,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+3457,2026-02-15,Mercado Pago,1,marketplace_app_mercado_pago
+3464,2026-02-15,Woocommerce,1,marketplace_app_woocommerce
+3525,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+3544,2026-02-15,Google Calendar,1,marketplace_app_google_calendar
+3544,2026-02-15,Stripe,1,marketplace_app_stripe
+3573,2026-02-15,Odoo,1,marketplace_app_odoo
+331,2026-02-22,AerisWeather,1,marketplace_app_aerisweather
+331,2026-02-22,HubSpot,1,marketplace_app_hubspot
+331,2026-02-22,Woocommerce,1,marketplace_app_woocommerce
+1944,2026-02-22,Stripe,1,marketplace_app_stripe
+1944,2026-02-22,shopify,1,marketplace_app_shopify
+2879,2026-02-22,Gmail,1,marketplace_app_gmail
+2960,2026-02-22,Google Calendar,1,marketplace_app_google_calendar
+3011,2026-02-22,Gmail,1,marketplace_app_gmail
+3154,2026-02-22,Gmail,1,marketplace_app_gmail
+3446,2026-02-22,Gmail,1,marketplace_app_gmail
+3525,2026-02-22,Mercado Pago,1,marketplace_app_mercado_pago
+3571,2026-02-22,Google Calendar,1,marketplace_app_google_calendar
+3617,2026-02-22,Gmail,1,marketplace_app_gmail
+3617,2026-02-22,Google Sheets,1,marketplace_app_google_sheets
+3617,2026-02-22,Mercado Pago,1,marketplace_app_mercado_pago
+3617,2026-02-22,shopify,1,marketplace_app_shopify
+5,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+322,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+331,2026-03-01,2Captcha,1,marketplace_app_2captcha
+462,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+1266,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+1639,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+1944,2026-03-01,De Una,1,marketplace_app_de_una
+2073,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+2242,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+2397,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+2420,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+2431,2026-03-01,shopify,1,marketplace_app_shopify
+2446,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+2446,2026-03-01,Woocommerce,1,marketplace_app_woocommerce
+2456,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+2601,2026-03-01,ClickUp,1,marketplace_app_clickup
+2879,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+2971,2026-03-01,Stripe,1,marketplace_app_stripe
+3011,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+3204,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+3205,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+3280,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+3280,2026-03-01,shopify,1,marketplace_app_shopify
+3292,2026-03-01,shopify,1,marketplace_app_shopify
+3299,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+3446,2026-03-01,shopify,1,marketplace_app_shopify
+3463,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+3477,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+3477,2026-03-01,shopify,1,marketplace_app_shopify
+3570,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+3573,2026-03-01,Odoo,1,marketplace_app_odoo
+3575,2026-03-01,shopify,1,marketplace_app_shopify
+3591,2026-03-01,Contifico,1,marketplace_app_contifico
+3623,2026-03-01,ClickUp,1,marketplace_app_clickup
+3684,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+3686,2026-03-01,Mercado Pago,1,marketplace_app_mercado_pago
+3703,2026-03-01,Woocommerce,1,marketplace_app_woocommerce
+3715,2026-03-01,Woocommerce,1,marketplace_app_woocommerce
+3724,2026-03-01,Google Sheets,1,marketplace_app_google_sheets
+3724,2026-03-01,Neon,1,marketplace_app_neon
+3727,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+3727,2026-03-01,shopify,1,marketplace_app_shopify
+3757,2026-03-01,Google Calendar,1,marketplace_app_google_calendar
+3757,2026-03-01,shopify,1,marketplace_app_shopify
+3758,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+3781,2026-03-01,Jelou Shop,1,marketplace_app_jelou_shop
+135,2026-03-08,Calendly,1,marketplace_app_calendly
+331,2026-03-08,FireCrawl,1,marketplace_app_firecrawl
+331,2026-03-08,Jelou KYC,1,marketplace_app_jelou_kyc
+331,2026-03-08,Mercado Pago,1,marketplace_app_mercado_pago
+331,2026-03-08,Supabase,1,marketplace_app_supabase
+1512,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+1944,2026-03-08,ElevenLabs,1,marketplace_app_elevenlabs
+1944,2026-03-08,Jelou KYC,1,marketplace_app_jelou_kyc
+1944,2026-03-08,elevenlabs,1,marketplace_app_elevenlabs
+1944,2026-03-08,payphone,1,marketplace_app_payphone
+2073,2026-03-08,Gmail,1,marketplace_app_gmail
+2130,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+2209,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+2276,2026-03-08,Microsoft OneDrive,1,marketplace_app_microsoft_onedrive
+2276,2026-03-08,Microsoft Sharepoint,1,marketplace_app_microsoft_sharepoint
+2505,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+2601,2026-03-08,Google Drive,1,marketplace_app_google_drive
+2601,2026-03-08,Google Sheets,1,marketplace_app_google_sheets
+2601,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+2669,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+2971,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+2971,2026-03-08,Microsoft Outlook Calendar,1,marketplace_app_microsoft_outlook_calendar
+3097,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+3261,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+3280,2026-03-08,Jelou KYC,1,marketplace_app_jelou_kyc
+3300,2026-03-08,Gmail,1,marketplace_app_gmail
+3362,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+3450,2026-03-08,Google Sheets,1,marketplace_app_google_sheets
+3461,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+3477,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+3518,2026-03-08,Gmail,1,marketplace_app_gmail
+3575,2026-03-08,Gmail,1,marketplace_app_gmail
+3623,2026-03-08,Jelou KYC,1,marketplace_app_jelou_kyc
+3684,2026-03-08,Airtable,1,marketplace_app_airtable
+3684,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+3731,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+3788,2026-03-08,Jelou Shop,1,marketplace_app_jelou_shop
+3788,2026-03-08,shopify,1,marketplace_app_shopify
+3801,2026-03-08,Gmail,1,marketplace_app_gmail
+3811,2026-03-08,Odoo,1,marketplace_app_odoo
+3834,2026-03-08,Google Calendar,1,marketplace_app_google_calendar
+3836,2026-03-08,Zendesk,1,marketplace_app_zendesk
+3853,2026-03-08,payphone,1,marketplace_app_payphone
+135,2026-03-15,HubSpot,1,marketplace_app_hubspot
+312,2026-03-15,Jelou KYC,1,marketplace_app_jelou_kyc
+322,2026-03-15,HubSpot,1,marketplace_app_hubspot
+331,2026-03-15,Google Drive,1,marketplace_app_google_drive
+361,2026-03-15,Jelou Shop,1,marketplace_app_jelou_shop
+1266,2026-03-15,Gmail,1,marketplace_app_gmail
+1266,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+1384,2026-03-15,Slack,1,marketplace_app_slack
+1937,2026-03-15,Jelou Shop,1,marketplace_app_jelou_shop
+1944,2026-03-15,Supabase,1,marketplace_app_supabase
+2190,2026-03-15,Jelou Shop,1,marketplace_app_jelou_shop
+2209,2026-03-15,Google Sheets,1,marketplace_app_google_sheets
+2233,2026-03-15,Jelou Shop,1,marketplace_app_jelou_shop
+2276,2026-03-15,Jelou Shop,1,marketplace_app_jelou_shop
+2506,2026-03-15,Jelou Shop,1,marketplace_app_jelou_shop
+3011,2026-03-15,Jelou KYC,1,marketplace_app_jelou_kyc
+3211,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3260,2026-03-15,Google Sheets,1,marketplace_app_google_sheets
+3261,2026-03-15,Notion,1,marketplace_app_notion
+3292,2026-03-15,Gmail,1,marketplace_app_gmail
+3292,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3292,2026-03-15,Google Drive,1,marketplace_app_google_drive
+3336,2026-03-15,Jelou Shop,1,marketplace_app_jelou_shop
+3360,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3493,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3575,2026-03-15,Woocommerce,1,marketplace_app_woocommerce
+3730,2026-03-15,ClickUp,1,marketplace_app_clickup
+3730,2026-03-15,Stripe,1,marketplace_app_stripe
+3825,2026-03-15,elevenlabs,1,marketplace_app_elevenlabs
+3885,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3928,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3945,2026-03-15,Contifico,1,marketplace_app_contifico
+3953,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3984,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+3984,2026-03-15,Slack,1,marketplace_app_slack
+4002,2026-03-15,ClickUp,1,marketplace_app_clickup
+4061,2026-03-15,Woocommerce,1,marketplace_app_woocommerce
+4091,2026-03-15,Google Calendar,1,marketplace_app_google_calendar
+312,2026-03-22,Jelou KYC,1,marketplace_app_jelou_kyc
+331,2026-03-22,payphone,1,marketplace_app_payphone
+361,2026-03-22,Gmail,1,marketplace_app_gmail
+1844,2026-03-22,Jelou KYC,1,marketplace_app_jelou_kyc
+2033,2026-03-22,HubSpot,1,marketplace_app_hubspot
+2209,2026-03-22,Gmail,1,marketplace_app_gmail
+2298,2026-03-22,Zoho CRM,1,marketplace_app_zoho_crm
+2708,2026-03-22,Gmail,1,marketplace_app_gmail
+2951,2026-03-22,Calendly,1,marketplace_app_calendly
+2971,2026-03-22,HubSpot,1,marketplace_app_hubspot
+2971,2026-03-22,shopify,1,marketplace_app_shopify
+3011,2026-03-22,payphone,1,marketplace_app_payphone
+3011,2026-03-22,shopify,1,marketplace_app_shopify
+3201,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+3201,2026-03-22,shopify,1,marketplace_app_shopify
+3211,2026-03-22,Jelou Shop,1,marketplace_app_jelou_shop
+3256,2026-03-22,Jelou KYC,1,marketplace_app_jelou_kyc
+3370,2026-03-22,Contifico,1,marketplace_app_contifico
+3431,2026-03-22,Jelou Shop,1,marketplace_app_jelou_shop
+3446,2026-03-22,Jelou KYC,1,marketplace_app_jelou_kyc
+3477,2026-03-22,Calendly,1,marketplace_app_calendly
+3477,2026-03-22,Jelou KYC,1,marketplace_app_jelou_kyc
+3477,2026-03-22,Stripe,1,marketplace_app_stripe
+3617,2026-03-22,De Una,1,marketplace_app_de_una
+3730,2026-03-22,Slack,1,marketplace_app_slack
+3735,2026-03-22,Jelou KYC,1,marketplace_app_jelou_kyc
+3773,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+3833,2026-03-22,Google Drive,1,marketplace_app_google_drive
+3833,2026-03-22,Google Sheets,1,marketplace_app_google_sheets
+3924,2026-03-22,Jelou KYC,1,marketplace_app_jelou_kyc
+3968,2026-03-22,Jelou Shop,1,marketplace_app_jelou_shop
+4015,2026-03-22,Jelou Shop,1,marketplace_app_jelou_shop
+4061,2026-03-22,Jelou Shop,1,marketplace_app_jelou_shop
+4067,2026-03-22,Jelou Shop,1,marketplace_app_jelou_shop
+4090,2026-03-22,Google Sheets,1,marketplace_app_google_sheets
+4122,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4125,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4194,2026-03-22,WordPress.com,1,marketplace_app_wordpress_com
+4208,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4221,2026-03-22,Google Sheets,1,marketplace_app_google_sheets
+4224,2026-03-22,Google Sheets,1,marketplace_app_google_sheets
+4237,2026-03-22,Gmail,1,marketplace_app_gmail
+4276,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4281,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4305,2026-03-22,Woocommerce,1,marketplace_app_woocommerce
+4340,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4367,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4385,2026-03-22,Gmail,1,marketplace_app_gmail
+4385,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4417,2026-03-22,Google Sheets,1,marketplace_app_google_sheets
+4420,2026-03-22,Gmail,1,marketplace_app_gmail
+4420,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4420,2026-03-22,HubSpot,1,marketplace_app_hubspot
+4420,2026-03-22,Microsoft Outlook Calendar,1,marketplace_app_microsoft_outlook_calendar
+4420,2026-03-22,shopify,1,marketplace_app_shopify
+4449,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4486,2026-03-22,Google Calendar,1,marketplace_app_google_calendar
+4502,2026-03-22,Calendly,1,marketplace_app_calendly
+5,2026-03-29,GitHub,1,marketplace_app_github
+331,2026-03-29,Bitrix24,1,marketplace_app_bitrix24
+462,2026-03-29,Jelou KYC,1,marketplace_app_jelou_kyc
+462,2026-03-29,Slack,1,marketplace_app_slack
+692,2026-03-29,Jelou KYC,1,marketplace_app_jelou_kyc
+1828,2026-03-29,Jelou Shop,1,marketplace_app_jelou_shop
+2625,2026-03-29,Jelou KYC,1,marketplace_app_jelou_kyc
+2971,2026-03-29,Notion,1,marketplace_app_notion
+3292,2026-03-29,Jelou Shop,1,marketplace_app_jelou_shop
+3335,2026-03-29,Supabase,1,marketplace_app_supabase
+3477,2026-03-29,Contifico,1,marketplace_app_contifico
+3575,2026-03-29,De Una,1,marketplace_app_de_una
+3613,2026-03-29,Google Sheets,1,marketplace_app_google_sheets
+3617,2026-03-29,Bitrix24,1,marketplace_app_bitrix24
+3729,2026-03-29,Jelou KYC,1,marketplace_app_jelou_kyc
+3735,2026-03-29,ClickUp,1,marketplace_app_clickup
+3911,2026-03-29,shopify,1,marketplace_app_shopify
+3968,2026-03-29,Stripe,1,marketplace_app_stripe
+3982,2026-03-29,Google Calendar,1,marketplace_app_google_calendar
+4152,2026-03-29,Gmail,1,marketplace_app_gmail
+4152,2026-03-29,Google Calendar,1,marketplace_app_google_calendar
+4152,2026-03-29,Google Sheets,1,marketplace_app_google_sheets
+4152,2026-03-29,Odoo,1,marketplace_app_odoo
+4471,2026-03-29,Jelou Shop,1,marketplace_app_jelou_shop
+4535,2026-03-29,Stripe,1,marketplace_app_stripe
+4564,2026-03-29,Google Sheets,1,marketplace_app_google_sheets
+4576,2026-03-29,Gmail,1,marketplace_app_gmail
+4576,2026-03-29,Google Analytics,1,marketplace_app_google_analytics
+4576,2026-03-29,Google Calendar,1,marketplace_app_google_calendar
+4585,2026-03-29,Jumpseller,1,marketplace_app_jumpseller
+4599,2026-03-29,shopify,1,marketplace_app_shopify
+4632,2026-03-29,Woocommerce,1,marketplace_app_woocommerce
+4639,2026-03-29,Google Gemini,1,marketplace_app_google_gemini
+4642,2026-03-29,Google Sheets,1,marketplace_app_google_sheets

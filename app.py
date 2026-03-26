@@ -131,12 +131,14 @@ def load_data():
     connect_plan_cols = [c for c in df.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
     kyc_metric_cols = [c for c in df.columns if c.startswith('kyc_')]
     hil_gov_cols = [c for c in df.columns if c.startswith('hil_') or c.startswith('gov_')]
+    marketplace_cols = [c for c in df.columns if c.startswith('marketplace_app_')]
 
     numeric_cols = [
         'execution_count', 'dau_count', 'unique_users_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION', 'connect_licenses',
+        'marketplace_install_total',
         'signups', 'self_service', 'enterprise', 'other_plans'
-    ] + connect_plan_cols + kyc_metric_cols + hil_gov_cols
+    ] + connect_plan_cols + kyc_metric_cols + hil_gov_cols + marketplace_cols
     for col in numeric_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
@@ -148,9 +150,10 @@ def load_data():
 
     company_metric_cols = [
         'execution_count', 'dau_count', 'unique_users_count',
-        'MARKETING', 'UTILITY', 'AUTHENTICATION', 'connect_licenses'
+        'MARKETING', 'UTILITY', 'AUTHENTICATION', 'connect_licenses',
+        'marketplace_install_total',
     ]
-    company_metric_cols += connect_plan_cols + kyc_metric_cols + hil_gov_cols
+    company_metric_cols += connect_plan_cols + kyc_metric_cols + hil_gov_cols + marketplace_cols
     company_metric_cols = [c for c in company_metric_cols if c in df.columns]
 
     return df, company_metric_cols
@@ -198,6 +201,66 @@ def get_kyc_status_cols(columns):
         and c not in {'kyc_total'}
         and not c.endswith('_wow')
     ])
+
+
+def get_marketplace_app_cols(columns):
+    return sorted([c for c in columns if c.startswith('marketplace_app_') and not c.endswith('_wow')])
+
+
+def format_marketplace_app_label(col_name):
+    app_text = re.sub(r'^marketplace_app_', '', col_name)
+    tokens = []
+    token_map = {
+        'api': 'API',
+        'crm': 'CRM',
+        'kyc': 'KYC',
+        'mcp': 'MCP',
+        'pro': 'PRO',
+        'sap': 'SAP',
+    }
+    for token in app_text.split('_'):
+        lower = token.lower()
+        if lower in token_map:
+            tokens.append(token_map[lower])
+        elif lower == 's':
+            tokens.append('S')
+        elif lower == '4hana':
+            tokens.append('4HANA')
+        else:
+            tokens.append(token.title())
+    label = ' '.join(tokens)
+    replacements = {
+        'Hubspot': 'HubSpot',
+        'Woocommerce': 'WooCommerce',
+        'Wordpress.Com': 'WordPress.com',
+        'Mercadopago': 'Mercado Pago',
+        'Elevenlabs': 'ElevenLabs',
+    }
+    for old, new in replacements.items():
+        label = label.replace(old, new)
+    return label
+
+
+def build_widget_key(prefix, value):
+    cleaned = re.sub(r'[^a-z0-9]+', '_', str(value).lower()).strip('_')
+    return f"{prefix}_{cleaned}"
+
+
+def render_checkbox_filter(options, key_prefix, title, columns=3):
+    if not options:
+        return []
+
+    selected = []
+    with st.expander(title, expanded=False):
+        checkbox_cols = st.columns(columns)
+        for i, option in enumerate(options):
+            widget_key = build_widget_key(key_prefix, option)
+            if widget_key not in st.session_state:
+                st.session_state[widget_key] = True
+            checked = checkbox_cols[i % columns].checkbox(option, key=widget_key)
+            if checked:
+                selected.append(option)
+    return selected
 
 
 def build_period_data(df, company_metric_cols, frequency):
@@ -335,6 +398,9 @@ with st.sidebar.expander("📖 Glosario de Variables"):
     **connect_licenses**  
     Licencias Connect activas (ACTIVE/TRIALING) por semana.
 
+    **marketplace_install_total / marketplace_app_***  
+    Instalaciones de integraciones del marketplace por semana, total y desglose por app.
+
     **kyc_*_total / kyc_total**  
     Volumen de pasos KYC por etapa (`document_check`, `liveness`, `facematch`) y total de pasos KYC por periodo.
 
@@ -448,6 +514,44 @@ if view == "📈 Overview":
         fig.update_traces(line_color='#00ff88', marker_color='#00d4ff')
         st.plotly_chart(fig, use_container_width=True)
 
+    marketplace_app_cols = [
+        c for c in get_marketplace_app_cols(weekly_totals.columns)
+        if weekly_totals[c].sum() > 0
+    ]
+    if marketplace_app_cols:
+        st.subheader(f"🧩 Marketplace Installations by App ({frequency})")
+        marketplace_app_map = {format_marketplace_app_label(col): col for col in marketplace_app_cols}
+        selected_marketplace_apps = render_checkbox_filter(
+            list(marketplace_app_map.keys()),
+            key_prefix=f"overview_marketplace_app_filter_{frequency}",
+            title="Apps to show"
+        )
+        selected_marketplace_cols = [marketplace_app_map[label] for label in selected_marketplace_apps]
+
+        if selected_marketplace_cols:
+            fig = go.Figure()
+            marketplace_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6', '#1abc9c', '#f39c12', '#e74c3c']
+            for i, col in enumerate(selected_marketplace_cols):
+                fig.add_trace(go.Bar(
+                    x=weekly_totals[period_col],
+                    y=weekly_totals[col],
+                    name=format_marketplace_app_label(col),
+                    marker_color=marketplace_colors[i % len(marketplace_colors)]
+                ))
+            fig.update_layout(
+                title=f'Marketplace Installations by App ({frequency})',
+                barmode='stack',
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#ccd6f6',
+                title_font_color='#00d4ff',
+                xaxis_title=period_short,
+                yaxis_title='Installations'
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Select at least one marketplace app to display the chart.")
+
     plan_cols = [c for c in weekly_totals.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
     if plan_cols:
         st.subheader(f"📦 Active Connect Plans by {period_short}")
@@ -501,7 +605,7 @@ if view == "📈 Overview":
     display_cols = [
         'companyId', 'companyName', 'execution_count',
         'MARKETING', 'UTILITY', 'AUTHENTICATION',
-        'dau_count', 'connect_licenses', 'connect_plan_list'
+        'dau_count', 'connect_licenses', 'marketplace_install_total', 'connect_plan_list'
     ]
     display_cols = [c for c in display_cols if c in df_week.columns]
     top_companies = df_week.nlargest(10, 'execution_count')[display_cols]
@@ -539,7 +643,7 @@ elif view == "🔍 Company Lookup":
         
         metric_cols = [
             'execution_count', 'MARKETING', 'UTILITY', 'AUTHENTICATION',
-            'dau_count', 'unique_users_count', 'connect_licenses'
+            'dau_count', 'unique_users_count', 'connect_licenses', 'marketplace_install_total'
         ]
         metric_cols = [c for c in metric_cols if c in df_company.columns]
         
@@ -630,6 +734,72 @@ elif view == "🔍 Company Lookup":
             )
             fig.update_traces(marker_color='#00ff88')
             st.plotly_chart(fig, use_container_width=True)
+
+        marketplace_app_cols_company = [
+            c for c in get_marketplace_app_cols(df_company.columns)
+            if df_company[c].sum() > 0
+        ]
+        if marketplace_app_cols_company:
+            st.subheader(f"🧩 Marketplace Installations ({period_short}: {selected_period_label})")
+            marketplace_app_map_company = {
+                format_marketplace_app_label(col): col for col in marketplace_app_cols_company
+            }
+            selected_company_marketplace_apps = render_checkbox_filter(
+                list(marketplace_app_map_company.keys()),
+                key_prefix=f"company_marketplace_app_filter_{selected_company_id}_{frequency}",
+                title="Apps to show"
+            )
+            selected_company_marketplace_cols = [
+                marketplace_app_map_company[label] for label in selected_company_marketplace_apps
+            ]
+            active_marketplace_apps = [
+                format_marketplace_app_label(c)
+                for c in marketplace_app_cols_company
+                if selected_company_period.get(c, 0) > 0
+            ]
+            if active_marketplace_apps:
+                st.markdown("**Apps con instalaciones en el periodo seleccionado:** " + " | ".join(active_marketplace_apps))
+            else:
+                st.info("No marketplace installations in selected period.")
+
+            if selected_company_marketplace_cols:
+                fig = go.Figure()
+                marketplace_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6', '#1abc9c', '#f39c12', '#e74c3c']
+                for i, col in enumerate(selected_company_marketplace_cols):
+                    fig.add_trace(go.Bar(
+                        x=df_company[period_col],
+                        y=df_company[col],
+                        name=format_marketplace_app_label(col),
+                        marker_color=marketplace_colors[i % len(marketplace_colors)]
+                    ))
+                fig.update_layout(
+                    title=f'Marketplace Installations - {selected_company_label}',
+                    barmode='stack',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    font_color='#ccd6f6',
+                    title_font_color='#00d4ff',
+                    xaxis_title=period_short,
+                    yaxis_title='Installations'
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
+                company_installation_rows = [
+                    {
+                        'App': format_marketplace_app_label(col),
+                        'Installations': int(selected_company_period.get(col, 0))
+                    }
+                    for col in selected_company_marketplace_cols
+                    if selected_company_period.get(col, 0) > 0
+                ]
+                if company_installation_rows:
+                    st.dataframe(
+                        pd.DataFrame(company_installation_rows).sort_values('Installations', ascending=False),
+                        use_container_width=True,
+                        hide_index=True
+                    )
+            else:
+                st.info("Select at least one marketplace app to display the company chart.")
 
         if plan_cols_company:
             st.subheader(f"📦 Connect Plan Mix by {period_short}")
