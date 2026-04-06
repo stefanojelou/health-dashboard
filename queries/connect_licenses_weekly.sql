@@ -1,8 +1,10 @@
--- Weekly active Connect licenses by company
+-- Weekly active Connect licenses by company and plan tier
 -- Run in MySQL (database: billing)
 -- Export to CSV: data/connect_licenses_weekly.csv
--- Expected columns: week_end_sunday, companyId, connect_licenses
+-- Expected columns:
+--   week_end_sunday, companyId, plan_tier_name, plan_tier_display_name, connect_licenses
 -- Note: uses subscription item quantity as license count.
+-- Connect platform_product_id provided by billing team.
 
 WITH RECURSIVE week_calendar AS (
     SELECT DATE_ADD(DATE('2025-01-01'), INTERVAL (6 - WEEKDAY('2025-01-01')) DAY) AS week_end_sunday
@@ -13,28 +15,37 @@ WITH RECURSIVE week_calendar AS (
 ),
 connect_items AS (
     SELECT
-        s.id AS subscription_id,
         s.company_id AS companyId,
-        sp.name AS product_name,
+        pt.name AS plan_tier_name,
+        COALESCE(NULLIF(pt.display_name, ''), pt.name, 'Unknown Plan') AS plan_tier_display_name,
         DATE(s.current_period_start) AS period_start,
         DATE(COALESCE(s.canceled_at, s.cancel_at, s.current_period_end, NOW())) AS period_end,
         COALESCE(NULLIF(si.quantity, 0), 1) AS license_qty
     FROM billing.subscriptions s
-    LEFT JOIN billing.subscription_items si
+    INNER JOIN billing.subscription_items si
         ON si.subscription_id = s.id
-    LEFT JOIN billing.stripe_products sp
-        ON sp.id = si.product_id
+    INNER JOIN billing.plan_tiers pt
+        ON pt.id = si.plan_tier_id
     WHERE s.company_id IS NOT NULL
-      AND sp.name LIKE '%Connect%'
-      AND UPPER(s.status) IN ('ACTIVE', 'TRIALING')
+      AND si.platform_product_id = '01KFNGRVQ1PAN0FGTMCZ959P9C'
+      AND UPPER(s.status) = 'ACTIVE'
 )
 SELECT
     wc.week_end_sunday,
     ci.companyId,
-    ci.product_name,
+    ci.plan_tier_name,
+    ci.plan_tier_display_name,
     SUM(ci.license_qty) AS connect_licenses
 FROM week_calendar wc
 JOIN connect_items ci
     ON wc.week_end_sunday BETWEEN ci.period_start AND ci.period_end
-GROUP BY wc.week_end_sunday, ci.companyId, ci.product_name
-ORDER BY wc.week_end_sunday ASC, ci.companyId ASC, ci.product_name ASC;
+GROUP BY
+    wc.week_end_sunday,
+    ci.companyId,
+    ci.plan_tier_name,
+    ci.plan_tier_display_name
+ORDER BY
+    wc.week_end_sunday ASC,
+    ci.companyId ASC,
+    ci.plan_tier_display_name ASC,
+    ci.plan_tier_name ASC;

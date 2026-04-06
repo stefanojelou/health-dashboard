@@ -128,7 +128,7 @@ st.markdown("""
 def load_data():
     df = pd.read_csv('data/merged_weekly_data.csv')
     df['week_end_sunday'] = pd.to_datetime(df['week_end_sunday'])
-    connect_plan_cols = [c for c in df.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
+    connect_plan_cols = get_connect_plan_cols(df.columns)
     kyc_metric_cols = [c for c in df.columns if c.startswith('kyc_')]
     hil_gov_cols = [c for c in df.columns if c.startswith('hil_') or c.startswith('gov_')]
     marketplace_cols = [c for c in df.columns if c.startswith('marketplace_app_')]
@@ -159,9 +159,46 @@ def load_data():
     return df, company_metric_cols
 
 
+def get_connect_plan_cols(columns):
+    return sorted([
+        c for c in columns
+        if c.startswith('connect_plan_')
+        and c != 'connect_plan_list'
+        and not c.endswith('_wow')
+    ])
+
+
 def format_plan_column_name(col_name):
     plan_text = re.sub(r'^connect_plan_', '', col_name)
     return plan_text.replace('_', ' ').strip().title()
+
+
+def build_connect_plan_mix_figure(df_source, period_col, title, xaxis_title):
+    plan_cols = get_connect_plan_cols(df_source.columns)
+    if not plan_cols:
+        return None
+
+    fig = go.Figure()
+    plan_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6', '#1abc9c']
+    for i, col in enumerate(plan_cols):
+        fig.add_trace(go.Bar(
+            x=df_source[period_col],
+            y=df_source[col],
+            name=format_plan_column_name(col),
+            marker_color=plan_colors[i % len(plan_colors)]
+        ))
+
+    fig.update_layout(
+        title=title,
+        barmode='stack',
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font_color='#ccd6f6',
+        title_font_color='#00d4ff',
+        xaxis_title=xaxis_title,
+        yaxis_title='Active licenses'
+    )
+    return fig
 
 
 def combine_plan_lists(series):
@@ -396,7 +433,7 @@ with st.sidebar.expander("📖 Glosario de Variables"):
     Usuarios únicos que interactuaron en la semana.
     
     **connect_licenses**  
-    Licencias Connect activas (ACTIVE/TRIALING) por semana.
+    Licencias Connect activas por semana. Los graficos apilados muestran el mix por plan tier.
 
     **marketplace_install_total / marketplace_app_***  
     Instalaciones de integraciones del marketplace por semana, total y desglose por app.
@@ -502,17 +539,26 @@ if view == "📈 Overview":
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
-        fig = px.line(weekly_totals, x=period_col, y='connect_licenses',
-                      title=f'Connect Licenses Over Time ({frequency})',
-                      markers=True)
-        fig.update_layout(
-            plot_bgcolor='rgba(0,0,0,0)',
-            paper_bgcolor='rgba(0,0,0,0)',
-            font_color='#ccd6f6',
-            title_font_color='#00d4ff'
+        connect_plan_fig = build_connect_plan_mix_figure(
+            weekly_totals,
+            period_col=period_col,
+            title=f'Connect Active Plans Mix ({frequency})',
+            xaxis_title=period_short,
         )
-        fig.update_traces(line_color='#00ff88', marker_color='#00d4ff')
-        st.plotly_chart(fig, use_container_width=True)
+        if connect_plan_fig is not None:
+            st.plotly_chart(connect_plan_fig, use_container_width=True)
+        else:
+            fig = px.line(weekly_totals, x=period_col, y='connect_licenses',
+                          title=f'Connect Licenses Over Time ({frequency})',
+                          markers=True)
+            fig.update_layout(
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#ccd6f6',
+                title_font_color='#00d4ff'
+            )
+            fig.update_traces(line_color='#00ff88', marker_color='#00d4ff')
+            st.plotly_chart(fig, use_container_width=True)
 
     marketplace_app_cols = [
         c for c in get_marketplace_app_cols(weekly_totals.columns)
@@ -551,30 +597,6 @@ if view == "📈 Overview":
             st.plotly_chart(fig, use_container_width=True)
         else:
             st.info("Select at least one marketplace app to display the chart.")
-
-    plan_cols = [c for c in weekly_totals.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
-    if plan_cols:
-        st.subheader(f"📦 Active Connect Plans by {period_short}")
-        fig = go.Figure()
-        plan_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6', '#1abc9c']
-        for i, col in enumerate(plan_cols):
-            fig.add_trace(go.Bar(
-                x=weekly_totals[period_col],
-                y=weekly_totals[col],
-                name=format_plan_column_name(col),
-                marker_color=plan_colors[i % len(plan_colors)]
-            ))
-        fig.update_layout(
-            title=f'Connect Active Plans Mix ({frequency})',
-            barmode='stack',
-            plot_bgcolor='rgba(0,0,0,0)',
-            paper_bgcolor='rgba(0,0,0,0)',
-            font_color='#ccd6f6',
-            title_font_color='#00d4ff',
-            xaxis_title=period_short,
-            yaxis_title='Active licenses'
-        )
-        st.plotly_chart(fig, use_container_width=True)
 
     kyc_stage_cols = get_kyc_stage_total_cols(weekly_totals.columns)
     if kyc_stage_cols:
@@ -660,7 +682,7 @@ elif view == "🔍 Company Lookup":
         
         st.divider()
 
-        plan_cols_company = [c for c in df_company.columns if c.startswith('connect_plan_') and c != 'connect_plan_list']
+        plan_cols_company = get_connect_plan_cols(df_company.columns)
         if plan_cols_company:
             st.subheader(f"📦 Active Connect Plans ({period_short}: {selected_period_label})")
             active_plan_names = [
@@ -724,16 +746,25 @@ elif view == "🔍 Company Lookup":
             st.plotly_chart(fig, use_container_width=True)
         
         with col2:
-            fig = px.bar(df_company, x=period_col, y='connect_licenses',
-                        title=f'Connect Licenses by {period_short}')
-            fig.update_layout(
-                plot_bgcolor='rgba(0,0,0,0)',
-                paper_bgcolor='rgba(0,0,0,0)',
-                font_color='#ccd6f6',
-                title_font_color='#00d4ff'
+            connect_plan_fig = build_connect_plan_mix_figure(
+                df_company,
+                period_col=period_col,
+                title=f'Connect Active Plans - {selected_company_label}',
+                xaxis_title=period_short,
             )
-            fig.update_traces(marker_color='#00ff88')
-            st.plotly_chart(fig, use_container_width=True)
+            if connect_plan_fig is not None:
+                st.plotly_chart(connect_plan_fig, use_container_width=True)
+            else:
+                fig = px.bar(df_company, x=period_col, y='connect_licenses',
+                            title=f'Connect Licenses by {period_short}')
+                fig.update_layout(
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    font_color='#ccd6f6',
+                    title_font_color='#00d4ff'
+                )
+                fig.update_traces(marker_color='#00ff88')
+                st.plotly_chart(fig, use_container_width=True)
 
         marketplace_app_cols_company = [
             c for c in get_marketplace_app_cols(df_company.columns)
@@ -800,29 +831,6 @@ elif view == "🔍 Company Lookup":
                     )
             else:
                 st.info("Select at least one marketplace app to display the company chart.")
-
-        if plan_cols_company:
-            st.subheader(f"📦 Connect Plan Mix by {period_short}")
-            fig = go.Figure()
-            plan_colors = ['#00d4ff', '#00ff88', '#ffd93d', '#ff6b6b', '#9b59b6', '#1abc9c']
-            for i, col in enumerate(plan_cols_company):
-                fig.add_trace(go.Bar(
-                    x=df_company[period_col],
-                    y=df_company[col],
-                    name=format_plan_column_name(col),
-                    marker_color=plan_colors[i % len(plan_colors)]
-                ))
-            fig.update_layout(
-                title=f'Connect Active Plans - {selected_company_label}',
-                barmode='stack',
-                plot_bgcolor='rgba(0,0,0,0)',
-                paper_bgcolor='rgba(0,0,0,0)',
-                font_color='#ccd6f6',
-                title_font_color='#00d4ff',
-                xaxis_title=period_short,
-                yaxis_title='Active licenses'
-            )
-            st.plotly_chart(fig, use_container_width=True)
 
         kyc_stage_cols_company = get_kyc_stage_total_cols(df_company.columns)
         if kyc_stage_cols_company:

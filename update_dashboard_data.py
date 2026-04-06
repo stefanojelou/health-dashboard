@@ -47,7 +47,13 @@ MYSQL_QUERY_JOBS = {
         "query_file": "connect_licenses_weekly.sql",
         "output_file": "connect_licenses_weekly.csv",
         "env_prefix": "MYSQL_BILLING",
-        "required_columns": {"week_end_sunday", "companyId", "connect_licenses"},
+        "required_columns": {
+            "week_end_sunday",
+            "companyId",
+            "plan_tier_name",
+            "plan_tier_display_name",
+            "connect_licenses",
+        },
     },
     "kyc_steps": {
         "query_file": "kyc_steps_weekly.sql",
@@ -149,7 +155,13 @@ SOURCE_CONFIG = {
     },
     "connect": {
         "candidates": ["connect_licenses_weekly.csv"],
-        "required_columns": {"companyId", "week_end_sunday", "connect_licenses"},
+        "required_columns": {
+            "companyId",
+            "week_end_sunday",
+            "plan_tier_name",
+            "plan_tier_display_name",
+            "connect_licenses",
+        },
     },
     "kyc": {
         "candidates": ["kyc_steps_weekly.csv"],
@@ -519,6 +531,23 @@ def slug_plan_name(name: str) -> str:
     return cleaned or "unknown_plan"
 
 
+CONNECT_PLAN_LABEL_COLUMNS = (
+    "plan_tier_display_name",
+    "plan_tier_name",
+    "product_name",
+)
+
+
+def get_connect_plan_label(df: pd.DataFrame) -> pd.Series | None:
+    for column in CONNECT_PLAN_LABEL_COLUMNS:
+        if column not in df.columns:
+            continue
+        plan_label = df[column].fillna("").astype(str).str.strip()
+        plan_label = plan_label.mask(plan_label.eq(""), "Unknown Plan")
+        return plan_label
+    return None
+
+
 def prepare_workflow(df_workflow: pd.DataFrame) -> pd.DataFrame:
     df = df_workflow.copy()
     if "companyName" not in df.columns:
@@ -601,23 +630,24 @@ def prepare_connect(df_connect: pd.DataFrame) -> pd.DataFrame:
     df = normalize_week_column(df, "connect")
     df = to_numeric_columns(df, ["connect_licenses"], "connect")
 
-    if "product_name" not in df.columns:
+    plan_label = get_connect_plan_label(df)
+    if plan_label is None:
         return (
             df.groupby(["companyId", "week_end_sunday"], as_index=False)["connect_licenses"]
             .sum()
             .sort_values(["week_end_sunday", "companyId"])
         )
 
-    df["product_name"] = df["product_name"].fillna("Unknown Plan").astype(str).str.strip()
+    df["connect_plan_label"] = plan_label
     grouped = (
-        df.groupby(["companyId", "week_end_sunday", "product_name"], as_index=False)["connect_licenses"]
+        df.groupby(["companyId", "week_end_sunday", "connect_plan_label"], as_index=False)["connect_licenses"]
         .sum()
-        .sort_values(["week_end_sunday", "companyId", "product_name"])
+        .sort_values(["week_end_sunday", "companyId", "connect_plan_label"])
     )
 
     connect_pivot = grouped.pivot_table(
         index=["companyId", "week_end_sunday"],
-        columns="product_name",
+        columns="connect_plan_label",
         values="connect_licenses",
         aggfunc="sum",
         fill_value=0,
